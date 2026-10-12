@@ -1,4 +1,5 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import postcss from 'postcss';
@@ -53,9 +54,15 @@ export async function buildSite() {
     filter: (path) => !path.endsWith('.gitkeep'),
   });
 
+  const cssVersion = createHash('sha256').update(cssResult.css).digest('hex').slice(0, 12);
+  const jsVersion = createHash('sha256').update(await readFile(join(distDir, 'js', 'app.min.js'))).digest('hex').slice(0, 12);
+
   for (const entry of await readdir(srcDir, { withFileTypes: true })) {
     if (entry.isFile() && entry.name.endsWith('.html')) {
-      await cp(join(srcDir, entry.name), join(distDir, entry.name));
+      const html = (await readFile(join(srcDir, entry.name), 'utf8'))
+        .replaceAll('href="css/app.min.css"', `href="css/app.min.css?v=${cssVersion}"`)
+        .replaceAll('src="js/app.min.js"', `src="js/app.min.js?v=${jsVersion}"`);
+      await writeFile(join(distDir, entry.name), html);
     }
   }
 
