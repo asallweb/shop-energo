@@ -1,0 +1,25 @@
+{
+  "name": "shop-energo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Desktop storefront built from the Shop-Energo OpenPencil design.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "devDependencies": {
+    "autoprefixer": "10.6.1",
+    "cssnano": "9.7.0",
+    "esbuild": "0.28.2",
+    "postcss": "8.5.29",
+    "postcss-import": "17.0.0"
+  }
+}

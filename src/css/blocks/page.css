@@ -1,0 +1,4 @@
+.page {
+  width: var(--desktop-width);
+  margin-inline: auto;
+}
