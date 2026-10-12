@@ -1,0 +1,17 @@
+.company {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.company__description {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.company__services {
+  padding-left: 22.5px;
+  color: #75436f;
+  font-size: 13px;
+  line-height: 22px;
+}

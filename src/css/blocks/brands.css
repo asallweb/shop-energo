@@ -1,0 +1,39 @@
+.brands {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.brands__list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.brands__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 255px;
+  height: 96px;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  color: var(--color-plum);
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.brands__item--geko {
+  color: #c54257;
+}
+
+.brands__previous {
+  position: absolute;
+  top: 92px;
+  left: -20px;
+  width: 32px;
+  height: 32px;
+}

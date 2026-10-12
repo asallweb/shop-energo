@@ -1,0 +1,51 @@
+.search {
+  display: flex;
+  gap: 8px;
+  height: 40px;
+}
+
+.search__form {
+  display: flex;
+  gap: 8px;
+}
+
+.search__input {
+  width: 690px;
+  height: 40px;
+  padding: 0 17px;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.search__input::placeholder {
+  color: var(--color-muted);
+  opacity: 1;
+}
+
+.search__button {
+  width: 182px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+.search__socials {
+  display: flex;
+  gap: 8px;
+}
+
+.search__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.search__social--twitter {
+  background: #47a6e3;
+}

@@ -9,3 +9,10 @@
   background: var(--color-accent);
   text-decoration: none;
 }
+
+.button--primary {
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+}

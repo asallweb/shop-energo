@@ -1,0 +1,26 @@
+.products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.products--leaders {
+  width: 1050px;
+}
+
+.products__list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.products__previous {
+  position: absolute;
+  left: -20px;
+  top: 258px;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+}

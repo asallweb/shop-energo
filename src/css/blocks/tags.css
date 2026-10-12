@@ -1,0 +1,26 @@
+.tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+  padding-block: 4px;
+  color: var(--color-link);
+}
+
+.tags__list {
+  width: 100%;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.tags__more {
+  width: 345px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 23px;
+}
