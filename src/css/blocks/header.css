@@ -142,7 +142,7 @@
   color: var(--color-cart);
 }
 
-.header__cart-button {
+.header__cart-link {
   display: flex;
   align-items: flex-start;
   align-self: flex-start;

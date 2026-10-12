@@ -6,6 +6,7 @@
 }
 
 .product-card__photo {
+  display: block;
   position: relative;
   width: 317px;
   height: 216px;

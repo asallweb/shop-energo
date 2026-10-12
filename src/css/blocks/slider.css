@@ -1,0 +1,41 @@
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider__viewport {
+  overflow: hidden;
+}
+
+.slider__track {
+  display: flex;
+  gap: var(--slider-gap, 0px);
+}
+
+.slider__slide {
+  flex-shrink: 0;
+}
+
+.slider__button {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translateY(-50%);
+}
+
+.slider__button--previous {
+  left: -20px;
+}
+
+.slider__button--next {
+  right: -20px;
+}
+
+.slider__button--next img {
+  transform: rotate(180deg);
+}

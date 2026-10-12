@@ -1,4 +1,5 @@
 .brands {
+  --slider-gap: 17.333333px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6,8 +7,6 @@
 }
 
 .brands__list {
-  display: flex;
-  justify-content: space-between;
   padding: 0;
   list-style: none;
 }
@@ -30,10 +29,10 @@
   color: #c54257;
 }
 
-.brands__previous {
-  position: absolute;
-  top: 92px;
-  left: -20px;
-  width: 32px;
-  height: 32px;
+.brands__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
