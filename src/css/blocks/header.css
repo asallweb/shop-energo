@@ -1,0 +1,231 @@
+.header {
+  position: relative;
+  isolation: isolate;
+  width: var(--desktop-width);
+  height: 245px;
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.header::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("../assets/images/header-haze-left.svg"), url("../assets/images/header-haze-right.svg"), url("../assets/images/header-background.webp");
+  background-repeat: no-repeat;
+  background-size: 976.395508px 828.703857px, 702.23291px 698.686279px, 1440px 300px;
+  background-position: -375.271484px -294.852051px, 1150.883423px -233.839111px, -0.421021px -10.428223px;
+  content: "";
+}
+
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--container-width);
+  height: 188px;
+  margin-left: 29.583984px;
+  padding-top: 27px;
+  padding-bottom: 26px;
+}
+
+.header__brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 27px;
+}
+
+.header__symbol {
+  width: 65.567871px;
+  height: 67.307556px;
+}
+
+.header__wordmark {
+  width: 360.091797px;
+  height: 65.788208px;
+}
+
+.header__info {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 749.770508px;
+  flex-shrink: 0;
+}
+
+.header__phones {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 16px;
+  width: 241px;
+  padding-inline: 15px;
+  color: var(--color-white);
+  opacity: 0.94;
+}
+
+.header__phone-number {
+  display: block;
+  font: 600 24px / 25px Roboto, sans-serif;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header__phone-description {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 17px;
+  white-space: nowrap;
+}
+
+.header__contact-divider {
+  position: relative;
+  flex-shrink: 0;
+  width: 0;
+  height: 124.000977px;
+}
+
+.header__contact-divider::before {
+  position: absolute;
+  top: 0;
+  left: 0.5px;
+  width: 1px;
+  height: 100%;
+  background: url("../assets/images/header-divider.svg") no-repeat center / 100% 100%;
+  content: "";
+}
+
+.header__address {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 14px;
+  width: 232.770508px;
+  padding-inline: 14px;
+  font-style: normal;
+  color: var(--color-white);
+  opacity: 0.94;
+}
+
+.header__location {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.header__hours-divider {
+  width: 145.541992px;
+  height: 3px;
+  margin-block: -1.5px;
+}
+
+.header__hours,
+.header__email {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.header__email {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header__cart {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 16px;
+  width: 216px;
+  color: var(--color-cart);
+}
+
+.header__cart-button {
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  gap: 8.799805px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font: 700 20px / 18px Inter, sans-serif;
+  color: inherit;
+  background: none;
+  text-decoration: underline;
+}
+
+.header__cart-icon {
+  width: 18.916992px;
+  height: 19.218689px;
+}
+
+.header__cart-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.header__callback {
+  gap: 6px;
+  width: 100%;
+  padding: 8px 15px;
+}
+
+.header__callback-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.header__callback-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.header__callback-title {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.header__callback-description {
+  font-size: 8px;
+  line-height: 12px;
+}
+
+.header__nav {
+  width: var(--container-width);
+  margin-inline: auto;
+}
+
+.header__nav-list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  padding: 0;
+  list-style: none;
+  background: var(--color-plum);
+}
+
+.header__nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 57px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  color: var(--color-white);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header__nav-link--current {
+  background: var(--color-active);
+}

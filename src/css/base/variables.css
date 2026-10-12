@@ -1,3 +1,9 @@
 :root {
   --desktop-width: 1440px;
+  --container-width: 1380px;
+  --color-white: #fff;
+  --color-plum: #352031;
+  --color-cart: #3f2333;
+  --color-active: #763873;
+  --color-accent: #0ba6ba;
 }

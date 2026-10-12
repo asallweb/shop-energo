@@ -1,0 +1,19 @@
+<svg viewBox="0 0 976.396 828.704" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="976.395508" height="828.703857" fill="none" customFrame="#000000">
+	<defs>
+		<g id="pixso_custom_effect_1">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="100" />
+		</g>
+		<filter id="filter_1" width="976.395508" height="828.703857" x="0.000000" y="0.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_1)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="33.3333321" result="effect_layerBlur_1" />
+		</filter>
+		<linearGradient id="paint_linear_1" x1="438.049896" x2="877.603882" y1="382.08783" y2="418.754333" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(255,255,255)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(255,255,255)" offset="1" stop-opacity="0.5" />
+		</linearGradient>
+	</defs>
+	<g filter="url(#filter_1)">
+		<ellipse id="Ellipse 3" rx="388.197754" ry="314.351929" cx="488.197754" cy="414.351929" fill="url(#paint_linear_1)" />
+	</g>
+</svg>
