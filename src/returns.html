@@ -8,12 +8,12 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <!-- include: header -->
+    <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
-        <!-- include: sidebar -->
+        <template data-include="sidebar"></template>
         <div class="stack page__content returns">
-          <!-- include: search -->
+          <template data-include="search"></template>
           <section class="stack page-heading" aria-labelledby="returns-title">
             <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Возврат товара</span></nav>
             <h1 class="page-heading__title" id="returns-title">Возврат товара</h1>
@@ -48,12 +48,12 @@
             <div class="stack returns-assortment__heading"><h2 class="returns-assortment__title" id="returns-assortment-title">В нашем ассортименте</h2><p class="returns-assortment__description">Подберите оборудование в каталоге:</p></div>
             <nav class="returns-assortment__links" aria-label="Категории генераторов"><a class="link returns-assortment__link" href="#">Дизельные генераторы  →</a><a class="link returns-assortment__link" href="./catalog.html">Бензиновые генераторы  →</a></nav>
           </section>
-          <!-- include: advantages -->
-          <!-- include: brands -->
-          <!-- include: news -->
+          <template data-include="advantages"></template>
+          <template data-include="brands"></template>
+          <template data-include="news"></template>
         </div>
       </div>
     </main>
-    <!-- include: footer -->
+    <template data-include="footer"></template>
   </body>
 </html>

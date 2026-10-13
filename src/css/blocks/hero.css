@@ -37,7 +37,7 @@
 
 .hero__pagination {
   position: absolute;
-  top: 384.5px;
+  bottom: 14px;
   left: 762px;
   display: flex;
   gap: 13px;

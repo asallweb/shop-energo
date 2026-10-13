@@ -8,13 +8,13 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <!-- include: header -->
+    <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
-        <!-- include: sidebar -->
+        <template data-include="sidebar"></template>
         <div class="stack page__content">
           <div class="stack page__intro">
-            <!-- include: search -->
+            <template data-include="search"></template>
             <section class="panel hero" data-hero aria-label="Предложения магазина">
               <div class="slider__viewport"><div class="slider__track hero__track">
                 <article class="hero__slide"><nav class="hero__breadcrumbs" aria-label="Хлебные крошки">
@@ -182,12 +182,12 @@
             </div>
             <a class="link tags__more" href="#">Показать все теги (100500)</a>
           </section>
-          <!-- include: advantages -->
-          <!-- include: brands -->
-          <!-- include: news -->
+          <template data-include="advantages"></template>
+          <template data-include="brands"></template>
+          <template data-include="news"></template>
         </div>
       </div>
     </main>
-    <!-- include: footer -->
+    <template data-include="footer"></template>
   </body>
 </html>

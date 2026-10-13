@@ -8,12 +8,12 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <!-- include: header -->
+    <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
-        <!-- include: sidebar -->
+        <template data-include="sidebar"></template>
         <div class="stack page__content page__content--delivery">
-            <!-- include: search -->
+            <template data-include="search"></template>
           <section class="stack page-heading" aria-labelledby="delivery-title">
             <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Доставка</span></nav>
             <h1 class="page-heading__title" id="delivery-title">Доставка</h1>
@@ -103,12 +103,12 @@
             <div class="stack delivery-help__copy"><h2 class="delivery-help__title" id="delivery-help-title">Нужно уточнить доставку вашего заказа?</h2><p class="delivery-help__description">Специалисты помогут выбрать способ получения и согласовать детали заказа.</p></div>
             <button class="button delivery-help__button" type="button">Заказать звонок</button>
           </section>
-          <!-- include: advantages -->
-          <!-- include: brands -->
-          <!-- include: news -->
+          <template data-include="advantages"></template>
+          <template data-include="brands"></template>
+          <template data-include="news"></template>
         </div>
       </div>
     </main>
-    <!-- include: footer -->
+    <template data-include="footer"></template>
   </body>
 </html>

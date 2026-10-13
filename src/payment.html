@@ -8,12 +8,12 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <!-- include: header -->
+    <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
-        <!-- include: sidebar -->
+        <template data-include="sidebar"></template>
         <div class="stack page__content payment">
-          <!-- include: search -->
+          <template data-include="search"></template>
           <section class="stack page-heading" aria-labelledby="payment-title">
             <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Оплата</span></nav>
             <h1 class="page-heading__title" id="payment-title">Оплата</h1>
@@ -60,12 +60,12 @@
             <div class="stack payment-help__copy"><h2 class="payment-help__title" id="payment-help-title">Нужна помощь с оплатой заказа?</h2><p class="payment-help__description">Менеджер уточнит подходящий способ оплаты и поможет оформить заказ.</p></div>
             <button class="button payment-help__button" type="button">Заказать звонок</button>
           </section>
-          <!-- include: advantages -->
-          <!-- include: brands -->
-          <!-- include: news -->
+          <template data-include="advantages"></template>
+          <template data-include="brands"></template>
+          <template data-include="news"></template>
         </div>
       </div>
     </main>
-    <!-- include: footer -->
+    <template data-include="footer"></template>
   </body>
 </html>

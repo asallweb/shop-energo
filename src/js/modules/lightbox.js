@@ -1,8 +1,18 @@
+let initialized = false;
+let dialog;
+let image;
+let caption;
+let trigger;
+
+export function closeLightbox(root) {
+  if (!trigger || (trigger !== root && !root.contains(trigger))) return;
+  if (dialog?.open) dialog.close();
+  trigger = null;
+}
+
 export function initLightbox() {
-  let dialog;
-  let image;
-  let caption;
-  let trigger;
+  if (initialized) return;
+  initialized = true;
 
   function createDialog() {
     dialog = document.createElement('dialog');
@@ -38,7 +48,9 @@ export function initLightbox() {
         dialog.close();
       }
     });
-    dialog.addEventListener('close', () => trigger?.focus({ preventScroll: true }));
+    dialog.addEventListener('close', () => {
+      if (trigger?.isConnected) trigger.focus({ preventScroll: true });
+    });
   }
 
   document.addEventListener('click', event => {
@@ -46,7 +58,7 @@ export function initLightbox() {
     if (!link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
 
     event.preventDefault();
-    if (!dialog) createDialog();
+    if (!dialog?.isConnected) createDialog();
     trigger = link;
     const description = link.dataset.lightboxCaption || link.querySelector('img')?.alt || link.textContent.trim() || 'Просмотр фотографии';
     image.src = link.href;

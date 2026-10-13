@@ -8,10 +8,10 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <!-- include: header -->
+    <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
-        <!-- include: sidebar -->
+        <template data-include="sidebar"></template>
         <div class="product-detail" data-product-detail>
           <section class="product-heading" aria-labelledby="product-title">
             <nav class="product-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <a class="link" href="./catalog.html">Каталог</a>  ›  <a class="link" href="./catalog.html">Бензиновые генераторы</a>  ›  <span aria-current="page">Mitsui ECO</span></nav>
@@ -163,6 +163,6 @@
         </div>
       </div>
     </main>
-    <!-- include: footer -->
+    <template data-include="footer"></template>
   </body>
 </html>

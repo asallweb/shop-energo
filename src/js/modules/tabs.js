@@ -1,18 +1,22 @@
-export function initTabs() {
-  for (const section of document.querySelectorAll('[data-tabs]')) {
-    const tabs = Array.from(section.querySelectorAll('[role="tab"]'));
+import { mountElements } from './lifecycle.js';
+
+export function initTabs(root = document) {
+  mountElements(root, '[data-tabs]', (section, signal) => {
+    const tabs = Array.from(section.querySelectorAll('[role="tab"]')).filter(tab => tab.closest('[data-tabs]') === section);
+    const panels = new Map(Array.from(section.querySelectorAll('[role="tabpanel"]')).filter(panel => panel.closest('[data-tabs]') === section).map(panel => [panel.id, panel]));
+    if (!tabs.length || tabs.some(tab => !panels.has(tab.getAttribute('aria-controls')))) return false;
 
     function selectTab(selected) {
       for (const tab of tabs) {
         const active = tab === selected;
         tab.setAttribute('aria-selected', String(active));
         tab.tabIndex = active ? 0 : -1;
-        document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+        panels.get(tab.getAttribute('aria-controls')).hidden = !active;
       }
     }
 
     for (const tab of tabs) {
-      tab.addEventListener('click', () => selectTab(tab));
+      tab.addEventListener('click', () => selectTab(tab), { signal });
       tab.addEventListener('keydown', event => {
         const index = tabs.indexOf(tab);
         let next;
@@ -24,7 +28,8 @@ export function initTabs() {
         event.preventDefault();
         selectTab(next);
         next.focus();
-      });
+      }, { signal });
     }
-  }
+    selectTab(tabs.find(tab => tab.getAttribute('aria-selected') === 'true') || tabs[0]);
+  });
 }

@@ -6,12 +6,12 @@ The eight pages share one desktop shell and retain the Pixso layout at 1440 px. 
 
 ## Source and build
 
-- `src/*.html` contains each page's unique content. `<!-- include: name -->` inserts a shared fragment from `src/partials/` during the build.
+- `src/*.html` contains each page's unique content. `<template data-include="name"></template>` inserts a shared fragment from `src/partials/` during the build. These template elements are expanded out of the delivered HTML.
 - `scripts/pages.mjs` declares page metadata, navigation state, category state and shared news variants. `scripts/templates.mjs` renders these values without a browser framework.
 - `src/css/base/` owns tokens, fonts, typography and UI primitives. `.stack` supplies a column flex layout; `.panel` supplies a white surface with a configurable `--panel-line` border.
 - `src/css/blocks/` owns visual components. Page-specific geometry stays in its component. Shared components use the same classes and fragments across pages.
 - `src/css/app.css` imports the common shell. `src/css/pages/<page>.css` imports only components used by that page. Import base product cards before page-specific recommendation overrides.
-- `src/js/main.js` initializes common sliders, tabs and the photo lightbox. It loads optional page behavior through dynamic imports keyed by `body[data-page]`.
+- `src/js/main.js` initializes common sliders, tabs and the photo lightbox. It loads optional behavior through dynamic imports keyed by component data attributes, including AJAX fragments. `lifecycle.js` prevents duplicate initialization and releases handlers on removal.
 - `src/js/pages/` owns page interactions; `src/js/modules/` owns reusable behavior.
 
 `npm run build` renders HTML, minifies CSS, splits JavaScript into local ES modules and writes `dist/`. HTML uses only the generated bundles. Paths are relative and work under `/shop-energo/`. Source HTML is a template and must be previewed through the build, rather than served directly.
@@ -20,7 +20,7 @@ The eight pages share one desktop shell and retain the Pixso layout at 1440 px. 
 
 `createCarousel(root, { tracks, onChange })` is the shared carousel engine. Every track has the same number of original items in the same order, and each track sits inside its own viewport. It synchronizes tracks, loops through cloned items, queues rapid input, handles arrow keys, resize and reduced motion, and makes offscreen items inert. Clones must not contain IDs relied on by other components.
 
-Controls inside the root use `data-carousel-next`, `data-carousel-previous` or a zero-based `data-carousel-go-to`. The callback receives `{ index, moving, count }`. The returned interface exposes `next()`, `previous()` and `goTo(index)` for valid original indices. Adapters in `slider.js`, `hero.js` and `product-gallery.js` handle component-specific labels and state. The hero derives its dots from the real slide count and hides pagination for a single slide. It has no automatic playback.
+Controls inside the root use `data-carousel-next`, `data-carousel-previous` or a zero-based `data-carousel-go-to`. The callback receives `{ index, moving, count }`. The returned interface exposes `next()`, `previous()`, `goTo(index)` and `destroy()`. Destruction cancels timers and observers and restores original track items. Clones have `data-carousel-clone` and are excluded from component discovery. Adapters in `slider.js`, `hero.js` and `product-gallery.js` handle component-specific labels and state. The hero derives its dots from the real slide count and hides pagination for a single slide. It has no automatic playback.
 
 An `a[data-lightbox-open]` keeps its original image URL as a fallback. The shared lightbox creates one native dialog on demand, with an SVG close button, Escape handling and focus return. Optional `data-lightbox-caption` and `data-lightbox-width` configure the view without introducing a page-specific popup.
 
@@ -42,6 +42,6 @@ Below-the-fold card and brand carousels initialize as they approach the viewport
 
 `npm run dev -- --host 127.0.0.1 --port 4173 --base /shop-energo/ --strictPort` builds and watches the source. Stop the watcher before a separate manual build to avoid concurrent output cleanup.
 
-`npm run check` validates rendered includes, IDs, local files, anchors and metadata. `npm run audit:desktop -- --base <URL> --output <folder>` runs desktop Lighthouse for all pages; `--pages index,product` limits the set. The runner accepts `CHROME_PATH`. Local Lighthouse is diagnostic; Google PageSpeed Insights results must be recorded separately for the published URLs.
+`npm run check` validates rendered includes, IDs, local files, anchors, metadata and absence of HTML, JavaScript and CSS comments in source and output. JavaScript and CSS are parsed, so comment-like text inside strings or URLs is not mistaken for a comment. `npm run audit:desktop -- --base <URL> --output <folder>` runs desktop Lighthouse for all pages; `--pages index,product` limits the set. The runner accepts `CHROME_PATH`. Local Lighthouse is diagnostic; Google PageSpeed Insights results must be recorded separately for the published URLs. See `docs/cms-integration.md` for the JavaScript integration contract.
 
 Catalog filtering and comparison selection operate on the supplied demonstration products. The contact form validates locally and explicitly states that delivery is not connected. Unimplemented destinations retain the authorized `href="#"` placeholders. These behaviors do not claim backend integration.

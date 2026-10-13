@@ -1,13 +1,26 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
+import { parse as parseJavaScript } from 'acorn';
+import postcss from 'postcss';
 import { pages } from './pages.mjs';
 
 const output = resolve('dist');
 const pageNames = [...Object.keys(pages), 'pages'];
 let checks = 0;
+function checkCode(text, file) {
+  if (/\.(?:js|mjs)$/.test(file)) {
+    const comments = [];
+    parseJavaScript(text, { ecmaVersion: 'latest', sourceType: 'module', onComment: comments });
+    if (comments.length) throw new Error(`${file}: JavaScript comment`);
+  } else if (file.endsWith('.css')) {
+    postcss.parse(text, { from: file }).walkComments(() => { throw new Error(`${file}: CSS comment`); });
+  }
+}
 for (const name of pageNames) {
   const html = await readFile(resolve(output, `${name}.html`), 'utf8');
-  if (html.includes('<!-- include:') || html.includes('{{')) throw new Error(`${name}: unresolved template`);
+  if (html.includes('data-include=') || html.includes('{{')) throw new Error(`${name}: unresolved template`);
+  if (html.includes('<!--')) throw new Error(`${name}: HTML comment`);
+  for (const match of html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/g)) checkCode(match[1], `${name}.inline.css`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   if (new Set(ids).size !== ids.length) throw new Error(`${name}: duplicate id`);
   for (const match of html.matchAll(/\b(?:src|href)="([^"#]+)(?:#([^"]*))?"/g)) {
@@ -33,6 +46,7 @@ async function checkBundles(directory) {
     if (entry.isDirectory()) { await checkBundles(file); continue; }
     if (!/\.(css|js)$/.test(file)) continue;
     const text = await readFile(file, 'utf8');
+    checkCode(text, file);
     const references = file.endsWith('.css')
       ? [...text.matchAll(/url\(["']?([^"')]+)["']?\)/g)]
       : [...text.matchAll(/(?:from|import\()?\s*["'](\.\.?\/[^"']+\.js)["']/g)];
@@ -44,4 +58,16 @@ async function checkBundles(directory) {
   }
 }
 await checkBundles(output);
+async function checkSource(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const file = join(directory, entry.name);
+    if (entry.isDirectory()) { await checkSource(file); continue; }
+    if (!/\.(?:html|css|js|mjs)$/.test(file)) continue;
+    const text = await readFile(file, 'utf8');
+    if (file.endsWith('.html') && text.includes('<!--')) throw new Error(`${file}: HTML comment`);
+    checkCode(text, file);
+  }
+}
+await checkSource(resolve('src'));
+await checkSource(resolve('scripts'));
 console.log(`${pageNames.length} pages, ${checks} local paths and anchors checked`);

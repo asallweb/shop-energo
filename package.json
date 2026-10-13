@@ -18,6 +18,7 @@
     "not IE 11"
   ],
   "devDependencies": {
+    "acorn": "8.15.0",
     "autoprefixer": "10.6.1",
     "chrome-launcher": "1.2.2",
     "cssnano": "9.7.0",

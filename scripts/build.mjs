@@ -43,6 +43,7 @@ export async function buildSite() {
     chunkNames: 'chunks/[name]-[hash]',
     bundle: true,
     minify: true,
+    legalComments: 'none',
     format: 'esm',
     splitting: true,
     platform: 'browser',

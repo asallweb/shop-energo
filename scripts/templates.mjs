@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 export async function renderPage(source, name, config, srcDir) {
   let html = source;
-  for (const match of source.matchAll(/<!-- include: ([a-z-]+) -->/g)) {
+  for (const match of source.matchAll(/<template data-include="([a-z-]+)"><\/template>/g)) {
     let partial = await readFile(join(srcDir, 'partials', `${match[1]}.html`), 'utf8');
     if (match[1] === 'header' && config.navigation) {
       partial = partial.replace(`class="header__nav-link" href="./${config.navigation}.html"`, `class="header__nav-link header__nav-link--current" href="./${config.navigation}.html" aria-current="page"`);

@@ -8,13 +8,13 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <!-- include: header -->
+    <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
-        <!-- include: sidebar -->
-        <div class="stack page__content catalog">
-          <!-- include: search -->
-          <div class="stack catalog__body" data-catalog>
+        <template data-include="sidebar"></template>
+        <div class="stack page__content catalog" data-catalog>
+          <template data-include="search"></template>
+          <div class="stack catalog__body">
             <section class="stack catalog-heading" aria-labelledby="catalog-page-title">
               <nav class="catalog-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная  › </a><a class="link" href="./catalog.html">Каталог  ›  </a><span aria-current="page">Бензиновые генераторы</span></nav>
               <div class="catalog-heading__row"><h1 class="catalog-heading__title" id="catalog-page-title">Бензиновые генераторы</h1><a class="link catalog-heading__compare" href="#"><img src="assets/icons/catalog-scales.png" width="14" height="14" alt=""><span>Сравнить товары (<span data-catalog-compare-count>0</span>)</span></a></div>
@@ -286,12 +286,12 @@
             </div>
             <a class="link tags__more" href="#">Показать все теги  →</a>
           </section>
-          <!-- include: advantages -->
-          <!-- include: brands -->
-          <!-- include: news -->
+          <template data-include="advantages"></template>
+          <template data-include="brands"></template>
+          <template data-include="news"></template>
         </div>
       </div>
     </main>
-    <!-- include: footer -->
+    <template data-include="footer"></template>
   </body>
 </html>

@@ -8,12 +8,12 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <!-- include: header -->
+    <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
-        <!-- include: sidebar -->
+        <template data-include="sidebar"></template>
         <div class="stack page__content contacts">
-          <!-- include: search -->
+          <template data-include="search"></template>
           <section class="stack page-heading" aria-labelledby="contacts-title">
             <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Контакты</span></nav>
             <h1 class="page-heading__title" id="contacts-title">Контакты</h1>
@@ -42,12 +42,12 @@
               <button class="button contacts-form__submit" type="submit">Отправить сообщение</button>
             </div>
           </form>
-          <!-- include: advantages -->
-          <!-- include: brands -->
-          <!-- include: news -->
+          <template data-include="advantages"></template>
+          <template data-include="brands"></template>
+          <template data-include="news"></template>
         </div>
       </div>
     </main>
-    <!-- include: footer -->
+    <template data-include="footer"></template>
   </body>
 </html>
