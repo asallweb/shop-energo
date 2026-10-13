@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Оплата — SHOP-ENERGO</title>
+    <link rel="stylesheet" href="css/app.min.css">
+    <script type="module" src="js/app.min.js"></script>
+  </head>
+  <body>
+    <!-- include: header -->
+    <main class="page">
+      <div class="container page__container">
+        <!-- include: sidebar -->
+        <div class="stack page__content payment">
+          <!-- include: search -->
+          <section class="stack page-heading" aria-labelledby="payment-title">
+            <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Оплата</span></nav>
+            <h1 class="page-heading__title" id="payment-title">Оплата</h1>
+            <p class="page-heading__description">Выберите удобный способ оплаты оборудования. Здесь собраны условия, порядок оплаты и документы, которые вы получите после покупки.</p>
+          </section>
+          <section class="stack panel payment-rule" aria-labelledby="payment-rule-title">
+            <h2 class="payment-rule__title" id="payment-rule-title">Один заказ — один способ оплаты</h2>
+            <p class="payment-rule__description">Для каждого заказа можно выбрать только один способ оплаты. Разделить сумму одного заказа между разными способами нельзя.</p>
+          </section>
+          <section class="stack payment-methods" aria-labelledby="payment-methods-title">
+            <h2 class="payment-methods__title" id="payment-methods-title">Способы оплаты</h2>
+            <div class="payment-methods__list">
+              <article class="stack panel payment-methods__card" id="payment-sbp">
+                <div class="payment-methods__heading"><img class="payment-methods__icon" src="assets/icons/payment-card.png" width="72" height="72" alt=""><div class="stack payment-methods__copy"><h3 class="payment-methods__name">СБП по QR-коду</h3><p class="payment-methods__caption">Для физических лиц</p></div></div>
+                <p class="payment-methods__description">Оплатите заказ через приложение своего банка. QR-код придёт на электронную почту или в сообщении на телефон. Проверьте сумму заказа, выберите счёт и подтвердите платёж.</p>
+                <p class="payment-methods__note">После оплаты электронный чек придёт на почту.</p>
+              </article>
+              <article class="stack panel payment-methods__card" id="payment-bank-card">
+                <div class="payment-methods__heading"><img class="payment-methods__icon" src="assets/icons/payment-card.png" width="72" height="72" alt=""><div class="stack payment-methods__copy"><h3 class="payment-methods__name">Банковская карта</h3><p class="payment-methods__caption">Предоплата в офисе</p></div></div>
+                <p class="payment-methods__description">Оплата банковской картой проводится в офисе Shop-Energo. Перед визитом возможность оплаты картой необходимо согласовать с менеджером по продажам.</p>
+                <p class="payment-methods__note">Адрес и время визита уточните у менеджера.</p>
+              </article>
+              <article class="stack panel payment-methods__card" id="payment-cash">
+                <div class="payment-methods__heading"><img class="payment-methods__icon" src="assets/icons/payment-cash.png" width="72" height="72" alt=""><div class="stack payment-methods__copy"><h3 class="payment-methods__name">Наличные</h3><p class="payment-methods__caption">Курьеру или при самовывозе</p></div></div>
+                <p class="payment-methods__description">Оплатите заказ курьеру при доставке или в офисе при самовывозе. Вместе с товаром вы получите товарный и кассовый чеки, а также гарантийный талон.</p>
+                <p class="payment-methods__note">Все документы передаются вместе с товаром.</p>
+              </article>
+              <article class="stack panel payment-methods__card" id="payment-invoice">
+                <div class="payment-methods__heading"><img class="payment-methods__icon" src="assets/icons/payment-invoice.png" width="72" height="72" alt=""><div class="stack payment-methods__copy"><h3 class="payment-methods__name">Безналичный расчёт</h3><p class="payment-methods__caption">Для организаций и частных лиц</p></div></div>
+                <p class="payment-methods__description">Отправьте реквизиты организации или Ф. И. О. на электронную почту отдела продаж. Менеджер подготовит и выставит вам счёт для оплаты заказа.</p>
+                <p class="payment-methods__note">Реквизиты отдела продаж есть в шапке сайта.</p>
+              </article>
+            </div>
+          </section>
+          <section class="stack panel payment-documents" aria-labelledby="payment-documents-title">
+            <h2 class="payment-documents__title" id="payment-documents-title">Что вы получите после оплаты</h2>
+            <div class="payment-documents__list">
+              <article class="stack payment-documents__item"><h3 class="payment-documents__method">СБП</h3><p class="payment-documents__description">Электронный чек поступит на вашу почту после завершения платежа.</p></article>
+              <article class="stack payment-documents__item"><h3 class="payment-documents__method">Наличные</h3><p class="payment-documents__description">Товарный и кассовый чеки, а также гарантийный талон — вместе с товаром.</p></article>
+              <article class="stack payment-documents__item"><h3 class="payment-documents__method">Безналичный расчёт</h3><p class="payment-documents__description">Менеджер выставит счёт после получения ваших реквизитов.</p></article>
+            </div>
+          </section>
+          <section class="payment-help" aria-labelledby="payment-help-title">
+            <div class="stack payment-help__copy"><h2 class="payment-help__title" id="payment-help-title">Нужна помощь с оплатой заказа?</h2><p class="payment-help__description">Менеджер уточнит подходящий способ оплаты и поможет оформить заказ.</p></div>
+            <button class="button payment-help__button" type="button">Заказать звонок</button>
+          </section>
+          <!-- include: advantages -->
+          <!-- include: brands -->
+          <!-- include: news -->
+        </div>
+      </div>
+    </main>
+    <!-- include: footer -->
+  </body>
+</html>

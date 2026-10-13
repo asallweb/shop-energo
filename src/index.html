@@ -8,138 +8,58 @@
     <script type="module" src="js/app.min.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="container header__container">
-        <div class="header__top">
-          <a class="header__brand" href="./index.html" aria-label="SHOP-ENERGO — главная страница">
-            <img class="header__symbol" src="assets/images/logo-symbol.svg" width="66" height="67" alt="">
-            <img class="header__wordmark" src="assets/images/logo-wordmark.svg" width="360" height="66" alt="SHOP-ENERGO.ru. Продажа бензиновых и дизельных генераторов">
-          </a>
-          <div class="header__info">
-            <div class="header__phones">
-              <p class="header__phone">
-                <a class="header__phone-number" href="tel:+74998990090">+7 (499) 899-00-90</a>
-                <span class="header__phone-description">Многонакальный</span>
-              </p>
-              <p class="header__phone">
-                <a class="header__phone-number" href="tel:88007074483">8 (800) 707-44-83</a>
-                <span class="header__phone-description">Бесплатный звонок по РФ</span>
-              </p>
-            </div>
-            <span class="header__contact-divider" aria-hidden="true"></span>
-            <address class="header__address">
-              <p class="header__location">Москва, ул. Вавилова, д. 69/75</p>
-              <img class="header__hours-divider" src="assets/images/header-hours-divider.svg" width="146" height="3" alt="">
-              <p class="header__hours">с 10:00–18:00</p>
-              <a class="header__email" href="mailto:shop-energo@mail.ru">shop-energo@mail.ru</a>
-            </address>
-            <div class="header__cart">
-              <a class="header__cart-link" href="#">
-                <img class="header__cart-icon" src="assets/icons/cart-basket.svg" width="19" height="19" alt="">
-                <span>КОРЗИНА</span>
-              </a>
-              <div class="header__cart-summary">
-                <p>Товаров: 2 шт.</p>
-                <p>Сумма: 80 000 ₽</p>
-              </div>
-              <button class="button header__callback" type="button">
-                <img class="header__callback-icon" src="assets/icons/phone.svg" width="24" height="24" alt="">
-                <span class="header__callback-text">
-                  <span class="header__callback-title">Заказать звонок</span>
-                  <span class="header__callback-description">перезвоним через 15 сек.</span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <nav class="header__nav" aria-label="Главное меню">
-          <ul class="header__nav-list">
-            <li><a class="header__nav-link header__nav-link--current" href="./index.html" aria-current="page">ГЛАВНАЯ</a></li>
-            <li><a class="header__nav-link" href="#">О КОМПАНИИ</a></li>
-            <li><a class="header__nav-link" href="#">ОПЛАТА</a></li>
-            <li><a class="header__nav-link" href="#">ДОСТАВКА</a></li>
-            <li><a class="header__nav-link" href="#">ВОЗВРАТ ТОВАРА</a></li>
-            <li><a class="header__nav-link" href="#">КОНТАКТЫ</a></li>
-            <li><a class="header__nav-link" href="#">СПЕЦПРЕДЛОЖЕНИЯ</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <!-- include: header -->
     <main class="page">
       <div class="container page__container">
-        <aside class="sidebar" aria-label="Каталог и услуги">
-          <nav aria-labelledby="catalog-title">
-            <h2 class="sidebar__title" id="catalog-title">КАТАЛОГ ТОВАРОВ</h2>
-            <ul>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Бензиновые генераторы</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Газовые генераторы</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Дизельные генераторы</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Инверторные генераторы</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Сварочные генераторы</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Контейнеры для электростанций</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Блоки АВР и автоматика</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Мотопомпы</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Стабилизаторы напряжения</a></li>
-            </ul>
-          </nav>
-          <nav aria-labelledby="services-title">
-            <h2 class="sidebar__title" id="services-title">УСЛУГИ</h2>
-            <ul>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Монтаж электростанций</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Сервисное обслуживание</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Предпродажный запуск</a></li>
-              <li class="sidebar__item"><a class="link sidebar__link" href="#">Все услуги</a></li>
-            </ul>
-          </nav>
-          <section aria-labelledby="certificate-title">
-            <h2 class="sidebar__title sidebar__title--certificate" id="certificate-title">СЕРТИФИКАТЫ</h2>
-            <div class="sidebar__certificate">
-              <a class="link" href="assets/images/hyundai-certificate-full.png" data-lightbox-open data-lightbox-caption="Сертификат официального поставщика Hyundai" aria-haspopup="dialog" aria-label="Открыть сертификат Hyundai в полном просмотре"><img src="assets/images/hyundai-certificate.webp" width="140" height="198" alt="Сертификат официального поставщика Hyundai"></a>
-              <div class="sidebar__certificate-copy">
-                <h3 class="sidebar__certificate-title"><a class="link" href="assets/images/hyundai-certificate-full.png" data-lightbox-open data-lightbox-caption="Сертификат официального поставщика Hyundai" aria-haspopup="dialog">СЕРТИФИКАТ<br>СООТВЕТСТВИЯ</a></h3>
-                <p class="sidebar__certificate-description">Официальные поставки и документы производителей</p>
-              </div>
-              <a class="button button--primary sidebar__certificate-button" href="#">Все сертификаты</a>
-            </div>
-          </section>
-        </aside>
-        <div class="page__content">
-          <div class="page__intro">
-            <div class="search">
-              <form class="search__form" role="search" action="./index.html" method="get">
-                <input class="search__input" type="search" name="q" aria-label="Поиск по товарам и услугам" placeholder="Поиск по товарам и услугам">
-                <button class="button search__button" type="submit">Найти</button>
-              </form>
-              <div class="search__socials" aria-label="Социальные сети">
-                <a class="search__social" href="#"><img src="assets/icons/social-vk.svg" width="40" height="40" alt="ВКонтакте"></a>
-                <a class="search__social" href="#"><img src="assets/icons/social-google.svg" width="40" height="40" alt="Google Plus"></a>
-                <a class="search__social search__social--twitter" href="#"><img src="assets/icons/social-twitter.svg" width="26" height="26" alt="Twitter"></a>
-                <a class="search__social" href="#"><img src="assets/icons/social-facebook.svg" width="40" height="40" alt="Facebook"></a>
-              </div>
-            </div>
-            <section class="hero" aria-labelledby="hero-title">
-              <nav class="hero__breadcrumbs" aria-label="Хлебные крошки">
+        <!-- include: sidebar -->
+        <div class="stack page__content">
+          <div class="stack page__intro">
+            <!-- include: search -->
+            <section class="panel hero" data-hero aria-label="Предложения магазина">
+              <div class="slider__viewport"><div class="slider__track hero__track">
+                <article class="hero__slide"><nav class="hero__breadcrumbs" aria-label="Хлебные крошки">
                 <a class="hero__home" href="./index.html">Главная ›</a>
                 <span>Бензиновые генераторы</span>
               </nav>
               <div class="hero__body">
-                <div class="hero__copy">
-                  <div class="hero__intro">
+                <div class="stack hero__copy">
+                  <div class="stack hero__intro">
                     <h1 class="hero__title" id="hero-title">Газовые, дизельные и бензиновые электростанции</h1>
                     <p class="hero__description">Электростанции для дома и бизнеса.<br>Автономная энергия под ваши задачи.</p>
-                    <a class="button button--primary hero__button" href="#">Выбрать генератор</a>
+                    <a class="button button--primary hero__button" href="./catalog.html">Выбрать генератор</a>
                   </div>
-                  <div class="hero__offer">
+                  <div class="stack hero__offer">
                     <h2 class="hero__title">СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ</h2>
                     <p class="hero__offer-description">Готовые решения с доставкой и монтажом.<br>Подберём оборудование под ваш объект.</p>
                   </div>
-                  <a class="button button--primary hero__button" href="#">Узнать подробности</a>
+                  <a class="button button--primary hero__button" href="./offers.html">Узнать подробности</a>
                 </div>
                 <img class="hero__image" src="assets/images/generator-range.webp" width="534" height="331" alt="Газовые, дизельные и бензиновые электростанции">
-              </div>
+              </div></article>
+                <article class="hero__slide"><nav class="hero__breadcrumbs" aria-label="Хлебные крошки">
+                <a class="hero__home" href="./index.html">Главная ›</a>
+                <span>Бензиновые генераторы</span>
+              </nav>
+              <div class="hero__body hero__body--product">
+                <div class="stack hero__copy">
+                  <div class="stack hero__intro">
+                    <h2 class="hero__title hero__title--product" >БЕНЗИНОВЫЕ ГЕНЕРАТОРЫ</h2>
+                    <p class="hero__description">Электростанции для дома и бизнеса.<br>Автономная энергия под ваши задачи.</p>
+                    <a class="button button--primary hero__button" href="./catalog.html">Выбрать генератор</a>
+                  </div>
+                  <div class="stack hero__offer">
+                    <h2 class="hero__title">СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ</h2>
+                    <p class="hero__offer-description">Готовые решения с доставкой и монтажом.<br>Подберём оборудование под ваш объект.</p>
+                  </div>
+                  <a class="button button--primary hero__button" href="./offers.html">Узнать подробности</a>
+                </div>
+                <img class="hero__image hero__image--product" src="assets/images/hero-generator-red.png" width="415" height="375" alt="Бензиновый генератор SHOP-ENERGO">
+              </div></article>
+              </div></div>
+              <div class="hero__pagination" data-hero-pagination aria-label="Выбор предложения"></div>
             </section>
           </div>
-          <section class="company" aria-labelledby="company-title">
+          <section class="stack company" aria-labelledby="company-title">
             <h2 class="page__title" id="company-title">Бензиновые генераторные установки и дизель генераторы от компании Shop-Energo</h2>
             <p class="company__description">Компания Шоп-Энерго с 2009 года работает над разрешением проблемы эффективного обеспечения предприятий России бесперебойной электроэнергией. Компания непрерывно работает над решением широкого круга задач и предлагает:</p>
             <ul class="company__services">
@@ -148,55 +68,55 @@
             </ul>
           </section>
           <div class="services">
-            <section class="services__item" aria-labelledby="delivery-title">
+            <section class="stack services__item" aria-labelledby="delivery-title">
               <h2 class="services__title" id="delivery-title">Доставка электростанции на объект</h2>
               <div class="services__photo">
                 <img class="services__image" src="assets/images/generator-delivery.webp" width="535" height="296" alt="Разгрузка электростанции на объекте краном">
               </div>
             </section>
-            <section class="services__item services__item--connection" aria-labelledby="connection-title">
+            <section class="stack services__item services__item--connection" aria-labelledby="connection-title">
               <h2 class="services__title" id="connection-title">Подключение электростанции на объекте</h2>
               <div class="services__photo services__photo--connection">
                 <img class="services__image services__image--connection" src="assets/images/generator-connection.webp" width="598" height="299" alt="Специалисты подключают электростанцию на объекте">
               </div>
             </section>
           </div>
-          <section class="products products--leaders" id="best-sellers" aria-labelledby="best-sellers-title">
+          <section class="stack products products--leaders" id="best-sellers" aria-labelledby="best-sellers-title">
             <h2 class="page__title" id="best-sellers-title">Лидеры продаж</h2>
             <div class="slider" data-slider role="group" aria-label="Карусель: товары">
-              <button class="slider__button slider__button--previous" type="button" data-slider-previous aria-label="Предыдущие товары">
+              <button class="slider__button slider__button--previous" type="button" data-slider-previous data-carousel-previous aria-label="Предыдущие товары">
                 <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
               </button>
               <div class="slider__viewport">
                 <ul class="products__list slider__track">
-                  <li class="product-card slider__slide">
-                    <a class="link product-card__photo" href="#" aria-label="Открыть товар: Бензиновый генератор Mitsui Power ECO ZM 9500 SE">
+                  <li class="panel product-card slider__slide">
+                    <a class="link product-card__photo" href="./product.html" aria-label="ЛИДЕР ПРОДАЖ. Открыть товар: Бензиновый генератор Mitsui Power ECO ZM 9500 SE">
                       <img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-se.png" width="317" height="216" alt="Бензиновый генератор Mitsui Power ECO ZM 9500 SE">
                       <span class="product-card__badge">ЛИДЕР ПРОДАЖ</span>
                     </a>
-                    <div class="product-card__details">
-                      <h3 class="product-card__title"><a class="link" href="#">Бензиновый генератор Mitsui Power ECO ZM 9500 SE</a></h3>
+                    <div class="stack product-card__details">
+                      <h3 class="product-card__title"><a class="link" href="./product.html">Бензиновый генератор Mitsui Power ECO ZM 9500 SE</a></h3>
                       <p class="product-card__price">Цена: 152 200 ₽</p>
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить Mitsui Power ECO ZM 9500 SE">Купить</button>
                     </div>
                   </li>
-                  <li class="product-card slider__slide">
-                    <a class="link product-card__photo" href="#" aria-label="Открыть товар: Бензиновый генератор Mitsui Power ECO ZM 9500 E">
+                  <li class="panel product-card slider__slide">
+                    <a class="link product-card__photo" href="#" aria-label="НОВИНКА. Открыть товар: Бензиновый генератор Mitsui Power ECO ZM 9500 E">
                       <img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-e.png" width="317" height="216" alt="Бензиновый генератор Mitsui Power ECO ZM 9500 E">
                       <span class="product-card__badge">НОВИНКА</span>
                     </a>
-                    <div class="product-card__details">
+                    <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Бензиновый генератор Mitsui Power ECO ZM 9500 E</a></h3>
                       <p class="product-card__price">Цена: 77 900 ₽</p>
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить Mitsui Power ECO ZM 9500 E">Купить</button>
                     </div>
                   </li>
-                  <li class="product-card slider__slide">
-                    <a class="link product-card__photo" href="#" aria-label="Открыть товар: Газовый генератор Mitsui Power ECO ZM 9500 GE">
+                  <li class="panel product-card slider__slide">
+                    <a class="link product-card__photo" href="#" aria-label="СПЕЦПРЕДЛОЖЕНИЕ. Открыть товар: Газовый генератор Mitsui Power ECO ZM 9500 GE">
                       <img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-ge.png" width="317" height="216" alt="Газовый генератор Mitsui Power ECO ZM 9500 GE">
                       <span class="product-card__badge">СПЕЦПРЕДЛОЖЕНИЕ</span>
                     </a>
-                    <div class="product-card__details">
+                    <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Газовый генератор Mitsui Power ECO ZM 9500 GE</a></h3>
                       <p class="product-card__price">Цена: 85 600 ₽</p>
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить Mitsui Power ECO ZM 9500 GE">Купить</button>
@@ -204,44 +124,44 @@
                   </li>
                 </ul>
               </div>
-              <button class="slider__button slider__button--next" type="button" data-slider-next aria-label="Следующие товары">
+              <button class="slider__button slider__button--next" type="button" data-slider-next data-carousel-next aria-label="Следующие товары">
                 <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
               </button>
             </div>
           </section>
-          <section class="products products--new" id="new-products" aria-labelledby="new-products-title">
+          <section class="stack products products--new" id="new-products" aria-labelledby="new-products-title">
             <h2 class="page__title" id="new-products-title">Новые товары</h2>
             <div class="slider" data-slider role="group" aria-label="Карусель: товары">
-              <button class="slider__button slider__button--previous" type="button" data-slider-previous aria-label="Предыдущие товары">
+              <button class="slider__button slider__button--previous" type="button" data-slider-previous data-carousel-previous aria-label="Предыдущие товары">
                 <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
               </button>
               <div class="slider__viewport">
                 <ul class="products__list slider__track">
-                  <li class="product-card slider__slide">
+                  <li class="panel product-card slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="Открыть товар: Дизельный генератор TOYO TKV–7.5SPC">
                       <img class="product-card__image" src="assets/images/toyo-tkv-7-5spc.png" width="317" height="216" alt="Дизельный генератор TOYO TKV–7.5SPC">
                     </a>
-                    <div class="product-card__details">
+                    <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Дизельный генератор TOYO TKV–7.5SPC</a></h3>
                       <p class="product-card__price">Цена: 1 124 800 ₽</p>
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить TOYO TKV–7.5SPC">Купить</button>
                     </div>
                   </li>
-                  <li class="product-card slider__slide">
+                  <li class="panel product-card slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="Открыть товар: Дизельный генератор TSS SDG 7500EH3A">
                       <img class="product-card__image" src="assets/images/tss-sdg-7500eh3a.png" width="317" height="216" alt="Дизельный генератор TSS SDG 7500EH3A">
                     </a>
-                    <div class="product-card__details">
+                    <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Дизельный генератор TSS SDG 7500EH3A</a></h3>
                       <p class="product-card__price">Цена: 128 430 ₽</p>
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить TSS SDG 7500EH3A">Купить</button>
                     </div>
                   </li>
-                  <li class="product-card slider__slide">
+                  <li class="panel product-card slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="Открыть товар: Инверторный генератор HND GE3300JSi">
                       <img class="product-card__image" src="assets/images/hnd-ge3300jsi.png" width="317" height="216" alt="Инверторный генератор HND GE3300JSi">
                     </a>
-                    <div class="product-card__details">
+                    <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Инверторный генератор HND GE3300JSi</a></h3>
                       <p class="product-card__price">Цена: 74 900 ₽</p>
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить HND GE3300JSi">Купить</button>
@@ -249,12 +169,12 @@
                   </li>
                 </ul>
               </div>
-              <button class="slider__button slider__button--next" type="button" data-slider-next aria-label="Следующие товары">
+              <button class="slider__button slider__button--next" type="button" data-slider-next data-carousel-next aria-label="Следующие товары">
                 <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
               </button>
             </div>
           </section>
-          <section class="tags" aria-label="Теги товаров и услуг">
+          <section class="stack tags" aria-label="Теги товаров и услуг">
             <div class="tags__list">
               <p><strong>Теги:</strong> <a class="link" href="#">Бензиновые генераторы (35)</a> <a class="link" href="#">Газовые генераторы (15)</a> <a class="link" href="#">Дизельные электростанции (41)</a> <a class="link" href="#">Инверторные генераторы (18)</a></p>
               <p><a class="link" href="#">Мотопомпы (25)</a> <a class="link" href="#">Сварочные генераторы (9)</a> <a class="link" href="#">Контейнеры для электростанций (10)</a> <a class="link" href="#">Стабилизаторы напряжения (12)</a></p>
@@ -262,213 +182,12 @@
             </div>
             <a class="link tags__more" href="#">Показать все теги (100500)</a>
           </section>
-          <section class="advantages" aria-labelledby="advantages-title">
-            <h2 class="page__title page__title--center" id="advantages-title">Преимущества SHOP-ENERGO</h2>
-            <ul class="advantages__list">
-              <li class="advantages__item">
-                <img src="assets/icons/users.svg" width="49" height="49" alt="">
-                <p class="advantages__description">7 лет безупречного опыта<br>профессионального подхода</p>
-              </li>
-              <li class="advantages__divider" role="presentation" aria-hidden="true"></li>
-              <li class="advantages__item advantages__item--service">
-                <img src="assets/icons/star.svg" width="49" height="49" alt="">
-                <p class="advantages__description">У нас собственная<br>профессиональная монтажная служба</p>
-              </li>
-              <li class="advantages__divider" role="presentation" aria-hidden="true"></li>
-              <li class="advantages__item advantages__item--suppliers">
-                <img src="assets/icons/shield-check.svg" width="49" height="49" alt="">
-                <p class="advantages__description">Только официальные поставки<br>и проверенные производители</p>
-              </li>
-            </ul>
-          </section>
-          <section class="brands" aria-labelledby="brands-title">
-            <h2 class="page__title page__title--center" id="brands-title">Бренды</h2>
-            <div class="slider" data-slider role="group" aria-label="Карусель: бренды">
-              <button class="slider__button slider__button--previous" type="button" data-slider-previous aria-label="Предыдущие бренды">
-                <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
-              </button>
-              <div class="slider__viewport">
-                <ul class="brands__list slider__track">
-                  <li class="brands__item slider__slide"><a class="link brands__link" href="#">SDMO</a></li>
-                  <li class="brands__item slider__slide"><a class="link brands__link" href="#">SDMO</a></li>
-                  <li class="brands__item brands__item--geko slider__slide"><a class="link brands__link" href="#">Geko</a></li>
-                  <li class="brands__item slider__slide"><a class="link brands__link" href="#">EUROPOWER</a></li>
-                </ul>
-              </div>
-              <button class="slider__button slider__button--next" type="button" data-slider-next aria-label="Следующие бренды">
-                <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
-              </button>
-            </div>
-          </section>
-          <section class="news" data-tabs aria-label="Новости, акции и статьи">
-            <div class="news__categories" role="tablist" aria-label="Категории публикаций">
-              <button class="news__category" type="button" role="tab" id="news-tab" aria-controls="news-panel" aria-selected="true">НОВОСТИ</button>
-              <button class="news__category news__category--offers" type="button" role="tab" id="offers-tab" aria-controls="offers-panel" aria-selected="false" tabindex="-1">АКЦИИ</button>
-              <button class="news__category news__category--articles" type="button" role="tab" id="articles-tab" aria-controls="articles-panel" aria-selected="false" tabindex="-1">СТАТЬИ</button>
-            </div>
-            <div class="news__list" role="tabpanel" id="news-panel" aria-labelledby="news-tab" tabindex="0">
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">1. Новости — SDMO — один из крупнейших производителей генераторов</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">2. Новости — Поступление бензиновых генераторов в каталог</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">3. Новости — Готовые решения для резервного электроснабжения</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">4. Новости — Новые статьи о выборе электрогенераторов</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-            </div>
-            <div class="news__list" role="tabpanel" id="offers-panel" aria-labelledby="offers-tab" tabindex="0" hidden>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">1. Акции — SDMO — один из крупнейших производителей генераторов</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">2. Акции — Поступление бензиновых генераторов в каталог</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">3. Акции — Готовые решения для резервного электроснабжения</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">4. Акции — Новые статьи о выборе электрогенераторов</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-            </div>
-            <div class="news__list" role="tabpanel" id="articles-panel" aria-labelledby="articles-tab" tabindex="0" hidden>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">1. Статьи — SDMO — один из крупнейших производителей генераторов</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">2. Статьи — Поступление бензиновых генераторов в каталог</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">3. Статьи — Готовые решения для резервного электроснабжения</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-              <article class="news__card">
-                <div class="news__body">
-                  <time class="news__date" datetime="2026-09-26">26.09.2026</time>
-                  <h3 class="news__title"><a class="link" href="#">4. Статьи — Новые статьи о выборе электрогенераторов</a></h3>
-                  <p class="news__description">Оборудование для дома и бизнеса: подбор, поставка и сервис. Подробности в материале на сайте.</p>
-                </div>
-                <a class="link news__more" href="#">Читать далее →</a>
-              </article>
-            </div>
-          </section>
+          <!-- include: advantages -->
+          <!-- include: brands -->
+          <!-- include: news -->
         </div>
       </div>
     </main>
-    <footer class="footer">
-      <div class="container footer__container">
-        <div class="footer__content">
-          <a class="footer__brand" href="./index.html" aria-label="SHOP-ENERGO — главная страница">
-            <span class="footer__symbol-frame"><img class="footer__symbol" src="assets/images/footer-symbol.webp" width="106" height="88" alt=""></span>
-            <img class="footer__wordmark" src="assets/images/footer-wordmark.svg" width="242" height="21" alt="SHOP-ENERGO.ru">
-          </a>
-          <nav class="footer__nav" aria-label="Меню в подвале">
-            <ul class="footer__nav-list">
-              <li><a class="link footer__nav-link" href="./index.html">ГЛАВНАЯ</a></li>
-              <li><a class="link footer__nav-link" href="#">О КОМПАНИИ</a></li>
-              <li><a class="link footer__nav-link" href="#">ОПЛАТА</a></li>
-              <li><a class="link footer__nav-link" href="#">ДОСТАВКА</a></li>
-              <li><a class="link footer__nav-link" href="#">ВОЗВРАТ ТОВАРА</a></li>
-              <li><a class="link footer__nav-link" href="#">КОНТАКТЫ</a></li>
-              <li><a class="link footer__nav-link" href="#">СПЕЦПРЕДЛОЖЕНИЕ</a></li>
-            </ul>
-          </nav>
-          <address class="footer__address">
-            <p>Москва, ул.. Руставели,</p>
-            <p>д.. 14, стр. 6</p>
-            <p>пн–пт: с 9.00 до 18.00</p>
-            <a class="footer__email" href="mailto:info@shop-energo.ru">info@shop-energo.ru</a>
-          </address>
-          <div class="footer__contacts">
-            <p class="footer__phone">
-              <a class="link footer__phone-number" href="tel:+74952762770">+7 495 276-27-70</a>
-              <span class="footer__phone-description">Многоканальный</span>
-            </p>
-            <p class="footer__phone">
-              <a class="link footer__phone-number" href="tel:88005552710">8 800 555-27-10</a>
-              <span class="footer__phone-description">Бесплатный по РФ</span>
-            </p>
-            <button class="button footer__callback" type="button">
-              <img src="assets/icons/phone.svg" width="24" height="24" alt="">
-              <span class="footer__callback-copy">
-                <span class="footer__callback-title">Заказать звонок</span>
-                <span class="footer__callback-description">перезвоним через 15 сек.</span>
-              </span>
-            </button>
-          </div>
-          <div class="footer__networks">
-            <div class="footer__socials" aria-label="Социальные сети">
-              <a class="footer__social" href="#"><img src="assets/icons/social-vk.svg" width="40" height="40" alt="ВКонтакте"></a>
-              <a class="footer__social" href="#"><img src="assets/icons/social-google.svg" width="40" height="40" alt="Google Plus"></a>
-              <a class="footer__social footer__social--twitter" href="#"><img src="assets/icons/social-twitter.svg" width="26" height="26" alt="Twitter"></a>
-              <a class="footer__social" href="#"><img src="assets/icons/social-facebook.svg" width="40" height="40" alt="Facebook"></a>
-            </div>
-            <div class="footer__payments" aria-label="Способы оплаты">
-              <img src="assets/images/payment-visa.svg" width="50" height="32" alt="Visa">
-              <img src="assets/images/payment-mastercard.svg" width="49" height="32" alt="Mastercard">
-              <img src="assets/images/payment-mir.svg" width="51" height="33" alt="МИР">
-            </div>
-          </div>
-        </div>
-        <p class="footer__copyright">© 2016 ООО «Базис-Групп».</p>
-      </div>
-    </footer>
+    <!-- include: footer -->
   </body>
 </html>

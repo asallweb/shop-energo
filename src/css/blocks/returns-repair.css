@@ -1,0 +1,29 @@
+.returns-repair {
+  width: 1072px;
+  padding: 22px 0 22px 22px;
+  border-left: 6px solid var(--color-plum);
+}
+
+.returns-repair__title {
+  width: 982px;
+}
+
+.returns-repair__description {
+  width: 986px;
+  height: 64px;
+  margin-top: 15px;
+}
+
+.returns-repair__divider {
+  width: 1016px;
+  height: 1px;
+  margin: 16px 0 18px;
+  border: 0;
+  background: var(--color-panel-line);
+}
+
+.returns-repair__note {
+  width: 986px;
+  color: var(--color-muted);
+  white-space: pre;
+}

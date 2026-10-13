@@ -1,6 +1,6 @@
 @font-face {
   font-family: Arimo;
-  src: url("../assets/fonts/arimo-regular.ttf") format("truetype");
+  src: url("../assets/fonts/arimo-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: Arimo;
-  src: url("../assets/fonts/arimo-bold.ttf") format("truetype");
+  src: url("../assets/fonts/arimo-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: Inter;
-  src: url("../assets/fonts/inter-bold.ttf") format("truetype");
+  src: url("../assets/fonts/inter-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: Roboto;
-  src: url("../assets/fonts/roboto-bold.ttf") format("truetype");
+  src: url("../assets/fonts/roboto-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -44,4 +44,76 @@ body {
   font-synthesis: none;
   color: var(--color-plum);
   background: var(--color-white);
+}
+
+.page__section-title {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+.page-heading__breadcrumbs {
+  color: var(--color-link);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.page-heading__title {
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 43px;
+}
+
+.page-heading__description {
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.product-detail__section-title {
+  color: var(--color-cart);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.contacts__section-title {
+  height: 34px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.returns__section-title {
+  height: 31px;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.numbered-cards__title,
+.offers-results__title {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.product-detail__subtitle {
+  color: var(--color-cart);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.product-detail__small {
+  color: var(--product-muted);
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.product-detail .product-detail__link {
+  color: var(--color-control);
+  font-weight: 700;
+  line-height: 19px;
+  white-space: pre-wrap;
 }

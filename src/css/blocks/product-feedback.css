@@ -1,0 +1,24 @@
+.product-feedback {
+  gap: 28px;
+  padding: 40px 24px;
+}
+
+.product-feedback__list {
+  display: grid;
+  grid-template-columns: 516px 516px;
+  justify-content: space-between;
+}
+
+.product-feedback__card {
+  gap: 14px;
+  padding: 15px;
+  border-top: 3px solid var(--color-cart);
+  background: var(--product-pale);
+}
+
+.product-feedback__button {
+  color: var(--color-cart);
+  font-weight: 700;
+  line-height: 19px;
+  white-space: pre-wrap;
+}

@@ -1,9 +1,59 @@
 .hero {
+  --panel-line: var(--color-line);
   height: 421px;
-  padding: 11px 24px 0;
+  position: relative;
   overflow: hidden;
-  border: 1px solid var(--color-line);
-  background: var(--color-white);
+}
+
+.hero__slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 419px;
+  padding: 11px 24px 0;
+}
+
+.hero__track {
+  position: relative;
+}
+
+.hero__body.hero__body--product {
+  margin-top: 25px;
+}
+
+.hero__title.hero__title--product {
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.hero__image.hero__image--product {
+  position: absolute;
+  top: 10px;
+  left: 559px;
+  width: 414.116913px;
+  height: 374.557587px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.hero__pagination {
+  position: absolute;
+  top: 384.5px;
+  left: 762px;
+  display: flex;
+  gap: 13px;
+  transform: translateX(-50%);
+}
+
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  background: var(--color-panel-line);
+}
+
+.hero__dot[aria-pressed="true"] {
+  background: var(--color-plum);
 }
 
 .hero__breadcrumbs {
@@ -27,15 +77,11 @@
 }
 
 .hero__copy {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
   gap: 20px;
 }
 
 .hero__intro {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
   gap: 10px;
 }
@@ -60,8 +106,6 @@
 }
 
 .hero__offer {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 

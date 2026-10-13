@@ -1,0 +1,41 @@
+.contacts-details {
+  display: grid;
+  grid-template-columns: repeat(4, 256px);
+  gap: 16px;
+}
+
+.contacts-details__card {
+  gap: 10px;
+  padding: 18px;
+}
+
+.contacts-details__label {
+  width: 220px;
+  height: 20px;
+  color: var(--color-link);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.contacts-details__value {
+  display: block;
+  width: 220px;
+  height: 49px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.contacts-details__value--email {
+  font-size: 17px;
+}
+
+.contacts-details__note {
+  width: 220px;
+  height: 18px;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 18px;
+  white-space: pre-wrap;
+}

@@ -1,0 +1,31 @@
+.catalog-power {
+  gap: 11px;
+  padding: 24px;
+}
+
+.catalog-power__title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.catalog-power__row {
+  display: flex;
+  gap: 10px;
+}
+
+.catalog-power__button {
+  flex: 1;
+  padding: 9px 0;
+  border: 0;
+  border-right: 1px solid var(--color-panel-line);
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.catalog-power__button[aria-pressed="true"] {
+  color: var(--color-white);
+  background: var(--color-active);
+}

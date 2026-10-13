@@ -1,0 +1,28 @@
+.contacts-pickup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1072px;
+  padding: 24px;
+}
+
+.contacts-pickup__copy {
+  gap: 13px;
+  width: 750px;
+}
+
+.contacts-pickup__description {
+  width: 478.363281px;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.contacts-pickup__button {
+  flex-shrink: 0;
+  width: 208px;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+}

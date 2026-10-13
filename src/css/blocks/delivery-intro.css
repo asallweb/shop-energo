@@ -1,0 +1,35 @@
+.delivery-intro {
+  display: grid;
+  grid-template-columns: 760px 228px;
+  gap: 54px;
+  width: 1072px;
+  height: 236px;
+  padding: 24px 0 0 25px;
+  border-left: 3px solid var(--color-cart);
+  background: var(--color-white);
+}
+
+.delivery-intro__title {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.delivery-intro__description {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.delivery-intro__pickup {
+  margin-top: 36px;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.delivery-intro__image {
+  width: 228px;
+  height: 165px;
+  margin-top: 31px;
+  object-fit: contain;
+}

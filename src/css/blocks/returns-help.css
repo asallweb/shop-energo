@@ -1,0 +1,45 @@
+.returns-help {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+  width: 1072px;
+  padding: 40px 28px;
+  background: var(--color-plum);
+  color: var(--color-white);
+}
+
+.returns-help__copy {
+  gap: 14px;
+  width: 620px;
+}
+
+.returns-help__description {
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.returns-help__contacts {
+  gap: 13px;
+  width: 357px;
+}
+
+.returns-help__contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.returns-help__phone {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.returns-help__email {
+  background: var(--color-white);
+  color: var(--color-plum);
+  font-size: 16px;
+  line-height: 22px;
+}

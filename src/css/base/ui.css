@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:where([id]) {
+  scroll-margin-top: 24px;
+}
+
 .container {
   width: var(--desktop-width);
   margin-inline: auto;
@@ -25,6 +33,28 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 19px;
+}
+
+.product-detail__text-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.product-detail__text-button.product-detail__link {
+  color: var(--color-control);
+}
+
+.product-detail__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 :where(a, button) {
@@ -79,6 +109,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   :where(a, button) {
     transition: none;
   }

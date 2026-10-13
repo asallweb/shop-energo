@@ -1,0 +1,42 @@
+.offers-help {
+  gap: 23px;
+  width: 1072px;
+  padding: 24px 0 23px 22px;
+  border-left: 6px solid var(--color-accent);
+}
+
+.offers-help__heading {
+  gap: 6px;
+  width: 1000px;
+}
+
+.offers-help__title {
+  height: 30px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.offers-help__description {
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.offers-help__contacts {
+  display: flex;
+  gap: 20px;
+  width: 671px;
+  color: var(--color-plum);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.offers-help__phone {
+  width: 137px;
+}
+
+.offers-help__email {
+  width: 176px;
+}

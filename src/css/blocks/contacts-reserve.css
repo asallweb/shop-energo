@@ -1,0 +1,24 @@
+.contacts-reserve {
+  display: flex;
+  align-items: center;
+  width: 1072px;
+  height: 156px;
+  padding-left: 20px;
+  border-left: 5px solid var(--color-plum);
+}
+
+.contacts-reserve__copy {
+  gap: 8px;
+  width: 1000px;
+}
+
+.contacts-reserve__description {
+  height: 55px;
+}
+
+.contacts-reserve__note {
+  height: 20px;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 20px;
+}

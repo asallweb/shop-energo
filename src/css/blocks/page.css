@@ -12,15 +12,11 @@
 }
 
 .page__content {
-  display: flex;
-  flex-direction: column;
   gap: 40px;
   padding: 24px 24px 32px;
 }
 
 .page__intro {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
@@ -33,4 +29,20 @@
 
 .page__title--center {
   text-align: center;
+}
+
+.page__content--delivery {
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.payment,
+.contacts,
+.returns,
+.offers {
+  align-items: flex-start;
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 23px;
 }

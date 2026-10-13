@@ -1,0 +1,55 @@
+.catalog-toolbar {
+  height: 18px;
+  overflow: hidden;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.catalog-toolbar__row {
+  display: flex;
+  align-items: center;
+  gap: 509px;
+  width: max-content;
+  margin-left: -16.5px;
+}
+
+.catalog-toolbar__sorting {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.catalog-toolbar__choices {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.catalog-toolbar__choice {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-ink);
+  line-height: 13px;
+  white-space: pre;
+  cursor: pointer;
+}
+
+.catalog-toolbar__radio {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  border: 1px solid var(--color-control);
+  border-radius: 50%;
+}
+
+.catalog-toolbar__radio:checked {
+  background: var(--color-control) url("../assets/icons/catalog-radio-check.svg") no-repeat left top / 24px 24px;
+  background-origin: border-box;
+}
+
+.catalog-toolbar__count {
+  white-space: pre;
+}

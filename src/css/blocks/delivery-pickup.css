@@ -1,0 +1,17 @@
+.delivery-pickup {
+  gap: 21px;
+  width: 1085px;
+  padding: 24px;
+}
+
+.delivery-pickup__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.delivery-pickup__hint {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 20px;
+}

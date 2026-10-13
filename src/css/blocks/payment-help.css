@@ -1,0 +1,34 @@
+.payment-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1072px;
+  padding: 40px 28px;
+  background: var(--color-plum);
+  color: var(--color-white);
+}
+
+.payment-help__copy {
+  gap: 5px;
+  width: 745px;
+}
+
+.payment-help__title {
+  height: 38px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.payment-help__description {
+  height: 23px;
+}
+
+.payment-help__button {
+  flex-shrink: 0;
+  width: 240px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22px;
+}

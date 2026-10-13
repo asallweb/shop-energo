@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Доставка — SHOP-ENERGO</title>
+    <link rel="stylesheet" href="css/app.min.css">
+    <script type="module" src="js/app.min.js"></script>
+  </head>
+  <body>
+    <!-- include: header -->
+    <main class="page">
+      <div class="container page__container">
+        <!-- include: sidebar -->
+        <div class="stack page__content page__content--delivery">
+            <!-- include: search -->
+          <section class="stack page-heading" aria-labelledby="delivery-title">
+            <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Доставка</span></nav>
+            <h1 class="page-heading__title" id="delivery-title">Доставка</h1>
+            <p class="page-heading__description">Доставляем генераторы и другое оборудование по Москве, области и всей России. Здесь собраны сроки, тарифы и порядок получения заказа.</p>
+          </section>
+          <section class="delivery-intro" aria-labelledby="delivery-intro-title">
+            <div class="delivery-intro__copy">
+              <h2 class="delivery-intro__title" id="delivery-intro-title">Доставка по всей России</h2>
+              <p class="delivery-intro__description">Собственный автопарк позволяет доставлять заказы по Москве и Подмосковью в течение 1–2 дней после оформления. В регионы оборудование перевозят наши партнёры — транспортные компании.</p>
+              <p class="delivery-intro__pickup">Также возможен самовывоз со склада в Москве. Товар нужно заранее зарезервировать по телефону или оформить заказ через корзину сайта.</p>
+            </div>
+            <img class="delivery-intro__image" src="assets/images/delivery-van.png" width="228" height="165" alt="Автомобиль службы доставки Shop-Energo">
+          </section>
+          <nav class="panel delivery-navigation" aria-label="Разделы условий доставки">
+            <a class="link delivery-navigation__link" href="#delivery-moscow">Москва и область</a>
+            <span class="delivery-navigation__divider" aria-hidden="true"></span>
+            <a class="link delivery-navigation__link" href="#delivery-pickup">Самовывоз</a>
+            <span class="delivery-navigation__divider" aria-hidden="true"></span>
+            <a class="link delivery-navigation__link" href="#delivery-regions">Регионы России</a>
+            <span class="delivery-navigation__divider" aria-hidden="true"></span>
+            <a class="link delivery-navigation__link" href="#delivery-receiving">Получение заказа</a>
+          </nav>
+          <ul class="delivery-terms" aria-label="Краткие условия доставки">
+            <li class="stack delivery-terms__item"><p class="delivery-terms__label">В пределах МКАД</p><p class="delivery-terms__value">Бесплатно</p><p class="delivery-terms__description">Доставка собственной службой</p></li>
+            <li class="stack delivery-terms__item"><p class="delivery-terms__label">За пределами МКАД</p><p class="delivery-terms__value">80 ₽ / км</p><p class="delivery-terms__description">Расстояние считается от МКАД</p></li>
+            <li class="stack delivery-terms__item"><p class="delivery-terms__label">Москва и область</p><p class="delivery-terms__value">1–2 дня</p><p class="delivery-terms__description">После оформления заказа</p></li>
+            <li class="stack delivery-terms__item"><p class="delivery-terms__label">Дни и время</p><p class="delivery-terms__value">Пн–пт</p><p class="delivery-terms__description">С 10:00 до 20:00</p></li>
+          </ul>
+          <section class="stack delivery-moscow" id="delivery-moscow" aria-labelledby="delivery-moscow-title">
+            <div class="stack delivery-moscow__heading">
+              <h2 class="page__section-title" id="delivery-moscow-title">Доставка по Москве и Подмосковью</h2>
+              <p class="delivery-moscow__description">Заказы по Москве и области доставляет собственная служба Shop-Energo. Срок — 1–2 дня после оформления. Доставка выполняется ежедневно, кроме субботы и воскресенья, с 10:00 до 20:00.</p>
+            </div>
+            <div class="stack delivery-moscow__details">
+              <div class="delivery-moscow__columns">
+                <div class="stack delivery-moscow__prices">
+                  <section class="stack panel delivery-moscow__tariffs" aria-labelledby="delivery-tariffs-title">
+                    <h3 class="delivery-moscow__tariffs-title" id="delivery-tariffs-title">Стоимость доставки</h3>
+                    <p class="delivery-moscow__price-row"><span>В пределах МКАД</span><strong class="delivery-moscow__price delivery-moscow__price--free">Бесплатно</strong></p>
+                    <p class="delivery-moscow__price-row"><span>Московская область</span><strong class="delivery-moscow__price">80 ₽ / км от МКАД</strong></p>
+                  </section>
+                  <section class="panel delivery-moscow__lifting" aria-labelledby="delivery-lifting-title">
+                    <h3 class="delivery-moscow__lifting-title" id="delivery-lifting-title">Подъём в квартиру или офис</h3>
+                    <p class="delivery-moscow__lifting-description">Доставка до помещения возможна для оборудования весом до 20 кг при наличии лифта. Если лифта нет, подъём товара до 20 кг стоит 100 ₽ за этаж.</p>
+                  </section>
+                </div>
+                <figure class="panel delivery-moscow__map"><img class="delivery-moscow__map-image" src="assets/images/delivery-moscow-map.png" width="368" height="301" alt="Карта Москвы и Московской области"></figure>
+              </div>
+              <div class="panel delivery-moscow__installation"><p class="delivery-moscow__installation-copy">При необходимости специалисты Shop-Energo выполнят монтаж электростанции на объекте.</p><a class="link delivery-moscow__installation-link" href="#">Подробнее об услуге  →</a></div>
+            </div>
+          </section>
+          <section class="stack panel delivery-pickup" id="delivery-pickup" aria-labelledby="delivery-pickup-title">
+            <h2 class="delivery-pickup__title" id="delivery-pickup-title">Самовывоз со склада в Москве</h2>
+            <p>Забрать заказ можно самостоятельно. Перед приездом необходимо зарезервировать товар по телефону у специалистов или оформить заказ через корзину на сайте.</p>
+            <p class="delivery-pickup__hint">Пожалуйста, согласуйте наличие и время получения перед поездкой.</p>
+          </section>
+          <section class="stack delivery-regions" id="delivery-regions" aria-labelledby="delivery-regions-title">
+            <div class="stack delivery-regions__heading">
+              <h2 class="page__section-title" id="delivery-regions-title">Доставка в регионы РФ</h2>
+              <p>Для заказов из других регионов доставим товар до пункта отправления выбранной транспортной компании в Москве бесплатно. Дальше перевозку выполняет грузоперевозчик, а заказ можно получить в пункте выдачи вашего города.</p>
+            </div>
+            <ol class="delivery-regions__steps">
+              <li class="stack panel delivery-regions__step"><div class="delivery-regions__step-heading"><img class="delivery-regions__step-number" src="assets/icons/delivery-step-01.svg" width="27" height="18" alt="Шаг 1"><h3 class="delivery-regions__step-title">Выберите компанию</h3></div><p class="delivery-regions__step-description">Можно указать удобного перевозчика при оформлении заказа.</p></li>
+              <li class="stack panel delivery-regions__step"><div class="delivery-regions__step-heading"><img class="delivery-regions__step-number delivery-regions__step-number--second" src="assets/icons/delivery-step-02.svg" width="27" height="18" alt="Шаг 2"><h3 class="delivery-regions__step-title">Проверим заказ</h3></div><p class="delivery-regions__step-description">Перед отправкой проверим комплектность, качество и надёжность упаковки.</p></li>
+              <li class="stack panel delivery-regions__step"><div class="delivery-regions__step-heading"><img class="delivery-regions__step-number delivery-regions__step-number--third" src="assets/icons/delivery-step-03.svg" width="27" height="18" alt="Шаг 3"><h3 class="delivery-regions__step-title">Получите в городе</h3></div><p class="delivery-regions__step-description">Транспортная компания доставит груз до своего пункта выдачи.</p></li>
+            </ol>
+            <div class="delivery-regions__columns">
+              <figure class="panel delivery-regions__map"><img class="delivery-regions__map-image" src="assets/images/delivery-russia-map.png" width="478" height="231" alt="Карта регионов России"></figure>
+              <section class="stack panel delivery-regions__companies" aria-labelledby="delivery-companies-title">
+                <h3 class="delivery-regions__companies-title" id="delivery-companies-title">Транспортные компании</h3>
+                <div class="delivery-regions__companies-list"><p><a class="link" href="#">ПЭК</a>   ·   <a class="link" href="#">Деловые линии</a>   ·   <a class="link" href="#">Желдорэкспедиция</a></p><p><a class="link" href="#">Байкал Сервис</a>   ·   <a class="link" href="#">Аттента</a>   ·   <a class="link" href="#">Кит</a></p><p><a class="link" href="#">Юником-Карго</a>   ·   <a class="link" href="#">Экспресс-Авто</a></p><p><a class="link" href="#">Нева Центр</a>   ·   <a class="link" href="#">ФАСТранс</a></p></div>
+                <p class="delivery-regions__companies-hint">Можно выбрать другую компанию, если заранее сообщить об этом отделу продаж</p>
+              </section>
+            </div>
+            <p class="panel delivery-regions__notice">Условия работы, сроки и стоимость перевозки уточняйте на сайте выбранной транспортной компании.</p>
+          </section>
+          <section class="stack delivery-receiving" id="delivery-receiving" aria-labelledby="delivery-receiving-title">
+            <h2 class="page__section-title" id="delivery-receiving-title">Получение заказа и важные условия</h2>
+            <ol class="stack delivery-receiving__list">
+              <li class="panel delivery-receiving__item"><img class="delivery-receiving__number" src="assets/icons/delivery-condition-01.svg" width="41" height="42" alt="Условие 1"><div class="stack delivery-receiving__copy"><h3 class="delivery-receiving__title">Проверьте товар при получении</h3><p class="delivery-receiving__description">Осмотрите внешний вид и проверьте комплектность оборудования. Если обнаружены несоответствия, от товара можно отказаться.</p></div></li>
+              <li class="panel delivery-receiving__item"><img class="delivery-receiving__number" src="assets/icons/delivery-condition-02.svg" width="41" height="42" alt="Условие 2"><div class="stack delivery-receiving__copy"><h3 class="delivery-receiving__title">Передача и ответственность</h3><p class="delivery-receiving__description">После передачи товара и подписания сопроводительных документов риск повреждения переходит к покупателю.</p></div></li>
+              <li class="panel delivery-receiving__item"><img class="delivery-receiving__number" src="assets/icons/delivery-condition-03.svg" width="41" height="42" alt="Условие 3"><div class="stack delivery-receiving__copy"><h3 class="delivery-receiving__title">Если заказ не принят</h3><p class="delivery-receiving__description">При необоснованном отказе от доставленного товара стоимость доставки оплачивается по произведённому расчёту.</p></div></li>
+            </ol>
+            <p class="delivery-receiving__legal">Условие об оплате доставки при отказе приведено на действующей странице Shop-Energo со ссылкой на нормы законодательства РФ.</p>
+          </section>
+          <section class="delivery-help" aria-labelledby="delivery-help-title">
+            <div class="stack delivery-help__copy"><h2 class="delivery-help__title" id="delivery-help-title">Нужно уточнить доставку вашего заказа?</h2><p class="delivery-help__description">Специалисты помогут выбрать способ получения и согласовать детали заказа.</p></div>
+            <button class="button delivery-help__button" type="button">Заказать звонок</button>
+          </section>
+          <!-- include: advantages -->
+          <!-- include: brands -->
+          <!-- include: news -->
+        </div>
+      </div>
+    </main>
+    <!-- include: footer -->
+  </body>
+</html>

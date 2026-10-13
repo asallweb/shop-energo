@@ -1,0 +1,22 @@
+.returns-conditions__exception {
+  width: 1024px;
+  height: 72px;
+  padding: 12px 19px 0;
+  border: 1px solid var(--color-panel-line);
+}
+
+.returns-conditions__exception-title {
+  width: 120px;
+  height: 22px;
+  color: var(--color-link);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+.returns-conditions__exception-description {
+  width: 963px;
+  height: 39px;
+  font-size: 15px;
+  line-height: 20px;
+}

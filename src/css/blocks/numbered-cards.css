@@ -1,0 +1,82 @@
+.numbered-cards {
+  gap: 30px;
+  width: 1074px;
+  padding: 16px 24px;
+}
+
+.numbered-cards__heading {
+  gap: 6px;
+  width: 1000px;
+}
+
+.numbered-cards__title {
+  height: 30px;
+}
+
+.numbered-cards__description {
+  height: 24px;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.numbered-cards__list {
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  gap: 24px;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+.numbered-cards__item {
+  gap: 9px;
+  padding: 19px 16px;
+  border: 1px solid var(--color-panel-line);
+  background: var(--color-background);
+}
+
+.numbered-cards__item-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.numbered-cards__number {
+  width: 34px;
+  height: 34px;
+}
+
+.numbered-cards__item-title {
+  width: 418px;
+  height: 28px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.numbered-cards__item-description {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 19px;
+  white-space: pre-line;
+}
+
+.numbered-cards--returns .numbered-cards__item-description {
+  height: 38px;
+}
+
+.numbered-cards--offers .numbered-cards__item-title {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.numbered-cards--offers .numbered-cards__item-description {
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.numbered-cards--offers .numbered-cards__item-description--small {
+  font-size: 14px;
+  line-height: 19px;
+}

@@ -1,0 +1,28 @@
+.product-documents {
+  gap: 27px;
+  padding: 40px 24px;
+}
+
+.product-documents__list {
+  display: grid;
+  grid-template-columns: 334px 334px 368px;
+  gap: 16px;
+}
+
+.product-documents__card {
+  gap: 10px;
+  padding: 15px;
+  border-top: 3px solid var(--color-cart);
+  background: var(--product-pale);
+}
+
+.product-documents__description {
+  min-height: 44px;
+}
+
+.product-documents__link {
+  color: var(--color-cart);
+  font-weight: 700;
+  line-height: 19px;
+  white-space: pre-wrap;
+}

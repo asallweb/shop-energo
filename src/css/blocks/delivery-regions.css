@@ -1,0 +1,111 @@
+.delivery-regions {
+  gap: 20px;
+  width: 1072px;
+  padding-block: 1px;
+}
+
+.delivery-regions__heading {
+  gap: 10px;
+}
+
+.delivery-regions__steps {
+  display: flex;
+  gap: 17px;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.delivery-regions__step {
+  gap: 22px;
+  width: 345px;
+  padding: 21px 18px;
+}
+
+.delivery-regions__step-heading {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.delivery-regions__step-number {
+  flex-shrink: 0;
+  width: 27.180664px;
+  height: 18.408203px;
+}
+
+.delivery-regions__step-number--second {
+  width: 26.863281px;
+}
+
+.delivery-regions__step-number--third {
+  width: 26.964844px;
+  height: 18.446289px;
+}
+
+.delivery-regions__step-title {
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.delivery-regions__step-description {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.delivery-regions__columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delivery-regions__map {
+  width: 510px;
+  height: 263px;
+  padding: 15px;
+}
+
+.delivery-regions__map-image {
+  width: 478px;
+  height: 231px;
+  object-fit: contain;
+}
+
+.delivery-regions__companies {
+  justify-content: space-between;
+  width: 543px;
+  height: 263px;
+  padding: 24px;
+}
+
+.delivery-regions__companies-title {
+  color: var(--color-plum);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.delivery-regions__companies-list {
+  width: 502.591797px;
+  font-size: 15px;
+  line-height: 21px;
+  white-space: pre;
+}
+
+.delivery-regions__companies-hint {
+  width: 502.591797px;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.delivery-regions__notice {
+  padding: 24px 20px;
+  font-size: 15px;
+  line-height: 21px;
+  text-align: center;
+}

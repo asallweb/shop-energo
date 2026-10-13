@@ -52,6 +52,12 @@ export function initLightbox() {
     image.src = link.href;
     image.alt = description;
     caption.textContent = description;
+    const displayWidth = Number(link.dataset.lightboxWidth);
+    if (Number.isFinite(displayWidth) && displayWidth > 0) {
+      dialog.style.setProperty('--lightbox-image-width', `${displayWidth}px`);
+    } else {
+      dialog.style.removeProperty('--lightbox-image-width');
+    }
     link.setAttribute('aria-haspopup', 'dialog');
     link.setAttribute('aria-controls', dialog.id);
     dialog.showModal();

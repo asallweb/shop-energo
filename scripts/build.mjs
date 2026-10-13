@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -7,6 +7,9 @@ import postcssImport from 'postcss-import';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import { build } from 'esbuild';
+import { pages } from './pages.mjs';
+import { renderPage } from './templates.mjs';
+import { buildAssets } from './assets.mjs';
 
 export const rootDir = fileURLToPath(new URL('../', import.meta.url));
 export const srcDir = join(rootDir, 'src');
@@ -21,49 +24,49 @@ export async function buildSite() {
   await mkdir(join(distDir, 'css'), { recursive: true });
   await mkdir(join(distDir, 'js'), { recursive: true });
 
-  const cssInput = join(srcDir, 'css', 'app.css');
-  const cssOutput = join(distDir, 'css', 'app.min.css');
-  const cssResult = await postcss([
-    postcssImport(),
-    autoprefixer(),
-    cssnano({ preset: 'default' }),
-  ]).process(await readFile(cssInput, 'utf8'), {
-    from: cssInput,
-    to: cssOutput,
-    map: false,
-  });
-
-  for (const warning of cssResult.warnings()) {
-    console.warn(warning.toString());
+  const replaceAssets = await buildAssets({ rootDir, srcDir, distDir });
+  const cssVersions = new Map();
+  for (const name of ['app', ...Object.keys(pages)]) {
+    const cssInput = join(srcDir, 'css', name === 'app' ? 'app.css' : `pages/${name}.css`);
+    const cssOutput = join(distDir, 'css', `${name}.min.css`);
+    const result = await postcss([postcssImport(), autoprefixer(), cssnano({ preset: 'default' })])
+      .process(await readFile(cssInput, 'utf8'), { from: cssInput, to: cssOutput, map: false });
+    for (const warning of result.warnings()) console.warn(warning.toString());
+    const css = replaceAssets(result.css);
+    await writeFile(cssOutput, css);
+    cssVersions.set(name, createHash('sha256').update(css).digest('hex').slice(0, 12));
   }
-
-  await writeFile(cssOutput, cssResult.css);
   await build({
     entryPoints: [join(srcDir, 'js', 'main.js')],
-    outfile: join(distDir, 'js', 'app.min.js'),
+    outdir: join(distDir, 'js'),
+    entryNames: 'app.min',
+    chunkNames: 'chunks/[name]-[hash]',
     bundle: true,
     minify: true,
     format: 'esm',
+    splitting: true,
     platform: 'browser',
     target: ['es2020'],
     logLevel: 'warning',
   });
 
-  await cp(join(srcDir, 'assets'), join(distDir, 'assets'), {
-    recursive: true,
-    filter: (path) => !path.endsWith('.gitkeep'),
-  });
-
-  const cssVersion = createHash('sha256').update(cssResult.css).digest('hex').slice(0, 12);
   const jsVersion = createHash('sha256').update(await readFile(join(distDir, 'js', 'app.min.js'))).digest('hex').slice(0, 12);
 
-  for (const entry of await readdir(srcDir, { withFileTypes: true })) {
-    if (entry.isFile() && entry.name.endsWith('.html')) {
-      const html = (await readFile(join(srcDir, entry.name), 'utf8'))
-        .replaceAll('href="css/app.min.css"', `href="css/app.min.css?v=${cssVersion}"`)
-        .replaceAll('src="js/app.min.js"', `src="js/app.min.js?v=${jsVersion}"`);
-      await writeFile(join(distDir, entry.name), html);
-    }
+  for (const [name, config] of Object.entries(pages)) {
+    let html = await renderPage(await readFile(join(srcDir, `${name}.html`), 'utf8'), name, config, srcDir);
+    html = html.replace('href="css/app.min.css"', `href="css/app.min.css?v=${cssVersions.get('app')}"`)
+      .replace('src="js/app.min.js"', `src="js/app.min.js?v=${jsVersion}"`)
+      .replace('</head>', `  <link rel="stylesheet" href="css/${name}.min.css?v=${cssVersions.get(name)}">\n    <link rel="icon" href="assets/images/logo-symbol.svg" type="image/svg+xml">\n    <link rel="preload" href="assets/fonts/arimo-regular.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" href="assets/fonts/arimo-bold.woff2" as="font" type="font/woff2" crossorigin>\n  </head>`)
+      .replace('<link rel="stylesheet" href="css/app.min.css', '<link rel="preload" as="image" href="assets/images/header-background.webp" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-haze-left.svg">\n    <link rel="preload" as="image" href="assets/images/header-haze-right.svg">\n    <link rel="stylesheet" href="css/app.min.css');
+    let mainPhoto = false;
+    const mainStart = html.indexOf('<main');
+    html = html.replace(/<img\b[^>]+>/g, (tag, offset) => {
+      const priority = !mainPhoto && /hero__image|product-gallery__image/.test(tag);
+      if (priority) mainPhoto = true;
+      if (offset < mainStart || priority) return tag.replace(/>$/, `${priority ? ' fetchpriority="high"' : ''} decoding="async">`);
+      return tag.replace(/>$/, ' loading="lazy" decoding="async">');
+    });
+    await writeFile(join(distDir, `${name}.html`), replaceAssets(html));
   }
 
   await writeFile(join(distDir, '.nojekyll'), '');

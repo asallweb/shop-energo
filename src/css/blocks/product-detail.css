@@ -1,0 +1,34 @@
+.product-detail {
+  width: 1116px;
+  background: var(--color-white);
+  color: var(--product-ink);
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.product-detail__upper {
+  gap: 40px;
+  height: 1232px;
+}
+
+@media print {
+  body:has(.product-detail) {
+    min-width: 0;
+    background: var(--color-white);
+  }
+
+  body:has(.product-detail) :is(.header, .sidebar, .footer) {
+    display: none;
+  }
+
+  .page:has(.product-detail) .page__container {
+    display: block;
+    width: 1116px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .product-detail :is(.product-purchase, .product-conditions__card, .product-specifications__row, .product-documents__card, .product-feedback__card, .product-card) {
+    break-inside: avoid;
+  }
+}

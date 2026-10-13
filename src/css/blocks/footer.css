@@ -18,9 +18,7 @@
 }
 
 .footer__brand {
-  display: flex;
   flex-shrink: 0;
-  flex-direction: column;
   gap: 5.750977px;
   width: 242.134949px;
 }
@@ -51,8 +49,6 @@
 }
 
 .footer__nav-list {
-  display: flex;
-  flex-direction: column;
   gap: 6px;
   padding: 0;
   list-style: none;
@@ -66,9 +62,7 @@
 }
 
 .footer__address {
-  display: flex;
   flex-shrink: 0;
-  flex-direction: column;
   gap: 6px;
   width: 225px;
   height: 85px;
@@ -83,17 +77,13 @@
 }
 
 .footer__contacts {
-  display: flex;
   flex-shrink: 0;
-  flex-direction: column;
   align-items: flex-start;
   gap: 11px;
   width: 190px;
 }
 
 .footer__phone {
-  display: flex;
-  flex-direction: column;
   gap: 3px;
   width: 100%;
 }
@@ -117,8 +107,6 @@
 }
 
 .footer__callback-copy {
-  display: flex;
-  flex-direction: column;
   text-align: left;
   white-space: nowrap;
 }
@@ -135,9 +123,7 @@
 }
 
 .footer__networks {
-  display: flex;
   flex-shrink: 0;
-  flex-direction: column;
   align-items: flex-end;
   gap: 23px;
   width: 184px;

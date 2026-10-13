@@ -1,8 +1,7 @@
 .brands {
+  width: 100%;
   --slider-gap: 17.333333px;
   position: relative;
-  display: flex;
-  flex-direction: column;
   gap: 22px;
 }
 
@@ -12,13 +11,12 @@
 }
 
 .brands__item {
+  --panel-line: var(--color-line);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 255px;
   height: 96px;
-  border: 1px solid var(--color-line);
-  background: var(--color-white);
   color: var(--color-plum);
   font-size: 29px;
   font-weight: 700;

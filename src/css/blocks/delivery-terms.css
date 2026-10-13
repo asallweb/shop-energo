@@ -1,0 +1,34 @@
+.delivery-terms {
+  display: flex;
+  justify-content: space-between;
+  width: 1072px;
+  padding: 0 4px 0 0;
+  list-style: none;
+}
+
+.delivery-terms__item {
+  gap: 15px;
+  width: 255px;
+  height: 139px;
+  padding: 15px;
+  border-top: 3px solid var(--color-cart);
+  background: var(--color-white);
+}
+
+.delivery-terms__label {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.delivery-terms__value {
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.delivery-terms__description {
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 18px;
+}

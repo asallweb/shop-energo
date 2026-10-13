@@ -1,0 +1,37 @@
+.payment-documents {
+  gap: 17px;
+  width: 1072px;
+  padding: 23px;
+}
+
+.payment-documents__title {
+  height: 33px;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.payment-documents__list {
+  display: grid;
+  grid-template-columns: repeat(3, 328px);
+  gap: 20px;
+}
+
+.payment-documents__item {
+  gap: 7px;
+  padding: 16px;
+  background: var(--color-background);
+}
+
+.payment-documents__method {
+  height: 24px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.payment-documents__description {
+  height: 40px;
+  font-size: 14px;
+  line-height: 20px;
+}

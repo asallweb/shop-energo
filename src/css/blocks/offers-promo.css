@@ -1,0 +1,52 @@
+.offers-promo {
+  display: flex;
+  align-items: center;
+  gap: 74px;
+  width: max-content;
+  padding: 24px 28px;
+  background: var(--color-plum);
+  color: var(--color-white);
+}
+
+.offers-promo__copy {
+  gap: 42px;
+  width: 770px;
+}
+
+.offers-promo__introduction {
+  align-items: flex-start;
+  gap: 19px;
+}
+
+.offers-promo__label {
+  width: 184px;
+  padding: 4px 14px;
+  background: var(--color-accent);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.offers-promo__heading {
+  gap: 8px;
+  width: 100%;
+}
+
+.offers-promo__title {
+  height: 41px;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.offers-promo__term {
+  height: 24px;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.offers-promo__image {
+  width: 127.359375px;
+  height: 106.94921875px;
+}

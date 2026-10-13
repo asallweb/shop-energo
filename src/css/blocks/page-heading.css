@@ -1,0 +1,19 @@
+.page-heading {
+  align-items: flex-start;
+  gap: 10px;
+  width: 1072px;
+  padding-block: 2px;
+}
+
+.page-heading__breadcrumbs {
+  width: 900px;
+  white-space: pre;
+}
+
+.page-heading__title {
+  width: 760px;
+}
+
+.page-heading__description {
+  width: 1040px;
+}

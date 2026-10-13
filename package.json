@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Desktop storefront built from the Shop-Energo OpenPencil design.",
+  "description": "Desktop storefront built from the Shop-Energo Pixso design.",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "dev": "node scripts/dev.mjs"
+    "dev": "node scripts/dev.mjs",
+    "check": "node scripts/check.mjs",
+    "audit:desktop": "node scripts/audit.mjs"
   },
   "engines": {
     "node": ">=24 <25"
@@ -17,9 +19,12 @@
   ],
   "devDependencies": {
     "autoprefixer": "10.6.1",
+    "chrome-launcher": "1.2.2",
     "cssnano": "9.7.0",
     "esbuild": "0.28.2",
+    "lighthouse": "13.5.0",
     "postcss": "8.5.29",
-    "postcss-import": "17.0.0"
+    "postcss-import": "17.0.0",
+    "sharp": "0.35.5"
   }
 }

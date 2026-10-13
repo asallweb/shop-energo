@@ -1,0 +1,21 @@
+.returns-notice {
+  gap: 14px;
+  width: 1072px;
+  height: 146px;
+  padding: 22px 0 22px 22px;
+  border-left: 6px solid var(--color-plum);
+}
+
+.returns-notice__title {
+  width: 980px;
+  height: 28px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.returns-notice__description {
+  width: 1006px;
+  height: 58px;
+  color: var(--color-muted);
+}

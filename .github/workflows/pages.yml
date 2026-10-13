@@ -27,6 +27,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Check rendered pages
+        run: npm run check
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload production files

@@ -1,0 +1,117 @@
+.delivery-moscow {
+  gap: 30px;
+  width: 1105px;
+}
+
+.delivery-moscow__heading {
+  gap: 10px;
+}
+
+.delivery-moscow__description {
+  width: 1045px;
+}
+
+.delivery-moscow__details {
+  gap: 10px;
+  width: 1072px;
+}
+
+.delivery-moscow__columns {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.delivery-moscow__prices {
+  gap: 10px;
+  width: 709px;
+}
+
+.delivery-moscow__tariffs {
+  gap: 14px;
+  padding: 17px 20px;
+}
+
+.delivery-moscow__tariffs-title {
+  color: var(--color-plum);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.delivery-moscow__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-panel-line);
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.delivery-moscow__price {
+  width: 195px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.delivery-moscow__price--free {
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.delivery-moscow__lifting {
+  height: 136px;
+  padding: 15px 19px;
+}
+
+.delivery-moscow__lifting-title {
+  margin-bottom: 8px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.delivery-moscow__lifting-description {
+  width: 625px;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.delivery-moscow__map {
+  position: relative;
+  width: 354px;
+  height: 313px;
+  overflow: hidden;
+}
+
+.delivery-moscow__map-image {
+  position: absolute;
+  top: 11px;
+  left: 2px;
+  width: 368px;
+  max-width: none;
+  height: 301px;
+  object-fit: contain;
+}
+
+.delivery-moscow__installation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.delivery-moscow__installation-copy {
+  width: 850px;
+  white-space: nowrap;
+}
+
+.delivery-moscow__installation-link {
+  flex-shrink: 0;
+  color: var(--color-link);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 19px;
+  white-space: pre;
+}

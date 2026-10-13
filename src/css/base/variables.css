@@ -12,4 +12,13 @@
   --color-line: #e3dfe3;
   --color-focus: rgb(118 56 115 / 35%);
   --color-link: #7b6381;
+  --color-control: #75436f;
+  --color-success: #60ae31;
+  --color-danger: #c82c45;
+  --color-promo: #f65429;
+  --product-line: #d8d8d8;
+  --product-pale: #f6f5f6;
+  --product-muted: #6b6b6b;
+  --product-ink: #171717;
+  --color-panel-line: #d9d9d9;
 }

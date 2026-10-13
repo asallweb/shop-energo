@@ -1,0 +1,51 @@
+.product-description {
+  height: 360px;
+  padding: 21px 24px;
+}
+
+.product-description__body {
+  gap: 25px;
+}
+
+.product-description__columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-description__copy {
+  gap: 20px;
+  width: 690px;
+  height: 237px;
+}
+
+.product-description__text {
+  line-height: 22px;
+}
+
+.product-description__text p + p {
+  margin-top: 22px;
+}
+
+.product-description__links {
+  display: flex;
+  gap: 35px;
+}
+
+.product-description__advice {
+  gap: 16px;
+  width: 340px;
+  height: 237px;
+  padding: 20px;
+  border-top: 3px solid var(--color-cart);
+  background: var(--product-pale);
+}
+
+.product-description__points {
+  padding: 0;
+  list-style: none;
+}
+
+.product-description__points li::before {
+  content: "• ";
+}

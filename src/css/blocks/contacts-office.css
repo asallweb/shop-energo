@@ -1,0 +1,62 @@
+.contacts-office {
+  display: grid;
+  grid-template-columns: 430px 568px;
+  align-items: start;
+  gap: 26px;
+  width: 1074px;
+  padding: 24px;
+}
+
+.contacts-office__copy {
+  gap: 28px;
+}
+
+.contacts-office__title {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 33px;
+}
+
+.contacts-office__information {
+  gap: 20px;
+}
+
+.contacts-office__address {
+  color: var(--color-plum);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.contacts-office__schedule {
+  width: 410px;
+  line-height: 25px;
+}
+
+.contacts-office__note {
+  width: 410px;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.contacts-office__map {
+  position: relative;
+  width: 568px;
+  height: 298px;
+  margin: 0;
+  overflow: hidden;
+  outline: 1px solid var(--color-panel-line);
+  outline-offset: -1px;
+  background: var(--color-background);
+}
+
+.contacts-office__map-image {
+  position: absolute;
+  top: -15.905685px;
+  left: -21.265602px;
+  width: 651.220276px;
+  max-width: none;
+  height: 354.532532px;
+  object-fit: cover;
+}

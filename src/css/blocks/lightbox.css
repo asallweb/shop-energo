@@ -41,7 +41,7 @@ html:has(.lightbox[open]) {
 }
 
 .lightbox__image {
-  width: auto;
+  width: var(--lightbox-image-width, auto);
   height: auto;
   max-height: calc(100vh - 140px);
   max-width: 100%;

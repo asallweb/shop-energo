@@ -1,0 +1,9 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  border: 1px solid var(--panel-line, var(--color-panel-line));
+  background: var(--color-white);
+}

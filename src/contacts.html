@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Контакты — SHOP-ENERGO</title>
+    <link rel="stylesheet" href="css/app.min.css">
+    <script type="module" src="js/app.min.js"></script>
+  </head>
+  <body>
+    <!-- include: header -->
+    <main class="page">
+      <div class="container page__container">
+        <!-- include: sidebar -->
+        <div class="stack page__content contacts">
+          <!-- include: search -->
+          <section class="stack page-heading" aria-labelledby="contacts-title">
+            <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Контакты</span></nav>
+            <h1 class="page-heading__title" id="contacts-title">Контакты</h1>
+            <p class="page-heading__description">Свяжитесь с отделом продаж, уточните условия самовывоза или напишите нам через форму обратной связи.</p>
+          </section>
+          <section class="contacts-details" aria-label="Основные контакты">
+            <article class="stack panel contacts-details__card"><h2 class="contacts-details__label">Адрес офиса</h2><a class="link contacts-details__value" href="#contacts-office">Москва</a><p class="contacts-details__note">ул. Вавилова, д. 69/75</p></article>
+            <article class="stack panel contacts-details__card"><h2 class="contacts-details__label">Телефон</h2><a class="link contacts-details__value" href="tel:+74998990090">8 (499) 899-00-90</a><p class="contacts-details__note">Москва и Московская область</p></article>
+            <article class="stack panel contacts-details__card"><h2 class="contacts-details__label">Электронная почта</h2><a class="link contacts-details__value contacts-details__value--email" href="mailto:shop-energo@mail.ru">shop-energo@mail.ru</a><p class="contacts-details__note">Для вопросов и реквизитов</p></article>
+            <article class="stack panel contacts-details__card"><h2 class="contacts-details__label">Часы работы</h2><p class="contacts-details__value">Пн–пт, 10:00–18:00</p><p class="contacts-details__note">Суббота и воскресенье  выходные</p></article>
+          </section>
+          <section class="panel contacts-office" id="contacts-office" aria-labelledby="contacts-office-title">
+            <div class="stack contacts-office__copy"><h2 class="contacts-office__title" id="contacts-office-title">Офис и пункт самовывоза</h2><div class="stack contacts-office__information"><p class="contacts-office__address">117335, г. Москва, ул. Вавилова, д. 69/75</p><div class="contacts-office__schedule"><p><strong>Режим работы:</strong></p><p>понедельник — пятница, с 10:00 до 18:00.</p><p>Суббота и воскресенье — выходные.</p></div><p class="contacts-office__note">Оформить заказ на сайте можно в любое время. Менеджер свяжется с вами в рабочие часы.</p></div></div>
+            <figure class="contacts-office__map"><img class="contacts-office__map-image" src="assets/images/contacts-office-map.png" width="652" height="355" alt="Схема расположения пунктов самовывоза в Москве и области"></figure>
+          </section>
+          <section class="panel contacts-reserve" aria-labelledby="contacts-reserve-title"><div class="stack contacts-reserve__copy"><h2 class="contacts__section-title" id="contacts-reserve-title">Перед самовывозом зарезервируйте товар</h2><p class="contacts-reserve__description">Позвоните менеджеру или оформите заказ через корзину сайта до приезда. Так мы подтвердим наличие и подготовим оборудование к выдаче.</p><p class="contacts-reserve__note">По возможности оформите резерв за пару дней до визита.</p></div></section>
+          <section class="panel contacts-pickup" aria-labelledby="contacts-pickup-title"><div class="stack contacts-pickup__copy"><h2 class="contacts__section-title" id="contacts-pickup-title">Дополнительные пункты самовывоза</h2><p class="contacts-pickup__description">Актуальные адреса и возможность выдачи нужного оборудования уточните у менеджера перед оформлением заказа.</p></div><button class="button contacts-pickup__button" type="button" data-contacts-addresses>Уточнить адреса</button></section>
+          <form class="stack panel contacts-form" id="contacts-form" method="post" action="./contacts.html" aria-labelledby="contacts-form-title" data-contacts-form>
+            <div class="stack contacts-form__heading"><h2 class="contacts-form__title" id="contacts-form-title">Напишите нам</h2><p class="contacts-form__description">Оставьте сообщение — специалисты отдела продаж ответят по электронной почте.</p></div>
+            <div class="stack contacts-form__fields">
+              <div class="contacts-form__row"><label class="stack contacts-form__field"><span class="contacts-form__label">Ваше имя</span><input class="panel contacts-form__input" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required></label><label class="stack contacts-form__field"><span class="contacts-form__label">Ваш e-mail</span><input class="panel contacts-form__input" name="email" type="email" autocomplete="email" placeholder="name@example.ru" required></label></div>
+              <label class="stack contacts-form__field"><span class="contacts-form__label">Сообщение</span><textarea class="panel contacts-form__input contacts-form__textarea" name="message" placeholder="Опишите вопрос или укажите номер заказа" required></textarea></label>
+            </div>
+            <div class="contacts-form__footer">
+              <div class="stack contacts-form__verification"><label class="contacts-form__label contacts-form__label--code" for="contacts-code">Защита от автоматических сообщений</label><div class="contacts-form__code-row"><span class="contacts-form__code" aria-hidden="true">КОД</span><input class="panel contacts-form__input contacts-form__code-input" id="contacts-code" name="code" type="text" autocomplete="off" placeholder="Введите код" required data-contacts-code="КОД" aria-describedby="contacts-form-status"></div><p class="contacts-form__status" id="contacts-form-status" role="status">Поля и проверочный код показаны как макет формы.</p></div>
+              <button class="button contacts-form__submit" type="submit">Отправить сообщение</button>
+            </div>
+          </form>
+          <!-- include: advantages -->
+          <!-- include: brands -->
+          <!-- include: news -->
+        </div>
+      </div>
+    </main>
+    <!-- include: footer -->
+  </body>
+</html>

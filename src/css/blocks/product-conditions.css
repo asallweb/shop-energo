@@ -1,0 +1,27 @@
+.product-conditions {
+  padding-inline: 24px;
+}
+
+.product-conditions__list {
+  display: grid;
+  grid-template-columns: repeat(4, 255px);
+  justify-content: space-between;
+}
+
+.product-conditions__card {
+  gap: 15px;
+  height: 149px;
+  padding: 15px;
+  border: 1px solid var(--product-line);
+  background: var(--product-pale);
+}
+
+.product-conditions__description {
+  height: 44px;
+}
+
+.product-conditions__link {
+  color: var(--color-cart);
+  font-weight: 700;
+  line-height: 19px;
+}

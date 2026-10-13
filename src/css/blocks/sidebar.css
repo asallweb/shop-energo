@@ -42,19 +42,14 @@
 }
 
 .sidebar__certificate {
-  display: flex;
-  flex-direction: column;
+  --panel-line: var(--color-line);
   align-items: center;
   gap: 17px;
   padding: 37px 22px;
-  border: 1px solid var(--color-line);
-  background: var(--color-white);
   text-align: center;
 }
 
 .sidebar__certificate-copy {
-  display: flex;
-  flex-direction: column;
   gap: 18px;
 }
 

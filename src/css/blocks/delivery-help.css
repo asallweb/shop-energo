@@ -1,0 +1,33 @@
+.delivery-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1086px;
+  padding: 60px 30px;
+  background: var(--color-plum);
+  color: var(--color-white);
+}
+
+.delivery-help__copy {
+  gap: 12px;
+}
+
+.delivery-help__title {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.delivery-help__description {
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.delivery-help__button {
+  flex-shrink: 0;
+  width: 270px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
