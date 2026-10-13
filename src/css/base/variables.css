@@ -9,6 +9,7 @@
   --color-background: #f4f4f4;
   --color-ink: #262326;
   --color-muted: #69666a;
-  --color-line: #d9d9d9;
+  --color-line: #e3dfe3;
+  --color-focus: rgb(118 56 115 / 35%);
   --color-link: #7b6381;
 }

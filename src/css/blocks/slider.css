@@ -10,6 +10,11 @@
 .slider__track {
   display: flex;
   gap: var(--slider-gap, 0px);
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slider__track--reset {
+  transition: none;
 }
 
 .slider__slide {
@@ -24,8 +29,20 @@
   height: 32px;
   padding: 0;
   border: 0;
+  border-radius: 50%;
   background: transparent;
   transform: translateY(-50%);
+}
+
+.slider__button img {
+  width: 32px;
+  height: 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider__track {
+    transition: none;
+  }
 }
 
 .slider__button--previous {

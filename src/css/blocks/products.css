@@ -1,16 +1,9 @@
 .products {
+  --slider-gap: 11px;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 21px;
-}
-
-.products--leaders {
-  width: 1050px;
-}
-
-.products--new {
-  --slider-gap: 11px;
 }
 
 .products__list {

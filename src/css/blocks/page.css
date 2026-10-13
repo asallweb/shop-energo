@@ -1,12 +1,14 @@
 .page {
-  width: var(--desktop-width);
-  margin-inline: auto;
+  width: 100%;
+  background: var(--color-background);
+  color: var(--color-ink);
+}
+
+.page__container {
   display: grid;
   grid-template-columns: 255px 1120px;
   gap: 5px;
   padding-inline: 30px;
-  background: var(--color-background);
-  color: var(--color-ink);
 }
 
 .page__content {
