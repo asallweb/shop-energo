@@ -28,6 +28,8 @@ All assets, libraries and fonts are local. The build converts raster sources to 
 
 Critical header imagery and Arimo fonts are preloaded. Main hero/product imagery has high fetch priority; other HTML images load lazily. Page CSS and JavaScript behavior are loaded only where needed. Performance changes must preserve the supplied palette, geometry and typography.
 
+Below-the-fold card and brand carousels initialize as they approach the viewport, avoiding cloned DOM and layout work during the initial render. The engine measures all tracks before writing their styles and visibility state.
+
 ## Adding or extending a page
 
 1. Add its source HTML and reuse the shared include markers and components.

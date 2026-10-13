@@ -25,12 +25,19 @@ export function createCarousel(root, { tracks, onChange = () => {} }) {
   let timer;
 
   function render(animate) {
-    for (const { track, viewport, items } of rows) {
-      const start = items[position].offsetLeft;
+    const measurements = rows.map(({ track, viewport, items }) => {
+      const trackLeft = track.getBoundingClientRect().left;
+      const bounds = items.map(item => item.getBoundingClientRect());
+      const start = bounds[position].left - trackLeft;
+      const end = start + viewport.clientWidth - 1;
+      const hidden = bounds.map(rect => rect.right - trackLeft <= start + 1 || rect.left - trackLeft >= end);
+      return { track, items, start, hidden };
+    });
+    for (const { track, items, start, hidden } of measurements) {
       track.classList.toggle('slider__track--reset', !animate);
       track.style.transform = `translateX(-${start}px)`;
-      for (const item of items) {
-        item.inert = item.offsetLeft + item.offsetWidth <= start + 1 || item.offsetLeft >= start + viewport.clientWidth - 1;
+      for (const [index, item] of items.entries()) {
+        item.inert = hidden[index];
         item.setAttribute('aria-hidden', String(item.inert));
         if (item.inert && item.contains(document.activeElement)) {
           const replacement = items[position].querySelector('a, button') || root.querySelector('[data-carousel-next], [data-carousel-go-to]');
