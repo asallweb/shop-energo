@@ -69,6 +69,7 @@ export async function buildSite() {
     await writeFile(join(distDir, `${name}.html`), replaceAssets(html));
   }
 
+  await writeFile(join(distDir, 'pages.html'), await readFile(join(srcDir, 'pages.html'), 'utf8'));
   await writeFile(join(distDir, '.nojekyll'), '');
   console.log('Built dist/');
 }

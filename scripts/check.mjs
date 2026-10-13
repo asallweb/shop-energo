@@ -3,8 +3,9 @@ import { dirname, join, resolve } from 'node:path';
 import { pages } from './pages.mjs';
 
 const output = resolve('dist');
+const pageNames = [...Object.keys(pages), 'pages'];
 let checks = 0;
-for (const name of Object.keys(pages)) {
+for (const name of pageNames) {
   const html = await readFile(resolve(output, `${name}.html`), 'utf8');
   if (html.includes('<!-- include:') || html.includes('{{')) throw new Error(`${name}: unresolved template`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -43,4 +44,4 @@ async function checkBundles(directory) {
   }
 }
 await checkBundles(output);
-console.log(`${Object.keys(pages).length} pages, ${checks} local paths and anchors checked`);
+console.log(`${pageNames.length} pages, ${checks} local paths and anchors checked`);

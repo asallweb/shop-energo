@@ -2,6 +2,8 @@
 
 The eight pages share one desktop shell and retain the Pixso layout at 1440 px. Header, page and footer backgrounds fill the window; their content uses the centered 1440 px container. Mobile and tablet layouts and server-side commerce are outside the current implementation.
 
+`pages.html` is a simple index of the eight completed layouts. Its basic styles live only in its inline `<style>` element; it loads no storefront CSS or JavaScript and is copied directly from `src/pages.html` during the build. The storefront homepage remains `index.html`.
+
 ## Source and build
 
 - `src/*.html` contains each page's unique content. `<!-- include: name -->` inserts a shared fragment from `src/partials/` during the build.
