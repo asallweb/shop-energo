@@ -48,3 +48,29 @@
 .search__social--twitter {
   background: #47a6e3;
 }
+
+@media screen and (max-width: 1439px) {
+  .search {
+    width: 100%;
+  }
+
+  .search__form {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .search__input {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+  }
+
+  .search__button {
+    flex-shrink: 0;
+    width: 100px;
+  }
+
+  .search__socials {
+    flex-shrink: 0;
+  }
+}

@@ -17,3 +17,13 @@
 .page-heading__description {
   width: 1040px;
 }
+
+@media screen and (max-width: 1439px) {
+  .page-heading, .page-heading__breadcrumbs, .page-heading__title, .page-heading__description {
+    width: 100%;
+  }
+
+  .page-heading__breadcrumbs {
+    white-space: normal;
+  }
+}

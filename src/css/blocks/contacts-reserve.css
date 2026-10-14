@@ -22,3 +22,19 @@
   font-size: 14px;
   line-height: 20px;
 }
+
+@media screen and (max-width: 1439px) {
+  .contacts-reserve {
+    width: 100%;
+    height: auto;
+    padding: 24px 20px;
+  }
+
+  .contacts-reserve__copy {
+    width: 100%;
+  }
+
+  .contacts-reserve__description, .contacts-reserve__note {
+    height: auto;
+  }
+}

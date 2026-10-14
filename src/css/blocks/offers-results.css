@@ -101,3 +101,30 @@
 .offers-results__question {
   color: var(--color-link);
 }
+
+@media screen and (max-width: 1439px) {
+  .offers-results {
+    width: 100%;
+  }
+
+  .offers-results__summary {
+    gap: 20px;
+  }
+
+  .offers-results__count {
+    flex-shrink: 0;
+  }
+
+  .offers-results__empty {
+    width: 100%;
+  }
+
+  .offers-results__empty-title {
+    height: auto;
+  }
+
+  .offers-results__actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

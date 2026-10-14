@@ -80,3 +80,41 @@
   font-size: 14px;
   line-height: 19px;
 }
+
+@media screen and (max-width: 1439px) {
+  .numbered-cards {
+    width: 100%;
+  }
+
+  .numbered-cards__heading {
+    width: 100%;
+  }
+
+  .numbered-cards__title, .numbered-cards__description {
+    height: auto;
+  }
+
+  .numbered-cards__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .numbered-cards__item-heading {
+    gap: 16px;
+  }
+
+  .numbered-cards__item-title {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .numbered-cards__number {
+    flex-shrink: 0;
+  }
+
+  .numbered-cards--returns .numbered-cards__item-description {
+    height: auto;
+  }
+}

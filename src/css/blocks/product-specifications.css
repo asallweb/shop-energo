@@ -62,3 +62,18 @@
   font-size: 12px;
   line-height: 15px;
 }
+
+@media screen and (max-width: 1439px) {
+  .product-specifications__columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .product-specifications__row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  }
+
+  .product-specifications__note {
+    height: auto;
+  }
+}

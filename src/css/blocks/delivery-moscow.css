@@ -115,3 +115,68 @@
   line-height: 19px;
   white-space: pre;
 }
+
+@media screen and (max-width: 1439px) {
+  .delivery-moscow, .delivery-moscow__description, .delivery-moscow__details {
+    width: 100%;
+  }
+
+  .delivery-moscow__columns {
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .delivery-moscow__prices {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .delivery-moscow__price-row {
+    gap: 16px;
+  }
+
+  .delivery-moscow__price {
+    flex-shrink: 0;
+    width: 160px;
+  }
+
+  .delivery-moscow__lifting {
+    height: auto;
+  }
+
+  .delivery-moscow__lifting-description {
+    width: auto;
+  }
+
+  .delivery-moscow__map {
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  .delivery-moscow__map-image {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .delivery-moscow__installation {
+    gap: 20px;
+  }
+
+  .delivery-moscow__installation-copy {
+    width: auto;
+    white-space: normal;
+  }
+
+  @media (max-width: 1199px) {
+    .delivery-moscow__columns {
+      flex-direction: column;
+    }
+
+    .delivery-moscow__map {
+      width: 100%;
+    }
+  }
+}

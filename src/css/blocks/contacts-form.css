@@ -120,3 +120,44 @@
   font-weight: 700;
   line-height: 22px;
 }
+
+@media screen and (max-width: 1439px) {
+  .contacts-form {
+    width: 100%;
+  }
+
+  .contacts-form__title, .contacts-form__description, .contacts-form__label, .contacts-form__status {
+    height: auto;
+  }
+
+  .contacts-form__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contacts-form__footer {
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .contacts-form__verification {
+    flex: 1;
+    width: auto;
+    min-width: 300px;
+  }
+
+  .contacts-form__code {
+    flex-shrink: 0;
+  }
+
+  .contacts-form__code-input {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    max-width: 246px;
+  }
+
+  .contacts-form__submit {
+    width: 220px;
+  }
+}

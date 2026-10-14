@@ -39,3 +39,19 @@
   line-height: 18px;
   white-space: pre-wrap;
 }
+
+@media screen and (max-width: 1439px) {
+  .contacts-details {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contacts-details__label, .contacts-details__value, .contacts-details__note {
+    width: 100%;
+    height: auto;
+  }
+
+  .contacts-details__value {
+    min-height: 49px;
+  }
+}

@@ -69,3 +69,59 @@
   width: 209px;
   height: 45px;
 }
+
+@media screen and (max-width: 1439px) {
+  .sidebar {
+    min-width: 0;
+  }
+
+  .sidebar__item {
+    height: auto;
+    min-height: 42px;
+    white-space: normal;
+  }
+
+  .sidebar__link {
+    min-height: 42px;
+    padding: 10px 16px;
+  }
+
+  .sidebar__certificate {
+    padding-inline: 16px;
+  }
+
+  .sidebar__certificate-button {
+    width: 100%;
+  }
+
+  @media (max-width: 1099px) {
+    .sidebar {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) 210px;
+      align-items: start;
+      gap: 12px;
+      padding-block: 20px 0;
+    }
+
+    .sidebar__title {
+      padding-inline: 12px;
+    }
+
+    .sidebar__link {
+      padding-inline: 12px;
+    }
+
+    .sidebar__certificate {
+      padding: 20px 12px;
+      gap: 12px;
+    }
+
+    .sidebar__certificate-copy {
+      gap: 12px;
+    }
+
+    .sidebar__certificate-title {
+      font-size: 15px;
+    }
+  }
+}

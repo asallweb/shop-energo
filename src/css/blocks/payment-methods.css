@@ -77,3 +77,54 @@
   font-size: 14px;
   line-height: 20px;
 }
+
+@media screen and (max-width: 1439px) {
+  .payment-methods {
+    width: 100%;
+  }
+
+  .payment-methods__title {
+    width: 100%;
+    height: auto;
+  }
+
+  .payment-methods__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .payment-methods__card {
+    height: auto;
+  }
+
+  .payment-methods__heading {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .payment-methods__copy {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .payment-methods__name, .payment-methods__caption {
+    height: auto;
+  }
+
+  .payment-methods__description, .payment-methods__note {
+    width: 100%;
+    height: auto;
+  }
+
+  .payment-methods__note {
+    margin-top: auto;
+  }
+
+  .payment-methods__icon {
+    width: 56px;
+    height: 56px;
+  }
+}

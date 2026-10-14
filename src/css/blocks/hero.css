@@ -120,3 +120,52 @@
   margin-top: 8.5px;
   object-fit: cover;
 }
+
+@media screen and (max-width: 1439px) {
+  .hero {
+    height: auto;
+  }
+
+  .hero__slide {
+    height: auto;
+    min-height: 421px;
+    padding: 20px 24px 40px;
+  }
+
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+  }
+
+  .hero__description {
+    width: 100%;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .hero__image.hero__image--product {
+    position: static;
+    width: 100%;
+    height: 330px;
+    margin: 0;
+  }
+
+  .hero__title.hero__title--product {
+    font-size: 26px;
+    line-height: 35px;
+  }
+
+  .hero__button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero__pagination {
+    left: 75%;
+  }
+}

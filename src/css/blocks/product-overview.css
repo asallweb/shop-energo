@@ -52,3 +52,41 @@
 .product-overview__help .product-detail__subtitle {
   white-space: nowrap;
 }
+
+@media screen and (max-width: 1439px) {
+  .product-overview {
+    grid-template-columns: minmax(0, 1fr) 298px;
+  }
+
+  .product-overview__summary {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .product-overview__facts, .product-overview__help {
+    min-width: 0;
+  }
+
+  .product-overview__parameter {
+    height: auto;
+    min-height: 54px;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
+  .product-overview__parameter dt {
+    white-space: normal;
+  }
+
+  .product-overview__parameter dd {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .product-overview__help .product-detail__subtitle {
+    white-space: normal;
+  }
+}

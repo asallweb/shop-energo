@@ -40,3 +40,27 @@
   width: 545px;
   height: 296px;
 }
+
+@media screen and (max-width: 1439px) {
+  .services {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .services__item, .services__item--connection {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .services__title {
+    white-space: normal;
+  }
+
+  .services__photo {
+    height: auto;
+  }
+
+  .services__image, .services__image--connection {
+    width: 100%;
+    height: auto;
+  }
+}

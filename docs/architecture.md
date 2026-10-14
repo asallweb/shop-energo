@@ -1,6 +1,8 @@
-# Desktop storefront architecture
+# Storefront architecture
 
-The eight pages share one desktop shell and retain the Pixso layout at 1440 px. Header, page and footer backgrounds fill the window; their content uses the centered 1440 px container. Mobile and tablet layouts and server-side commerce are outside the current implementation.
+The eight pages share one shell and retain the Pixso layout at 1440 px. Header, page and footer backgrounds fill the window; their content uses a centered container capped at 1440 px. Layouts adapt down to 768 px. Mobile layouts below 768 px and server-side commerce are outside the current implementation.
+
+Below 1440 px, each component's stylesheet contains its responsive rules. The page uses a flexible content column; below 1100 px, the catalog, services and certificate move above the content in three columns. Below 1200 px, the header separates its logo and contact information into rows, and the footer uses three columns. Product and news cards reflow without changing the supplied content or adding a separate mobile navigation. The shared carousel engine already observes its viewport and recalculates positions on resize.
 
 `pages.html` is a simple index of the eight completed layouts. Its basic styles live only in its inline `<style>` element; it loads no storefront CSS or JavaScript and is copied directly from `src/pages.html` during the build. The storefront homepage remains `index.html`.
 
@@ -38,7 +40,7 @@ Below-the-fold card and brand carousels initialize as they approach the viewport
 2. Register metadata and navigation state in `scripts/pages.mjs`.
 3. Add its CSS entry under `src/css/pages/`; create a block file only for a distinct visual component.
 4. If behavior is required, add a page initializer under `src/js/pages/` and its loader in `src/js/main.js`. Prefer an existing module for tabs, carousels or photographs.
-5. Build, run `npm run check`, and verify appearance and interactions on the local desktop preview.
+5. Build, run `npm run check`, and verify appearance and interactions on the local preview from 768 px through desktop, including the unchanged 1440 px reference.
 
 `npm run dev -- --host 127.0.0.1 --port 4173 --base /shop-energo/ --strictPort` builds and watches the source. Stop the watcher before a separate manual build to avoid concurrent output cleanup.
 

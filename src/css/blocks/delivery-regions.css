@@ -109,3 +109,56 @@
   line-height: 21px;
   text-align: center;
 }
+
+@media screen and (max-width: 1439px) {
+  .delivery-regions {
+    width: 100%;
+  }
+
+  .delivery-regions__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .delivery-regions__step {
+    width: auto;
+  }
+
+  .delivery-regions__step-heading {
+    gap: 12px;
+  }
+
+  .delivery-regions__step-title {
+    flex-shrink: 1;
+    white-space: normal;
+  }
+
+  .delivery-regions__columns {
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .delivery-regions__map, .delivery-regions__companies {
+    width: calc((100% - 20px) / 2);
+    height: auto;
+  }
+
+  .delivery-regions__map {
+    display: flex;
+    align-items: center;
+  }
+
+  .delivery-regions__map-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .delivery-regions__companies {
+    gap: 20px;
+  }
+
+  .delivery-regions__companies-list, .delivery-regions__companies-hint {
+    width: 100%;
+    white-space: normal;
+  }
+}

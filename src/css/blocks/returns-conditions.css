@@ -20,3 +20,16 @@
   font-size: 15px;
   line-height: 20px;
 }
+
+@media screen and (max-width: 1439px) {
+  .returns-conditions__exception {
+    width: 100%;
+    height: auto;
+    padding-bottom: 16px;
+  }
+
+  .returns-conditions__exception-description {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -39,7 +39,7 @@
 }
 
 body {
-  min-width: var(--desktop-width);
+  min-width: 768px;
   font-family: Arimo, Arial, sans-serif;
   font-synthesis: none;
   color: var(--color-plum);

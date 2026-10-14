@@ -26,3 +26,9 @@
   line-height: 19px;
   white-space: pre-wrap;
 }
+
+@media screen and (max-width: 1439px) {
+  .product-documents__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

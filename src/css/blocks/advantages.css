@@ -42,3 +42,20 @@
 .advantages__description {
   white-space: nowrap;
 }
+
+@media screen and (max-width: 1439px) {
+  .advantages__list {
+    gap: 20px;
+    padding-inline: 20px;
+  }
+
+  .advantages__item, .advantages__item--service, .advantages__item--suppliers {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+
+  .advantages__description {
+    white-space: normal;
+  }
+}

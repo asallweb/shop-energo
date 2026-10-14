@@ -40,3 +40,22 @@
 .offers-help__email {
   width: 176px;
 }
+
+@media screen and (max-width: 1439px) {
+  .offers-help {
+    width: 100%;
+    padding-right: 22px;
+  }
+
+  .offers-help__heading, .offers-help__contacts {
+    width: 100%;
+  }
+
+  .offers-help__title {
+    height: auto;
+  }
+
+  .offers-help__contacts {
+    flex-wrap: wrap;
+  }
+}

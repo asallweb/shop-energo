@@ -34,3 +34,17 @@
   background: var(--color-white);
   color: var(--color-cart);
 }
+
+@media screen and (max-width: 1439px) {
+  .product-navigation {
+    height: auto;
+  }
+
+  .product-navigation__link {
+    height: auto;
+    min-height: 46px;
+    padding: 10px 8px;
+    font-size: 13px;
+    text-align: center;
+  }
+}

@@ -107,3 +107,36 @@
   height: 98.567444px;
   object-fit: contain;
 }
+
+@media screen and (max-width: 1439px) {
+  .product-gallery {
+    min-width: 0;
+  }
+
+  .product-gallery__main {
+    width: 100%;
+    height: 466px;
+  }
+
+  .product-gallery__slide {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .product-gallery__image {
+    left: 8%;
+    width: 84%;
+  }
+
+  .product-gallery__thumbnails {
+    width: 100%;
+  }
+
+  .product-gallery__thumbnail {
+    width: calc((100% - 22px) / 3);
+  }
+
+  .product-gallery__thumbnail img {
+    max-width: 90%;
+  }
+}

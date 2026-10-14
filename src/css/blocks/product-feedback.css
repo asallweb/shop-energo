@@ -22,3 +22,10 @@
   line-height: 19px;
   white-space: pre-wrap;
 }
+
+@media screen and (max-width: 1439px) {
+  .product-feedback__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}

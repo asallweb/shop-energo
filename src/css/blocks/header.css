@@ -218,3 +218,117 @@
 .header__nav-link--current {
   background: var(--color-active);
 }
+
+@media screen and (max-width: 1439px) {
+  .header {
+    height: auto;
+  }
+
+  .header__top {
+    width: auto;
+    margin-inline: 20px;
+    gap: 24px;
+  }
+
+  .header__brand {
+    gap: 16px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .header__symbol {
+    width: 52px;
+    height: auto;
+  }
+
+  .header__wordmark {
+    width: clamp(240px, 23vw, 330px);
+    height: auto;
+  }
+
+  .header__info {
+    width: auto;
+    gap: 14px;
+  }
+
+  .header__phones {
+    width: auto;
+    padding-inline: 0;
+  }
+
+  .header__phone-number {
+    font-size: 21px;
+  }
+
+  .header__address {
+    width: 190px;
+    padding-inline: 0;
+  }
+
+  .header__location {
+    font-size: 16px;
+  }
+
+  .header__cart {
+    width: 190px;
+  }
+
+  .header__nav {
+    width: auto;
+    margin-inline: 20px;
+  }
+
+  .header__nav-link {
+    padding-inline: 8px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  @media (max-width: 1199px) {
+    .header::before {
+      background: none;
+    }
+
+    .header__top {
+      flex-direction: column;
+      align-items: stretch;
+      height: auto;
+      gap: 20px;
+      padding-block: 24px 20px;
+    }
+
+    .header__brand {
+      align-self: center;
+    }
+
+    .header__symbol {
+      width: 66px;
+    }
+
+    .header__wordmark {
+      width: 360px;
+    }
+
+    .header__info {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+      gap: 24px;
+      padding: 20px;
+      background: var(--color-plum);
+    }
+
+    .header__address, .header__cart {
+      width: auto;
+      min-width: 0;
+    }
+
+    .header__cart {
+      color: var(--color-white);
+    }
+
+    .header__nav-link {
+      font-size: 12px;
+    }
+  }
+}

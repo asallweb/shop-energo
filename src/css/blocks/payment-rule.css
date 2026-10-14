@@ -22,3 +22,16 @@
   width: 1018px;
   height: 52px;
 }
+
+@media screen and (max-width: 1439px) {
+  .payment-rule {
+    width: 100%;
+    height: auto;
+    padding-bottom: 24px;
+  }
+
+  .payment-rule__title, .payment-rule__description {
+    width: 100%;
+    height: auto;
+  }
+}

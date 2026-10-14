@@ -27,3 +27,27 @@
   color: var(--color-muted);
   white-space: pre;
 }
+
+@media screen and (max-width: 1439px) {
+  .returns-repair {
+    width: 100%;
+    padding-right: 22px;
+  }
+
+  .returns-repair__title, .returns-repair__description, .returns-repair__divider, .returns-repair__note {
+    width: 100%;
+    height: auto;
+  }
+
+  .returns-repair__divider {
+    height: 1px;
+  }
+
+  .returns-repair__note {
+    white-space: normal;
+  }
+
+  .returns__section-title {
+    height: auto;
+  }
+}

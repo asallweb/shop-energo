@@ -31,3 +31,19 @@
   font-weight: 700;
   line-height: 20px;
 }
+
+@media screen and (max-width: 1439px) {
+  .delivery-help {
+    width: 100%;
+    gap: 24px;
+    padding: 40px 24px;
+  }
+
+  .delivery-help__copy {
+    min-width: 0;
+  }
+
+  .delivery-help__button {
+    width: 230px;
+  }
+}

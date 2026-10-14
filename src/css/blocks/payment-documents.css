@@ -35,3 +35,17 @@
   font-size: 14px;
   line-height: 20px;
 }
+
+@media screen and (max-width: 1439px) {
+  .payment-documents {
+    width: 100%;
+  }
+
+  .payment-documents__title, .payment-documents__method, .payment-documents__description {
+    height: auto;
+  }
+
+  .payment-documents__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

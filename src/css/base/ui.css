@@ -7,7 +7,7 @@ html {
 }
 
 .container {
-  width: var(--desktop-width);
+  width: min(100%, var(--desktop-width));
   margin-inline: auto;
 }
 

@@ -49,3 +49,42 @@
 .product-description__points li::before {
   content: "• ";
 }
+
+@media screen and (max-width: 1439px) {
+  .product-description {
+    height: auto;
+  }
+
+  .product-description__columns {
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .product-description__copy {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .product-description__advice {
+    width: 280px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .product-description__links {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  @media (max-width: 1199px) {
+    .product-description__columns {
+      flex-direction: column;
+    }
+
+    .product-description__advice {
+      width: 100%;
+    }
+  }
+}

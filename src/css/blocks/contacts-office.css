@@ -60,3 +60,22 @@
   height: 354.532532px;
   object-fit: cover;
 }
+
+@media screen and (max-width: 1439px) {
+  .contacts-office {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .contacts-office__schedule, .contacts-office__note, .contacts-office__map {
+    width: 100%;
+  }
+
+  .contacts-office__map-image {
+    width: 115%;
+    height: 119%;
+    left: -3.74%;
+    top: -5.34%;
+  }
+}

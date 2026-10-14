@@ -39,3 +39,23 @@
   color: var(--color-control);
   text-align: right;
 }
+
+@media screen and (max-width: 1439px) {
+  .product-heading {
+    height: auto;
+  }
+
+  .product-heading__breadcrumbs, .product-heading__title {
+    width: 100%;
+  }
+
+  .product-heading__meta {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .product-heading__meta p, .product-heading__actions {
+    width: auto;
+    margin-right: 0;
+  }
+}

@@ -40,3 +40,26 @@
   line-height: 20px;
   white-space: pre;
 }
+
+@media screen and (max-width: 1439px) {
+  .returns-assortment {
+    width: 100%;
+  }
+
+  .returns-assortment__heading {
+    width: 100%;
+  }
+
+  .returns-assortment__title {
+    height: auto;
+  }
+
+  .returns-assortment__links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .returns-assortment__link {
+    white-space: normal;
+    text-align: center;
+  }
+}

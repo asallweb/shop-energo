@@ -26,3 +26,24 @@
   font-weight: 700;
   line-height: 22px;
 }
+
+@media screen and (max-width: 1439px) {
+  .contacts-pickup {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .contacts-pickup__copy {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .contacts-pickup__description {
+    width: 100%;
+  }
+
+  .contacts__section-title {
+    height: auto;
+  }
+}

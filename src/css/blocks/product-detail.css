@@ -32,3 +32,14 @@
     break-inside: avoid;
   }
 }
+
+@media screen and (max-width: 1439px) {
+  .product-detail {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .product-detail__upper {
+    height: auto;
+  }
+}

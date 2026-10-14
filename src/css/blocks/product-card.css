@@ -62,3 +62,18 @@
   height: 42px;
   font-size: 15px;
 }
+
+@media screen and (max-width: 1439px) {
+  .product-card {
+    width: calc((100% - var(--slider-gap, 11px)) / 2);
+    min-width: 0;
+  }
+
+  .product-card__photo, .product-card__details, .product-card__buy {
+    width: 100%;
+  }
+
+  .product-card__price {
+    font-size: 26px;
+  }
+}

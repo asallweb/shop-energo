@@ -19,3 +19,16 @@
   height: 58px;
   color: var(--color-muted);
 }
+
+@media screen and (max-width: 1439px) {
+  .returns-notice {
+    width: 100%;
+    height: auto;
+    padding-right: 22px;
+  }
+
+  .returns-notice__title, .returns-notice__description {
+    width: 100%;
+    height: auto;
+  }
+}

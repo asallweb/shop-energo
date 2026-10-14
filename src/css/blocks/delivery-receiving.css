@@ -45,3 +45,19 @@
   line-height: 18px;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 1439px) {
+  .delivery-receiving {
+    width: 100%;
+  }
+
+  .delivery-receiving__copy {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .delivery-receiving__legal {
+    white-space: normal;
+  }
+}

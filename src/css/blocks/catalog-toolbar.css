@@ -53,3 +53,28 @@
 .catalog-toolbar__count {
   white-space: pre;
 }
+
+@media screen and (max-width: 1439px) {
+  .catalog-toolbar {
+    height: auto;
+    overflow: visible;
+  }
+
+  .catalog-toolbar__row {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: auto;
+    margin-left: 0;
+  }
+
+  .catalog-toolbar__sorting {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .catalog-toolbar__choices {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

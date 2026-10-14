@@ -50,3 +50,24 @@
   width: 127.359375px;
   height: 106.94921875px;
 }
+
+@media screen and (max-width: 1439px) {
+  .offers-promo {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .offers-promo__copy {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .offers-promo__title, .offers-promo__term {
+    height: auto;
+  }
+
+  .offers-promo__image {
+    flex-shrink: 0;
+  }
+}

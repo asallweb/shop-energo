@@ -37,3 +37,21 @@
   height: 30px;
   background: var(--color-panel-line);
 }
+
+@media screen and (max-width: 1439px) {
+  .delivery-navigation {
+    width: 100%;
+    padding-inline: 16px;
+    gap: 12px;
+  }
+
+  .delivery-navigation__link, .delivery-navigation__link:first-child, .delivery-navigation__link:nth-child(3), .delivery-navigation__link:nth-child(5), .delivery-navigation__link:nth-child(7) {
+    flex: 1;
+    width: auto;
+    white-space: normal;
+  }
+
+  .delivery-navigation__divider {
+    flex-shrink: 0;
+  }
+}

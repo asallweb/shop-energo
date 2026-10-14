@@ -24,3 +24,9 @@
   line-height: 23px;
   text-align: center;
 }
+
+@media screen and (max-width: 1439px) {
+  .tags__more {
+    max-width: 100%;
+  }
+}

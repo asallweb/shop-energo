@@ -56,3 +56,14 @@
   font: inherit;
   text-decoration: underline;
 }
+
+@media screen and (max-width: 1439px) {
+  .catalog-pagination {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .tags--catalog .tags__list p {
+    white-space: normal;
+  }
+}
