@@ -1,19 +1,25 @@
 # Storefront architecture
 
-The eight pages share one shell and retain the Pixso layout at 1440 px. Header, page and footer backgrounds fill the window; their content uses a centered container capped at 1440 px. Layouts adapt down to 768 px. Mobile layouts below 768 px and server-side commerce are outside the current implementation.
+The eight pages share one shell and retain the Pixso layout at 1440 px. Header, page and footer backgrounds fill the window; their content uses a centered container capped at 1440 px. All layouts adapt down to 768 px. The homepage, catalog and delivery page also have supplied mobile layouts from 320 px, with their exact references at 390 px. Other pages below 768 px and server-side commerce are outside the current implementation.
 
-Below 1440 px, each component's stylesheet contains its responsive rules. The page uses a flexible content column; below 1100 px, the catalog, services and certificate move above the content in three columns. Below 1200 px, the header separates its logo and contact information into rows, and the footer uses three columns. Product and news cards reflow without changing the supplied content or adding a separate mobile navigation. The shared carousel engine already observes its viewport and recalculates positions on resize.
+Below 1440 px, each component's stylesheet contains its responsive rules. The page uses a flexible content column; below 1100 px, the catalog, services and certificate move above the content in three columns. Below 1200 px, the header separates its logo and contact information into rows, discloses its navigation through a menu button, and the footer uses three columns. Product and news cards reflow. The shared carousel engine observes its viewport and recalculates positions on resize.
+
+Below 768 px, the homepage follows the updated 390 px Pixso frame: mobile header, nine-category directory, company and service sections, two vertical product selections, tags, certificate, advantages, a two-column brand grid, news tabs and a stacked dark footer. `category-directory.css` and `certificate.css` own the mobile-only blocks; the remaining components retain their shared structures and component stylesheets. Product images use local responsive picture sources. `navigation.js` controls menu and search disclosure, Escape handling and focus return. The mobile menu overlays the page without changing its layout, including when search is open. Hero, product and brand adapters destroy their carousels below 768 px and restore them when the viewport grows; mobile selections contain only original, accessible items.
+
+The mobile catalog reuses that header and dark footer, the catalog heading, pagination and the existing filter form. A disclosure button shows the form below the heading. The supplied mobile assortment differs from the desktop demonstration list: `catalog-mobile-list.html` contains ten mobile products with their own local images, while the desktop list remains unchanged. `catalog.js` applies the same criteria to both lists and updates the visible summary on breakpoint changes. `catalog-mobile-product.css` owns these rows; `catalog-article.html` and `catalog-article.css` own the mobile article. Text and separators use normal flow to avoid overlaps present in the design, as approved by the user; the article, images and footer retain their reference positions at 390 px.
 
 `pages.html` is a simple index of the eight completed layouts. Its basic styles live only in its inline `<style>` element; it loads no storefront CSS or JavaScript and is copied directly from `src/pages.html` during the build. The storefront homepage remains `index.html`.
 
 ## Source and build
+
+The mobile delivery page reuses its desktop sections, search, navigation anchors, certificate, advantages, brands, news and footer. Its component styles provide mobile stacking and spacing; local picture sources supply the original van, maps and condition badges from the mobile design. On this page, `templates.mjs` selects the mobile brand-grid mode and the supplied small arrow asset. `slider.js` rotates two brand items per action below768px, restores the original order on teardown and uses the common carousel above that breakpoint. The homepage retains its static mobile brand grid. Restart the dev process after changing build modules under `scripts/`; its watcher observes `src/`.
 
 - `src/*.html` contains each page's unique content. `<template data-include="name"></template>` inserts a shared fragment from `src/partials/` during the build. These template elements are expanded out of the delivered HTML.
 - `scripts/pages.mjs` declares page metadata, navigation state, category state and shared news variants. `scripts/templates.mjs` renders these values without a browser framework.
 - `src/css/base/` owns tokens, fonts, typography and UI primitives. `.stack` supplies a column flex layout; `.panel` supplies a white surface with a configurable `--panel-line` border.
 - `src/css/blocks/` owns visual components. Page-specific geometry stays in its component. Shared components use the same classes and fragments across pages.
 - `src/css/app.css` imports the common shell. `src/css/pages/<page>.css` imports only components used by that page. Import base product cards before page-specific recommendation overrides.
-- `src/js/main.js` initializes common sliders, tabs and the photo lightbox. It loads optional behavior through dynamic imports keyed by component data attributes, including AJAX fragments. `lifecycle.js` prevents duplicate initialization and releases handlers on removal.
+- `src/js/main.js` initializes navigation, common sliders, tabs and the photo lightbox. It loads optional behavior through dynamic imports keyed by component data attributes, including AJAX fragments. `lifecycle.js` prevents duplicate initialization and releases handlers on removal.
 - `src/js/pages/` owns page interactions; `src/js/modules/` owns reusable behavior.
 
 `npm run build` renders HTML, minifies CSS, splits JavaScript into local ES modules and writes `dist/`. HTML uses only the generated bundles. Paths are relative and work under `/shop-energo/`. Source HTML is a template and must be previewed through the build, rather than served directly.
@@ -40,7 +46,7 @@ Below-the-fold card and brand carousels initialize as they approach the viewport
 2. Register metadata and navigation state in `scripts/pages.mjs`.
 3. Add its CSS entry under `src/css/pages/`; create a block file only for a distinct visual component.
 4. If behavior is required, add a page initializer under `src/js/pages/` and its loader in `src/js/main.js`. Prefer an existing module for tabs, carousels or photographs.
-5. Build, run `npm run check`, and verify appearance and interactions on the local preview from 768 px through desktop, including the unchanged 1440 px reference.
+5. Build, run `npm run check`, and verify appearance and interactions on the local preview from 768 px through desktop, including the unchanged 1440 px reference. Check homepage and catalog changes from 320 px as well, with comparisons to their mobile designs at 390 px.
 
 `npm run dev -- --host 127.0.0.1 --port 4173 --base /shop-energo/ --strictPort` builds and watches the source. Stop the watcher before a separate manual build to avoid concurrent output cleanup.
 

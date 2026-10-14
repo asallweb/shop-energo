@@ -74,3 +74,33 @@
     flex-shrink: 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .delivery-page .search {
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+  }
+
+  .delivery-page .search__form {
+    flex: auto;
+    height: 46.02px;
+  }
+
+  .delivery-page .search__input {
+    height: 46px;
+    padding-inline: 16px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .delivery-page .search__button {
+    width: 78px;
+    height: 46.02px;
+    border-radius: 5px;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}

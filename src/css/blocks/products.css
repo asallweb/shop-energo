@@ -8,3 +8,17 @@
   padding: 0;
   list-style: none;
 }
+
+@media screen and (max-width: 767px) {
+  .products {
+    gap: 16px;
+  }
+  .products .slider__button {
+    display: none;
+  }
+  .products__list {
+    flex-direction: column;
+    gap: 16px;
+    width: min(350px, 100%);
+  }
+}

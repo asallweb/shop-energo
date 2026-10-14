@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.services__picture {
+  display: contents;
+}
+
 .services__item {
   flex: 535;
   min-width: 0;
@@ -54,5 +58,37 @@
 
   .services__image {
     height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .services {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .services__item,
+  .services__item--connection {
+    flex: none;
+    gap: 12px;
+  }
+  .services__title {
+    min-height: 58px;
+    font-size: 23px;
+    line-height: 29px;
+  }
+  .services__photo,
+  .services__image {
+    height: 224px;
+  }
+  .services__photo {
+    outline: 1px solid #d9d9d9;
+    outline-offset: -1px;
+  }
+  .services__photo--connection {
+    outline: none;
+  }
+  .services__image--connection {
+    height: 90.0901%;
+    object-fit: fill;
   }
 }

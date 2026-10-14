@@ -16,6 +16,10 @@
   position: relative;
 }
 
+.hero__picture {
+  display: contents;
+}
+
 .hero__body.hero__body--product {
   margin-top: 25px;
 }
@@ -167,5 +171,84 @@
 
   .hero__pagination {
     left: 75%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero,
+  .hero__slide {
+    height: 569px;
+    min-height: 0;
+    overflow: visible;
+    padding: 0;
+    border: 0;
+  }
+
+  .hero {
+    width: calc(100% + 32px);
+    margin-inline: -16px;
+  }
+
+  .hero > .slider__viewport {
+    overflow: visible;
+  }
+
+  .hero__track {
+    display: block;
+  }
+
+  .hero__slide:not(:first-child),
+  .hero__breadcrumbs,
+  .hero__pagination {
+    display: none;
+  }
+
+  .hero__body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18.824112px;
+    width: calc(100% - 32px);
+    margin: 0 0 0 20px;
+    color: #262326;
+  }
+
+  .hero__image {
+    order: -1;
+    width: 100%;
+    height: 222.175888px;
+    margin: 0;
+    object-fit: cover;
+  }
+
+  .hero__title {
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  .hero__description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .hero__button {
+    width: min(300px, 100%);
+    font-size: 15px;
+  }
+
+  .hero__offer-description {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  @media (max-width: 374px) {
+    .hero,
+    .hero__slide {
+      height: auto;
+    }
+
+    .hero__offer-description {
+      max-width: 100%;
+    }
   }
 }

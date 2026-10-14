@@ -30,3 +30,32 @@
     max-width: 100%;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .tags {
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0;
+  }
+  .tags__list {
+    min-height: 120px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .tags__list p {
+    display: inline;
+  }
+  .tags__list p + p::before {
+    content: " ";
+  }
+  .tags__list strong {
+    font-weight: 400;
+  }
+  .tags__more {
+    width: 100%;
+    font-family: Arimo, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: left;
+  }
+}

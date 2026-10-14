@@ -5,6 +5,42 @@
 @import "../blocks/catalog-toolbar.css";
 @import "../blocks/catalog-product.css";
 @import "../blocks/catalog-pagination.css";
+@import "../blocks/catalog-mobile-product.css";
+@import "../blocks/catalog-article.css";
 @import "../blocks/advantages.css";
 @import "../blocks/brands.css";
 @import "../blocks/news.css";
+
+.catalog-page {
+  min-width: 320px;
+}
+
+@media screen and (max-width: 767px) {
+  .catalog-page .page {
+    background: #fff;
+  }
+
+  .catalog-page .page__container {
+    display: block;
+    padding: 0;
+  }
+
+  .catalog-page .sidebar,
+  .catalog-page .search,
+  .catalog-page .tags,
+  .catalog-page .advantages,
+  .catalog-page .brands,
+  .catalog-page .news {
+    display: none;
+  }
+
+  .catalog-page .page__content {
+    gap: 0;
+    padding: 13px 20px 0;
+    overflow: visible;
+  }
+
+  .catalog__body {
+    gap: 0;
+  }
+}

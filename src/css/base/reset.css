@@ -28,6 +28,10 @@ svg {
   max-width: 100%;
 }
 
+source {
+  display: none;
+}
+
 button {
   cursor: pointer;
 }

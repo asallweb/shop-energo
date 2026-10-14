@@ -21,3 +21,23 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .delivery-pickup {
+    gap: 12px;
+    padding: 16px;
+    border: 0;
+    outline: 1px solid #d9d9d9;
+    outline-offset: -1px;
+  }
+
+  .delivery-pickup__title {
+    font-size: 23px;
+    line-height: 29px;
+  }
+
+  .delivery-pickup__hint {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

@@ -2,6 +2,11 @@
   gap: 16px;
 }
 
+.company__description-mobile,
+.company__mobile-title {
+  display: none;
+}
+
 .company__description {
   font-size: 14px;
   line-height: 19px;
@@ -12,4 +17,36 @@
   color: #75436f;
   font-size: 13px;
   line-height: 22px;
+}
+
+@media screen and (max-width: 767px) {
+  .company {
+    gap: 16px;
+  }
+  .company__desktop-title,
+  .company__description {
+    display: none;
+  }
+  .company__mobile-title {
+    display: block;
+    min-height: 116px;
+  }
+  .company__description-mobile {
+    display: block;
+    min-height: 110px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .company__services {
+    display: block;
+    padding: 0;
+    list-style: none;
+    color: var(--color-control);
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .company__services li::before {
+    content: "•  ";
+    white-space: pre;
+  }
 }

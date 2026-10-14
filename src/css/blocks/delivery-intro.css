@@ -48,3 +48,52 @@
     height: auto;
   }
 }
+
+.delivery-intro__picture {
+  display: contents;
+}
+
+@media screen and (max-width: 767px) {
+  .delivery-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    border: 0;
+    border-left: 3px solid var(--color-cart);
+    padding-left: 13px;
+  }
+
+  .delivery-intro__copy {
+    display: contents;
+  }
+
+  .delivery-intro__title {
+    order: 0;
+    margin: 0;
+    font-size: 23px;
+    line-height: 29px;
+  }
+
+  .delivery-intro__description {
+    order: 1;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-intro__image {
+    order: 2;
+    width: 100%;
+    height: 190px;
+    margin: 0;
+  }
+
+  .delivery-intro__pickup {
+    order: 3;
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

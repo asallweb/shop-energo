@@ -268,3 +268,38 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .catalog-filter {
+    display: none;
+  }
+
+  .catalog-filter[data-mobile-open] {
+    display: block;
+    margin-block: 10px;
+    padding: 20px;
+  }
+
+  .catalog-filter__brands {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 10px;
+  }
+
+  .catalog-filter__fields,
+  .catalog-filter__extra {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .catalog-filter__brand,
+  .catalog-filter__brand-column:nth-child(2) .catalog-filter__brand {
+    height: auto;
+    min-height: 24px;
+    white-space: normal;
+  }
+
+  .catalog-filter__submit,
+  .catalog-filter__more {
+    width: 100%;
+  }
+}

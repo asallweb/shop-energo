@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/app.min.css">
     <script type="module" src="js/app.min.js"></script>
   </head>
-  <body>
+  <body class="home-page">
     <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
@@ -34,7 +34,10 @@
                   </div>
                   <a class="button button--primary hero__button" href="./offers.html">Узнать подробности</a>
                 </div>
-                <img class="hero__image" src="assets/images/generator-range.webp" width="534" height="331" alt="Газовые, дизельные и бензиновые электростанции">
+                <picture class="hero__picture">
+                  <source media="(max-width: 767px)" srcset="assets/images/mobile-generator-range.png">
+                  <img class="hero__image" src="assets/images/generator-range.webp" width="534" height="331" alt="Газовые, дизельные и бензиновые электростанции">
+                </picture>
               </div></article>
                 <article class="hero__slide"><nav class="hero__breadcrumbs" aria-label="Хлебные крошки">
                 <a class="hero__home" href="./index.html">Главная ›</a>
@@ -59,9 +62,23 @@
               <div class="hero__pagination" data-hero-pagination aria-label="Выбор предложения"></div>
             </section>
           </div>
+          <nav class="category-directory" aria-label="Категории оборудования">
+            <ul class="category-directory__list">
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Бензиновые генераторы</span><img class="category-directory__image" src="assets/images/category-petrol.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Газовые генераторы</span><img class="category-directory__image" src="assets/images/category-gas.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Дизельные генераторы</span><img class="category-directory__image" src="assets/images/category-diesel.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Инверторные генераторы</span><img class="category-directory__image" src="assets/images/category-inverter.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Сварочные генераторы</span><img class="category-directory__image" src="assets/images/category-welding.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Контейнеры для электростанций</span><img class="category-directory__image" src="assets/images/category-container.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Бензиновые снегоуборщики</span><img class="category-directory__image" src="assets/images/category-snowblower.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Блоки АВР</span><img class="category-directory__image" src="assets/images/category-ats.png" width="150" height="133" alt=""></a></li>
+              <li><a class="category-directory__link" href="./catalog.html"><span class="category-directory__title">Мотопомпы</span><img class="category-directory__image" src="assets/images/category-pump.png" width="150" height="133" alt=""></a></li>
+            </ul>
+          </nav>
           <section class="stack company" aria-labelledby="company-title">
-            <h2 class="page__title" id="company-title">Бензиновые генераторные установки и дизель генераторы от компании Shop-Energo</h2>
+            <h2 class="page__title" id="company-title"><span class="company__desktop-title">Бензиновые генераторные установки и дизель генераторы от компании Shop-Energo</span><span class="company__mobile-title">Бензиновые генераторные установки и дизель генераторы от компании Shop-Energo</span></h2>
             <p class="company__description">Компания Шоп-Энерго с 2009 года работает над разрешением проблемы эффективного обеспечения предприятий России бесперебойной электроэнергией. Компания непрерывно работает над решением широкого круга задач и предлагает:</p>
+            <p class="company__description-mobile">Компания Шоп-Энерго с 2009 года работает над разрешением проблемы эффективного обеспечения предприятий России бесперебойной электроэнергией. Компания непрерывно работает над решением широкого круга задач и предлагает:</p>
             <ul class="company__services">
               <li><a class="link" href="#">предпродажный запуск;</a></li>
               <li><a class="link" href="#">монтаж, сервисное обслуживание;</a></li>
@@ -69,21 +86,21 @@
           </section>
           <div class="services">
             <section class="stack services__item" aria-labelledby="delivery-title">
-              <h2 class="services__title" id="delivery-title">Доставка электростанции на объект</h2>
+              <h2 class="services__title" id="delivery-title">Доставка электростанции на объект</h2>
               <div class="services__photo">
-                <img class="services__image" src="assets/images/generator-delivery.webp" width="535" height="296" alt="Разгрузка электростанции на объекте краном">
+                <picture class="services__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-generator-delivery.png"><img class="services__image" src="assets/images/generator-delivery.webp" width="535" height="296" alt="Разгрузка электростанции на объекте краном"></picture>
               </div>
             </section>
             <section class="stack services__item services__item--connection" aria-labelledby="connection-title">
-              <h2 class="services__title" id="connection-title">Подключение электростанции на объекте</h2>
+              <h2 class="services__title" id="connection-title">Подключение электростанции на объекте</h2>
               <div class="services__photo services__photo--connection">
-                <img class="services__image services__image--connection" src="assets/images/generator-connection.webp" width="598" height="299" alt="Специалисты подключают электростанцию на объекте">
+                <picture class="services__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-generator-connection.png"><img class="services__image services__image--connection" src="assets/images/generator-connection.webp" width="598" height="299" alt="Специалисты подключают электростанцию на объекте"></picture>
               </div>
             </section>
           </div>
           <section class="stack products products--leaders" id="best-sellers" aria-labelledby="best-sellers-title">
             <h2 class="page__title" id="best-sellers-title">Лидеры продаж</h2>
-            <div class="slider" data-slider role="group" aria-label="Карусель: товары">
+            <div class="slider" data-slider data-static-mobile role="group" aria-label="Лидеры продаж">
               <button class="slider__button slider__button--previous" type="button" data-slider-previous data-carousel-previous aria-label="Предыдущие товары">
                 <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
               </button>
@@ -91,7 +108,7 @@
                 <ul class="products__list slider__track">
                   <li class="panel product-card slider__slide">
                     <a class="link product-card__photo" href="./product.html" aria-label="ЛИДЕР ПРОДАЖ. Открыть товар: Бензиновый генератор Mitsui Power ECO ZM 9500 SE">
-                      <img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-se.png" width="317" height="216" alt="Бензиновый генератор Mitsui Power ECO ZM 9500 SE">
+                      <picture class="product-card__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-mitsui-se.png"><img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-se.png" width="317" height="216" alt="Бензиновый генератор Mitsui Power ECO ZM 9500 SE"></picture>
                       <span class="product-card__badge">ЛИДЕР ПРОДАЖ</span>
                     </a>
                     <div class="stack product-card__details">
@@ -100,9 +117,9 @@
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить Mitsui Power ECO ZM 9500 SE">Купить</button>
                     </div>
                   </li>
-                  <li class="panel product-card slider__slide">
+                  <li class="panel product-card product-card--petrol slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="НОВИНКА. Открыть товар: Бензиновый генератор Mitsui Power ECO ZM 9500 E">
-                      <img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-e.png" width="317" height="216" alt="Бензиновый генератор Mitsui Power ECO ZM 9500 E">
+                      <picture class="product-card__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-mitsui-e.png"><img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-e.png" width="317" height="216" alt="Бензиновый генератор Mitsui Power ECO ZM 9500 E"></picture>
                       <span class="product-card__badge">НОВИНКА</span>
                     </a>
                     <div class="stack product-card__details">
@@ -111,9 +128,9 @@
                       <button class="button button--primary product-card__buy" type="button" aria-label="Купить Mitsui Power ECO ZM 9500 E">Купить</button>
                     </div>
                   </li>
-                  <li class="panel product-card slider__slide">
+                  <li class="panel product-card product-card--gas slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="СПЕЦПРЕДЛОЖЕНИЕ. Открыть товар: Газовый генератор Mitsui Power ECO ZM 9500 GE">
-                      <img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-ge.png" width="317" height="216" alt="Газовый генератор Mitsui Power ECO ZM 9500 GE">
+                      <picture class="product-card__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-mitsui-ge.png"><img class="product-card__image" src="assets/images/mitsui-eco-zm-9500-ge.png" width="317" height="216" alt="Газовый генератор Mitsui Power ECO ZM 9500 GE"></picture>
                       <span class="product-card__badge">СПЕЦПРЕДЛОЖЕНИЕ</span>
                     </a>
                     <div class="stack product-card__details">
@@ -131,7 +148,7 @@
           </section>
           <section class="stack products products--new" id="new-products" aria-labelledby="new-products-title">
             <h2 class="page__title" id="new-products-title">Новые товары</h2>
-            <div class="slider" data-slider role="group" aria-label="Карусель: товары">
+            <div class="slider" data-slider data-static-mobile role="group" aria-label="Новые товары">
               <button class="slider__button slider__button--previous" type="button" data-slider-previous data-carousel-previous aria-label="Предыдущие товары">
                 <img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">
               </button>
@@ -139,7 +156,7 @@
                 <ul class="products__list slider__track">
                   <li class="panel product-card slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="Открыть товар: Дизельный генератор TOYO TKV–7.5SPC">
-                      <img class="product-card__image" src="assets/images/toyo-tkv-7-5spc.png" width="317" height="216" alt="Дизельный генератор TOYO TKV–7.5SPC">
+                      <picture class="product-card__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-toyo.png"><img class="product-card__image" src="assets/images/toyo-tkv-7-5spc.png" width="317" height="216" alt="Дизельный генератор TOYO TKV–7.5SPC"></picture>
                     </a>
                     <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Дизельный генератор TOYO TKV–7.5SPC</a></h3>
@@ -149,7 +166,7 @@
                   </li>
                   <li class="panel product-card slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="Открыть товар: Дизельный генератор TSS SDG 7500EH3A">
-                      <img class="product-card__image" src="assets/images/tss-sdg-7500eh3a.png" width="317" height="216" alt="Дизельный генератор TSS SDG 7500EH3A">
+                      <picture class="product-card__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-tss.png"><img class="product-card__image" src="assets/images/tss-sdg-7500eh3a.png" width="317" height="216" alt="Дизельный генератор TSS SDG 7500EH3A"></picture>
                     </a>
                     <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Дизельный генератор TSS SDG 7500EH3A</a></h3>
@@ -159,7 +176,7 @@
                   </li>
                   <li class="panel product-card slider__slide">
                     <a class="link product-card__photo" href="#" aria-label="Открыть товар: Инверторный генератор HND GE3300JSi">
-                      <img class="product-card__image" src="assets/images/hnd-ge3300jsi.png" width="317" height="216" alt="Инверторный генератор HND GE3300JSi">
+                      <picture class="product-card__picture"><source media="(max-width: 767px)" srcset="assets/images/mobile-hnd.png"><img class="product-card__image" src="assets/images/hnd-ge3300jsi.png" width="317" height="216" alt="Инверторный генератор HND GE3300JSi"></picture>
                     </a>
                     <div class="stack product-card__details">
                       <h3 class="product-card__title"><a class="link" href="#">Инверторный генератор HND GE3300JSi</a></h3>
@@ -182,6 +199,7 @@
             </div>
             <a class="link tags__more" href="#">Показать все теги (100500)</a>
           </section>
+          <template data-include="certificate"></template>
           <template data-include="advantages"></template>
           <template data-include="brands"></template>
           <template data-include="news"></template>

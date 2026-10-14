@@ -1,0 +1,49 @@
+.mobile-certificate {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-certificate {
+    display: block;
+    outline: 1px solid #d9d9d9;
+    outline-offset: -1px;
+  }
+
+  .mobile-certificate .sidebar__title {
+    height: 51px;
+    padding-inline: 16px;
+    font-size: 15px;
+  }
+
+  .mobile-certificate .sidebar__certificate {
+    gap: 16px;
+    padding: 20px;
+    border: 0;
+  }
+
+  .mobile-certificate .sidebar__certificate-copy {
+    gap: 16px;
+    width: 100%;
+  }
+
+  .mobile-certificate .sidebar__certificate-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .mobile-certificate .sidebar__certificate-description {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .mobile-certificate .sidebar__certificate-button {
+    width: 100%;
+    height: 46px;
+    font-size: 15px;
+  }
+
+  .delivery-page .mobile-certificate .sidebar__certificate-button {
+    align-self: center;
+    width: min(300px, 100%);
+  }
+}

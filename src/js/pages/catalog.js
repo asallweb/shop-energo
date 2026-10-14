@@ -5,6 +5,9 @@ export function initCatalog(root = document) {
 
     const form = catalog.querySelector('[data-catalog-filter]');
     const list = catalog.querySelector('[data-catalog-list]');
+    const mobileList = catalog.querySelector('[data-catalog-mobile-list]');
+    const filterToggle = catalog.querySelector('[data-catalog-filter-toggle]');
+    const mobile = matchMedia('(max-width: 767px)');
     const empty = catalog.querySelector('[data-catalog-empty]');
     const count = catalog.querySelector('[data-catalog-count]');
     const more = form?.querySelector('[data-catalog-more]');
@@ -18,6 +21,20 @@ export function initCatalog(root = document) {
     const activePower = powers.find(button => button.getAttribute('aria-pressed') === 'true');
     let quickPower = activePower ? Number(activePower.dataset.catalogPower) : null;
     let loadedBrand = form.querySelector('[data-catalog-loaded-brand]');
+
+    function setFilterOpen(open) {
+      form.toggleAttribute('data-mobile-open', open);
+      filterToggle?.setAttribute('aria-expanded', String(open));
+    }
+
+    filterToggle?.addEventListener('click', () => {
+      setFilterOpen(!form.hasAttribute('data-mobile-open'));
+    }, { signal });
+
+    mobile.addEventListener('change', () => {
+      setFilterOpen(false);
+      render();
+    }, { signal });
 
     function inRange(value, min, max) {
       return (min === '' || min === undefined || value >= Number(min)) && (max === '' || max === undefined || value <= Number(max));
@@ -36,19 +53,21 @@ export function initCatalog(root = document) {
     }
 
     function render() {
-      const products = Array.from(list.children);
       const sort = catalog.querySelector('[name="catalog-sort"]:checked')?.value || 'price';
-      const sorted = [...products].sort((a, b) => {
-        if (sort === 'name') return a.querySelector('h2').textContent.localeCompare(b.querySelector('h2').textContent, 'ru');
-        if (sort === 'new') return Number(b.dataset.new) - Number(a.dataset.new) || Number(a.dataset.index) - Number(b.dataset.index);
-        if (sort === 'power') return Number(a.dataset.power) - Number(b.dataset.power) || Number(a.dataset.index) - Number(b.dataset.index);
-        return Number(a.dataset.price) - Number(b.dataset.price) || Number(a.dataset.index) - Number(b.dataset.index);
-      });
-      list.append(...sorted);
       let visible = 0;
-      for (const product of products) {
-        product.hidden = !matches(product);
-        if (!product.hidden) visible++;
+      for (const productList of [list, mobileList].filter(Boolean)) {
+        const products = Array.from(productList.children);
+        const sorted = [...products].sort((a, b) => {
+          if (sort === 'name') return a.querySelector('h2').textContent.localeCompare(b.querySelector('h2').textContent, 'ru');
+          if (sort === 'new') return Number(b.dataset.new) - Number(a.dataset.new) || Number(a.dataset.index) - Number(b.dataset.index);
+          if (sort === 'power') return Number(a.dataset.power) - Number(b.dataset.power) || Number(a.dataset.index) - Number(b.dataset.index);
+          return Number(a.dataset.price) - Number(b.dataset.price) || Number(a.dataset.index) - Number(b.dataset.index);
+        });
+        productList.append(...sorted);
+        for (const product of products) {
+          product.hidden = !matches(product);
+          if (!product.hidden && productList === (mobile.matches && mobileList ? mobileList : list)) visible++;
+        }
       }
       empty.hidden = visible !== 0;
       const word = { one: 'товар', few: 'товара', many: 'товаров', other: 'товара' }[new Intl.PluralRules('ru').select(visible)];
@@ -62,6 +81,7 @@ export function initCatalog(root = document) {
       quickPower = null;
       for (const button of powers) button.setAttribute('aria-pressed', 'false');
       render();
+      if (mobile.matches) setFilterOpen(false);
     }, { signal });
 
     catalog.querySelector('[data-catalog-reset]').addEventListener('click', () => {
@@ -72,6 +92,7 @@ export function initCatalog(root = document) {
       quickPower = null;
       for (const button of powers) button.setAttribute('aria-pressed', 'false');
       render();
+      if (mobile.matches) setFilterOpen(true);
       form.querySelector('[name="power-min"]').focus({ preventScroll: true });
     }, { signal });
 

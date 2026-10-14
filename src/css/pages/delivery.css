@@ -9,3 +9,70 @@
 @import "../blocks/advantages.css";
 @import "../blocks/brands.css";
 @import "../blocks/news.css";
+@import "../blocks/certificate.css";
+
+.delivery-page {
+  min-width: 320px;
+}
+
+@media screen and (max-width: 767px) {
+  .delivery-page .page {
+    background: var(--color-background);
+  }
+
+  .delivery-page .page__container {
+    display: block;
+    padding: 0;
+  }
+
+  .delivery-page .sidebar {
+    display: none;
+  }
+
+  .delivery-page .page__content {
+    align-items: stretch;
+    gap: 32px;
+    padding: 16px 16px 32px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-page .page-heading,
+  .delivery-page .delivery-intro,
+  .delivery-page .delivery-navigation,
+  .delivery-page .delivery-terms {
+    margin-top: -8px;
+  }
+
+  .delivery-page .page-heading {
+    gap: 12px;
+    padding: 0;
+  }
+
+  .delivery-page .page-heading__breadcrumbs {
+    font-size: 12px;
+    line-height: 15px;
+    white-space: pre-wrap;
+  }
+
+  .delivery-page .page-heading__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+  }
+
+  .delivery-page .page-heading__description {
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--color-muted);
+  }
+
+  .delivery-page .page__section-title,
+  .delivery-page .page__title {
+    font-family: Arimo,Arial,sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 29px;
+    text-align: left;
+  }
+}

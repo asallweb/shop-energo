@@ -7,3 +7,50 @@
 @import "../blocks/advantages.css";
 @import "../blocks/brands.css";
 @import "../blocks/news.css";
+@import "../blocks/category-directory.css";
+@import "../blocks/certificate.css";
+
+.home-page {
+  min-width: 320px;
+}
+
+@media screen and (max-width: 767px) {
+  .home-page .page {
+    background: #fff;
+    color: var(--color-ink);
+  }
+
+  .home-page .page__container {
+    display: block;
+    padding: 0;
+  }
+
+  .home-page .sidebar,
+  .home-page .search {
+    display: none;
+  }
+
+  .home-page .page__content {
+    gap: 30px;
+    padding: 14px 16px 30px;
+  }
+
+  .home-page .page__title {
+    font-family: Arimo, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 29px;
+  }
+
+  .home-page .page__title--center {
+    text-align: left;
+  }
+
+  .home-page .services,
+  .home-page .products--new,
+  .home-page .tags,
+  .home-page .advantages,
+  .home-page .brands {
+    margin-top: 2px;
+  }
+}

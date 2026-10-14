@@ -61,3 +61,58 @@
     white-space: normal;
   }
 }
+
+.delivery-receiving__number-frame {
+  display: contents;
+}
+
+@media screen and (max-width: 767px) {
+  .delivery-receiving {
+    gap: 16px;
+  }
+
+  .delivery-receiving__list {
+    gap: 16px;
+  }
+
+  .delivery-receiving__item {
+    display: grid;
+    grid-template-columns: 36px minmax(0,1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .delivery-receiving__copy {
+    display: contents;
+  }
+
+  .delivery-receiving__number {
+    grid-column: 1;
+    width: 36px;
+    height: 36px;
+    align-self: center;
+  }
+
+  .delivery-receiving__title {
+    grid-column: 2;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .delivery-receiving__description {
+    grid-column: 1 / -1;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-receiving__legal {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .delivery-receiving .panel {
+    border: 0;
+    outline: 1px solid #d9d9d9;
+    outline-offset: -1px;
+  }
+}

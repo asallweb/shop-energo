@@ -12,6 +12,10 @@ export async function renderPage(source, name, config, srcDir) {
       partial = partial.replace('href="./catalog.html"', 'href="./catalog.html" aria-current="page"');
     }
     partial = partial.replaceAll('{{newsModifier}}', name === 'index' ? '' : ' news--compact');
+    if (match[1] === 'brands' && name === 'delivery') {
+      partial = partial.replace('data-static-mobile', 'data-mobile-grid');
+      partial = partial.replaceAll('<img src="assets/icons/carousel-previous.svg" width="32" height="32" alt="">', '<picture><source media="(max-width: 767px)" srcset="assets/icons/delivery-mobile-brand-previous.svg"><img src="assets/icons/carousel-previous.svg" width="32" height="32" alt=""></picture>');
+    }
     if (match[1] === 'news' && name !== 'index') {
       const split = partial.indexOf('<div class="news__list" role="tabpanel" id="offers-panel"');
       partial = partial.slice(0, split).replace(/\d+\. Новости — /g, '').replaceAll('\u00a0', ' ') + partial.slice(split).replaceAll('\u00a0', ' ');

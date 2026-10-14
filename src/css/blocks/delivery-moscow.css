@@ -117,7 +117,9 @@
 }
 
 @media screen and (max-width: 1439px) {
-  .delivery-moscow, .delivery-moscow__description, .delivery-moscow__details {
+  .delivery-moscow,
+  .delivery-moscow__description,
+  .delivery-moscow__details {
     width: 100%;
   }
 
@@ -178,5 +180,111 @@
     .delivery-moscow__map {
       width: 100%;
     }
+  }
+}
+
+.delivery-moscow__picture {
+  display: contents;
+}
+
+@media screen and (max-width: 767px) {
+  .delivery-moscow {
+    gap: 16px;
+  }
+
+  .delivery-moscow__heading {
+    gap: 16px;
+  }
+
+  .delivery-moscow__columns {
+    gap: 16px;
+  }
+
+  .delivery-moscow__details,
+  .delivery-moscow__prices {
+    gap: 16px;
+  }
+
+  .delivery-moscow__tariffs {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .delivery-moscow__tariffs-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .delivery-moscow__price-row {
+    gap: 12px;
+    padding-top: 12px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-moscow__price {
+    width: auto;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-moscow__price-row:last-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .delivery-moscow__lifting {
+    padding: 16px;
+  }
+
+  .delivery-moscow__lifting-title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .delivery-moscow__lifting-description {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-moscow__map {
+    height: 300px;
+    padding: 12px;
+  }
+
+  .delivery-moscow__map-image {
+    position: static;
+    width: 100%;
+    height: 276px;
+  }
+
+  .delivery-moscow__installation {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .delivery-moscow__installation-copy {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-moscow .panel {
+    border: 0;
+    outline: 1px solid #d9d9d9;
+    outline-offset: -1px;
+  }
+
+  .delivery-moscow__price-row:last-child > span {
+    color: var(--color-muted);
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .delivery-moscow__price-row:last-child .delivery-moscow__price {
+    line-height: 19px;
   }
 }

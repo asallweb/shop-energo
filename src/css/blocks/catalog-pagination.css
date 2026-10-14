@@ -67,3 +67,25 @@
     white-space: normal;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .catalog-pagination {
+    display: block;
+    min-height: 32px;
+    margin-top: 15px;
+  }
+
+  .catalog-pagination__count,
+  .catalog-pagination__pages > span:first-child,
+  .catalog-pagination__next {
+    display: none;
+  }
+
+  .catalog-pagination__pages {
+    justify-content: center;
+    gap: 22px;
+    color: #6b6b6b;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

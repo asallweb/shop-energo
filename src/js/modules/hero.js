@@ -2,7 +2,7 @@ import { createCarousel } from './carousel.js';
 import { mountElements } from './lifecycle.js';
 
 export function initHero(root = document) {
-  mountElements(root, '[data-hero]', hero => {
+  mountElements(root, '[data-hero]', (hero, signal) => {
     const track = hero.querySelector('.slider__track');
     const pagination = hero.querySelector('[data-hero-pagination]');
     if (!track || !pagination) return false;
@@ -19,14 +19,25 @@ export function initHero(root = document) {
       button.setAttribute('aria-label', `Показать предложение ${index + 1}`);
       pagination.append(button);
     }
-    const carousel = createCarousel(hero, {
+    const mobile = matchMedia('(max-width: 767px)');
+    let carousel;
+    function update() {
+      if (mobile.matches) {
+        carousel?.destroy();
+        carousel = undefined;
+        return;
+      }
+      carousel ||= createCarousel(hero, {
       tracks: [track],
       onChange: ({ index }) => {
         pagination.querySelectorAll('button').forEach((button, position) => button.setAttribute('aria-pressed', String(position === index)));
       },
-    });
+      });
+    }
+    mobile.addEventListener('change', update, { signal });
+    update();
     return () => {
-      carousel.destroy();
+      carousel?.destroy();
       pagination.replaceChildren();
     };
   });

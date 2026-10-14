@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/app.min.css">
     <script type="module" src="js/app.min.js"></script>
   </head>
-  <body>
+  <body class="catalog-page">
     <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
@@ -19,7 +19,8 @@
               <nav class="catalog-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная  › </a><a class="link" href="./catalog.html">Каталог  ›  </a><span aria-current="page">Бензиновые генераторы</span></nav>
               <div class="catalog-heading__row"><h1 class="catalog-heading__title" id="catalog-page-title">Бензиновые генераторы</h1><a class="link catalog-heading__compare" href="#"><img src="assets/icons/catalog-scales.png" width="14" height="14" alt=""><span>Сравнить товары (<span data-catalog-compare-count>0</span>)</span></a></div>
             </section>
-            <form class="catalog-filter" data-catalog-filter>
+            <button class="catalog-heading__filter-toggle" type="button" data-catalog-filter-toggle aria-expanded="false" aria-controls="catalog-filter"><span aria-hidden="true">☷</span> Фильтровать</button>
+            <form class="catalog-filter" id="catalog-filter" data-catalog-filter>
               <h2 class="catalog-filter__title">Производители</h2>
               <div class="catalog-filter__brands">
                 <div class="stack catalog-filter__brand-column">
@@ -274,10 +275,12 @@
                 </article>
               </li>
             </ul>
+            <template data-include="catalog-mobile-list"></template>
             <p class="panel catalog__empty" data-catalog-empty role="status" hidden>По выбранным параметрам товаров не найдено.<button class="catalog__reset" type="button" data-catalog-reset>Сбросить фильтры</button></p>
 
           </div>
           <nav class="catalog-pagination" aria-label="Страницы каталога"><p class="catalog-pagination__count" data-catalog-count>Показано: 10 товаров</p><div class="catalog-pagination__pages"><span>Страницы:</span><a class="link" href="#" aria-current="page">1</a><a class="link" href="#">2</a><a class="link" href="#">3</a><span>…</span><a class="link" href="#">32</a><a class="link" href="#">33</a><a class="link catalog-pagination__next" href="#">Следующая  ›</a></div></nav>
+          <template data-include="catalog-article"></template>
           <section class="stack tags tags--catalog" aria-label="Теги товаров и услуг">
             <div class="tags__list">
               <p><strong>Теги:</strong> <a class="link" href="#">Бензиновые генераторы (35)</a>    <a class="link" href="#">Газовые генераторы (15)</a>    <a class="link" href="#">Дизельные электростанции (41)</a>    <a class="link" href="#">Инверторные генераторы (18)</a></p>
