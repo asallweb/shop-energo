@@ -59,3 +59,36 @@
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .offers-help {
+    gap: 20px;
+    padding: 20px;
+    border: 0;
+    box-shadow: inset 4px 0 var(--color-accent);
+  }
+
+  .offers-help__heading {
+    gap: 8px;
+  }
+
+  .offers-help__title {
+    font-size: 23px;
+    line-height: 29px;
+  }
+
+  .offers-help__description {
+    line-height: 22px;
+  }
+
+  .offers-help__contacts {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .offers-help__phone, .offers-help__email {
+    width: 100%;
+  }
+}

@@ -27,10 +27,6 @@
 @import "../blocks/product-recommendations.css";
 
 @media screen and (max-width: 767px) {
-  .product-page {
-    min-width: 320px;
-  }
-
   .product-page .page {
     background: #fff;
   }

@@ -38,3 +38,45 @@
     height: auto;
   }
 }
+
+.contacts-reserve__information {
+  display: contents;
+}
+
+@media screen and (max-width: 767px) {
+  .contacts-reserve {
+    margin-top: -8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .contacts-reserve__copy {
+    gap: 12px;
+  }
+
+  .contacts-reserve__information {
+    display: flex;
+    gap: 8px;
+    padding: 20px 20px 20px 24px;
+    box-shadow: inset 4px 0 var(--color-plum);
+  }
+
+  .contacts-reserve__description {
+    color: var(--color-muted);
+  }
+
+  .contacts-page .contacts-reserve .contacts__section-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .contacts-reserve__note {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .contacts-reserve + .contacts-pickup {
+    margin-top: -8px;
+  }
+}

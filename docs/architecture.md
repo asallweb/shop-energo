@@ -12,7 +12,15 @@ The mobile catalog uses the same eight product records and semantic cards as des
 
 The mobile payment page reuses its desktop content and icons. Below 768 px, payment component styles stack the four payment methods, document summaries and help block with the spacing and typography of the 390 px design. Advantages, the four vertical brands, publication tabs, header, two-level menu and footer reuse the shared mobile components. The main search and sidebar are hidden on this page; header search remains available. Desktop rendering is preserved.
 
+The mobile contacts page stacks the existing contact cards, office information, reservation advice, pickup assistance and message form below 768 px. A local picture source supplies the map exported from the mobile design; desktop retains its original map and layout. The shared mobile header, two-level menu, advantages, brands, publication tabs and footer are reused. Existing form validation and its explicit notice that submission is not connected remain in contacts.js; the pickup button focuses the message field.
+
+The mobile returns page reuses the desktop text and numbered icons. Below 768 px, its block styles stack the return conditions, repair guidance, contact links and assortment links with the dimensions of the 390 px design. Shared header, two-level menu, advantages, brands, publication tabs and footer are reused. The existing links remain semantic links; this informational page needs no additional JavaScript.
+
+The mobile offers page follows the 390 px gray-background design below 768 px. The promo uses a grid for the full-width introduction and the term beside the percent graphic. offers-reasons.css adapts the shared numbered-card markup locally, including smaller text badges while preserving desktop icons. The empty offers state, stacked catalog/question actions and manager contacts reuse the existing content and links. Shared mobile header, menu, advantages, brands, tabs and footer are reused; no additional behavior is required.
+
 ## Source and build
+
+All eight storefront documents share the `site-page` shell marker. Mobile header, navigation, footer and minimum width use that marker, so adding a page does not require changing a list of page names in CSS and JavaScript. Page-specific classes retain their content layouts and component variants. The informational payment, contacts, returns and offers headings use `page-heading--mobile` for their shared mobile typography and spacing.
 
 The mobile delivery page reuses its desktop sections, search, navigation anchors, certificate, advantages, brands, news and footer. Its component styles provide mobile stacking and spacing; local picture sources supply the original van, maps and condition badges from the mobile design. On this page, `templates.mjs` selects the mobile brand-grid mode and the supplied small arrow asset. `slider.js` rotates two brand items per action below768px, restores the original order on teardown and uses the common carousel above that breakpoint. The homepage retains its static mobile brand grid. Restart the dev process after changing build modules under `scripts/`; its watcher observes `src/`.
 

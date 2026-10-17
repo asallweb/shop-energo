@@ -71,3 +71,45 @@
     flex-shrink: 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .offers-promo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 70px;
+    align-items: center;
+    gap: 16px;
+    margin-top: -8px;
+    padding: 24px;
+  }
+
+  .offers-promo__copy, .offers-promo__introduction, .offers-promo__heading {
+    display: contents;
+  }
+
+  .offers-promo__label, .offers-promo__title, .offers-promo__heading > p {
+    grid-column: 1 / -1;
+  }
+
+  .offers-promo__label {
+    width: max-content;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+
+  .offers-promo__title {
+    font-size: 23px;
+    line-height: 29px;
+  }
+
+  .offers-promo__term {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .offers-promo__image {
+    width: 70px;
+    height: 59px;
+  }
+}

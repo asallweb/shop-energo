@@ -1,8 +1,46 @@
 @import "../blocks/contacts-details.css";
+
 @import "../blocks/contacts-office.css";
+
 @import "../blocks/contacts-reserve.css";
+
 @import "../blocks/contacts-pickup.css";
+
 @import "../blocks/contacts-form.css";
+
 @import "../blocks/advantages.css";
+
 @import "../blocks/brands.css";
+
 @import "../blocks/news.css";
+
+@media screen and (max-width: 767px) {
+  .contacts-page .page {
+    background: #fff;
+  }
+
+  .contacts-page .page__container {
+    display: block;
+    padding: 0;
+  }
+
+  .contacts-page .sidebar, .contacts-page .search {
+    display: none;
+  }
+
+  .contacts-page .page__content {
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+  .contacts-page .contacts {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .contacts-page .contacts__section-title {
+    height: auto;
+    font-size: 23px;
+    line-height: 29px;
+  }
+}

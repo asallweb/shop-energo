@@ -27,3 +27,25 @@
     white-space: normal;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .page-heading--mobile {
+    gap: 12px;
+    padding: 0;
+  }
+
+  .page-heading--mobile .page-heading__breadcrumbs {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .page-heading--mobile .page-heading__title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .page-heading--mobile .page-heading__description {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

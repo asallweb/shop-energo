@@ -13,10 +13,6 @@
 @import "../blocks/news.css";
 
 @media screen and (max-width: 767px) {
-  .payment-page {
-    min-width: 320px;
-  }
-
   .payment-page .page {
     background: #fff;
   }
@@ -36,26 +32,6 @@
   }
 
   .payment-page .payment {
-    font-size: 15px;
-    line-height: 22px;
-  }
-
-  .payment-page .page-heading {
-    gap: 12px;
-    padding: 0;
-  }
-
-  .payment-page .page-heading__breadcrumbs {
-    font-size: 12px;
-    line-height: 15px;
-  }
-
-  .payment-page .page-heading__title {
-    font-size: 28px;
-    line-height: 34px;
-  }
-
-  .payment-page .page-heading__description {
     font-size: 15px;
     line-height: 22px;
   }

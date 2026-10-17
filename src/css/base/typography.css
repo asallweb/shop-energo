@@ -117,3 +117,7 @@ body {
   line-height: 19px;
   white-space: pre-wrap;
 }
+
+.site-page {
+  min-width: 320px;
+}

@@ -1,7 +1,40 @@
 @import "../blocks/offers-promo.css";
+
 @import "../blocks/numbered-cards.css";
+
+@import "../blocks/offers-reasons.css";
+
 @import "../blocks/offers-results.css";
+
 @import "../blocks/offers-help.css";
+
 @import "../blocks/advantages.css";
+
 @import "../blocks/brands.css";
+
 @import "../blocks/news.css";
+
+@media screen and (max-width: 767px) {
+  .offers-page .page {
+    background: #f4f4f4;
+  }
+
+  .offers-page .page__container {
+    display: block;
+    padding: 0;
+  }
+
+  .offers-page .sidebar, .offers-page .search {
+    display: none;
+  }
+
+  .offers-page .page__content {
+    gap: 32px;
+    padding: 32px 16px;
+  }
+
+  .offers-page .offers {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

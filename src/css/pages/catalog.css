@@ -18,10 +18,6 @@
 
 @import "../blocks/news.css";
 
-.catalog-page {
-  min-width: 320px;
-}
-
 @media screen and (max-width: 767px) {
   .catalog-page .page {
     background: #fff;

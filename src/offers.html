@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="css/app.min.css">
     <script type="module" src="js/app.min.js"></script>
   </head>
-  <body>
+  <body class="site-page offers-page">
     <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
         <template data-include="sidebar"></template>
         <div class="stack page__content offers">
           <template data-include="search"></template>
-          <section class="stack page-heading" aria-labelledby="offers-title">
+          <section class="stack page-heading page-heading--mobile" aria-labelledby="offers-title">
             <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Спецпредложения</span></nav>
             <h1 class="page-heading__title" id="offers-title">Спецпредложения</h1>
             <p class="page-heading__description">Здесь появляются генераторы и оборудование по специальной цене.</p>
@@ -23,13 +23,13 @@
             <div class="stack offers-promo__copy"><div class="stack offers-promo__introduction"><p class="offers-promo__label">АКЦИИ И РАСПРОДАЖА</p><div class="stack offers-promo__heading"><h2 class="offers-promo__title" id="offers-promo-title">Специальная цена на оборудование</h2><p>Здесь появляются предложения на генераторы и другое силовое оборудование по сниженной цене.</p></div></div><p class="offers-promo__term">Акционная цена на новый товар обычно действует до двух недель.</p></div>
             <img class="offers-promo__image" src="assets/icons/offers-percent.svg" alt="" aria-hidden="true">
           </section>
-          <section class="stack panel numbered-cards numbered-cards--offers" aria-labelledby="offers-reasons-title">
+          <section class="stack panel numbered-cards numbered-cards--offers offers-reasons" aria-labelledby="offers-reasons-title">
             <div class="stack numbered-cards__heading"><h2 class="numbered-cards__title" id="offers-reasons-title">Почему цена может быть ниже?</h2><p class="numbered-cards__description">Тип предложения указан в описании товара. Детали и состояние уточняйте у менеджера.</p></div>
             <ol class="numbered-cards__list">
-              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-01.svg" width="34" height="34" alt="" aria-hidden="true"><h3 class="numbered-cards__item-title">Акционная цена</h3></div><p class="numbered-cards__item-description numbered-cards__item-description--small">Новый товар с временной специальной ценой.</p></li>
-              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-02.svg" width="34" height="34" alt="" aria-hidden="true"><h3 class="numbered-cards__item-title">Модель прошлого года</h3></div><p class="numbered-cards__item-description">Оборудование более раннего года выпуска или прошлая модель.</p></li>
-              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-03.svg" width="34" height="34" alt="" aria-hidden="true"><h3 class="numbered-cards__item-title">Витринный образец</h3></div><p class="numbered-cards__item-description">Товар, который находился на витрине магазина.</p></li>
-              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-04.svg" width="34" height="34" alt="" aria-hidden="true"><h3 class="numbered-cards__item-title">Товар без упаковки</h3></div><p class="numbered-cards__item-description">Оборудование предлагается без заводской упаковки.</p></li>
+              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-01.svg" width="34" height="34" alt="" aria-hidden="true"><span class="offers-reasons__number" aria-hidden="true">01</span><h3 class="numbered-cards__item-title">Акционная цена</h3></div><p class="numbered-cards__item-description numbered-cards__item-description--small">Новый товар с временной специальной ценой.</p></li>
+              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-02.svg" width="34" height="34" alt="" aria-hidden="true"><span class="offers-reasons__number" aria-hidden="true">02</span><h3 class="numbered-cards__item-title">Модель прошлого года</h3></div><p class="numbered-cards__item-description">Оборудование более раннего года выпуска или прошлая модель.</p></li>
+              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-03.svg" width="34" height="34" alt="" aria-hidden="true"><span class="offers-reasons__number" aria-hidden="true">03</span><h3 class="numbered-cards__item-title">Витринный образец</h3></div><p class="numbered-cards__item-description">Товар, который находился на витрине магазина.</p></li>
+              <li class="stack numbered-cards__item"><div class="numbered-cards__item-heading"><img class="numbered-cards__number" src="assets/icons/returns-condition-04.svg" width="34" height="34" alt="" aria-hidden="true"><span class="offers-reasons__number" aria-hidden="true">04</span><h3 class="numbered-cards__item-title">Товар без упаковки</h3></div><p class="numbered-cards__item-description">Оборудование предлагается без заводской упаковки.</p></li>
             </ol>
           </section>
           <section class="panel offers-results" aria-labelledby="offers-results-title">

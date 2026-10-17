@@ -184,21 +184,21 @@
 }
 
 @media screen and (max-width: 767px) {
-  :is(.catalog-page, .payment-page) .news {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news {
     gap: 12px;
   }
 
-  :is(.catalog-page, .payment-page) .news__categories {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__categories {
     height: 44px;
   }
 
-  :is(.catalog-page, .payment-page) .news__list {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__list {
     display: grid;
     grid-template-columns: minmax(0,1fr);
     gap: 12px;
   }
 
-  :is(.catalog-page, .payment-page) .news__card {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__card {
     width: 100%;
     min-height: 194px;
     padding: 20px;
@@ -209,41 +209,41 @@
     outline-offset: -1px;
   }
 
-  :is(.catalog-page, .payment-page) .news__category[aria-selected="true"] {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__category[aria-selected="true"] {
     box-shadow: none;
   }
 
-  :is(.catalog-page, .payment-page) .news__body {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__body {
     gap: 12px;
   }
 
-  :is(.catalog-page, .payment-page) .news__title {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__title {
     min-height: 48px;
     font-family: Arimo, Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
   }
 
-  :is(.catalog-page, .payment-page) .news__description {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__description {
     min-height: 30px;
   }
 
-  :is(.catalog-page, .payment-page) .news__desktop-title {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__desktop-title {
     display: none;
   }
 
-  :is(.catalog-page, .payment-page) .news__mobile-title {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__mobile-title {
     display: inline;
   }
 
-  :is(.catalog-page, .payment-page) .news__date {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .news__date {
     min-width: 73px;
     padding: 3px 5px;
     font-size: 11px;
     line-height: 15px;
   }
 
-  .payment-page .news__category, .payment-page .news__date {
+  :is(.payment-page, .contacts-page, .returns-page, .offers-page) .news__category, :is(.payment-page, .contacts-page, .returns-page, .offers-page) .news__date {
     font-weight: 400;
   }
 }

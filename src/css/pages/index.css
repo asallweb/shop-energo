@@ -1,18 +1,24 @@
 @import "../blocks/hero.css";
-@import "../blocks/company.css";
-@import "../blocks/services.css";
-@import "../blocks/products.css";
-@import "../blocks/product-card.css";
-@import "../blocks/tags.css";
-@import "../blocks/advantages.css";
-@import "../blocks/brands.css";
-@import "../blocks/news.css";
-@import "../blocks/category-directory.css";
-@import "../blocks/certificate.css";
 
-.home-page {
-  min-width: 320px;
-}
+@import "../blocks/company.css";
+
+@import "../blocks/services.css";
+
+@import "../blocks/products.css";
+
+@import "../blocks/product-card.css";
+
+@import "../blocks/tags.css";
+
+@import "../blocks/advantages.css";
+
+@import "../blocks/brands.css";
+
+@import "../blocks/news.css";
+
+@import "../blocks/category-directory.css";
+
+@import "../blocks/certificate.css";
 
 @media screen and (max-width: 767px) {
   .home-page .page {

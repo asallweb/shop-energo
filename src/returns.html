@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="css/app.min.css">
     <script type="module" src="js/app.min.js"></script>
   </head>
-  <body>
+  <body class="site-page returns-page">
     <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
         <template data-include="sidebar"></template>
         <div class="stack page__content returns">
           <template data-include="search"></template>
-          <section class="stack page-heading" aria-labelledby="returns-title">
+          <section class="stack page-heading page-heading--mobile" aria-labelledby="returns-title">
             <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Возврат товара</span></nav>
             <h1 class="page-heading__title" id="returns-title">Возврат товара</h1>
             <p class="page-heading__description">Условия возврата оборудования и порядок обращения по вопросам неисправности.</p>

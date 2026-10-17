@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="css/app.min.css">
     <script type="module" src="js/app.min.js"></script>
   </head>
-  <body>
+  <body class="site-page contacts-page">
     <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
         <template data-include="sidebar"></template>
         <div class="stack page__content contacts">
           <template data-include="search"></template>
-          <section class="stack page-heading" aria-labelledby="contacts-title">
+          <section class="stack page-heading page-heading--mobile" aria-labelledby="contacts-title">
             <nav class="page-heading__breadcrumbs" aria-label="Хлебные крошки"><a class="link" href="./index.html">Главная</a>  ›  <span aria-current="page">Контакты</span></nav>
             <h1 class="page-heading__title" id="contacts-title">Контакты</h1>
             <p class="page-heading__description">Свяжитесь с отделом продаж, уточните условия самовывоза или напишите нам через форму обратной связи.</p>
@@ -27,9 +27,9 @@
           </section>
           <section class="panel contacts-office" id="contacts-office" aria-labelledby="contacts-office-title">
             <div class="stack contacts-office__copy"><h2 class="contacts-office__title" id="contacts-office-title">Офис и пункт самовывоза</h2><div class="stack contacts-office__information"><p class="contacts-office__address">117335, г. Москва, ул. Вавилова, д. 69/75</p><div class="contacts-office__schedule"><p><strong>Режим работы:</strong></p><p>понедельник — пятница, с 10:00 до 18:00.</p><p>Суббота и воскресенье — выходные.</p></div><p class="contacts-office__note">Оформить заказ на сайте можно в любое время. Менеджер свяжется с вами в рабочие часы.</p></div></div>
-            <figure class="contacts-office__map"><img class="contacts-office__map-image" src="assets/images/contacts-office-map.png" width="652" height="355" alt="Схема расположения пунктов самовывоза в Москве и области"></figure>
+            <figure class="contacts-office__map"><picture><source media="(max-width: 767px)" srcset="assets/images/contacts-office-map-mobile.png"><img class="contacts-office__map-image" src="assets/images/contacts-office-map.png" width="652" height="355" alt="Схема расположения пунктов самовывоза в Москве и области"></picture></figure>
           </section>
-          <section class="panel contacts-reserve" aria-labelledby="contacts-reserve-title"><div class="stack contacts-reserve__copy"><h2 class="contacts__section-title" id="contacts-reserve-title">Перед самовывозом зарезервируйте товар</h2><p class="contacts-reserve__description">Позвоните менеджеру или оформите заказ через корзину сайта до приезда. Так мы подтвердим наличие и подготовим оборудование к выдаче.</p><p class="contacts-reserve__note">По возможности оформите резерв за пару дней до визита.</p></div></section>
+          <section class="panel contacts-reserve" aria-labelledby="contacts-reserve-title"><div class="stack contacts-reserve__copy"><div class="stack contacts-reserve__information"><h2 class="contacts__section-title" id="contacts-reserve-title">Перед самовывозом зарезервируйте товар</h2><p class="contacts-reserve__description">Позвоните менеджеру или оформите заказ через корзину сайта до приезда. Так мы подтвердим наличие и подготовим оборудование к выдаче.</p></div><p class="contacts-reserve__note">По возможности оформите резерв за пару дней до визита.</p></div></section>
           <section class="panel contacts-pickup" aria-labelledby="contacts-pickup-title"><div class="stack contacts-pickup__copy"><h2 class="contacts__section-title" id="contacts-pickup-title">Дополнительные пункты самовывоза</h2><p class="contacts-pickup__description">Актуальные адреса и возможность выдачи нужного оборудования уточните у менеджера перед оформлением заказа.</p></div><button class="button contacts-pickup__button" type="button" data-contacts-addresses>Уточнить адреса</button></section>
           <form class="stack panel contacts-form" id="contacts-form" method="post" action="./contacts.html" aria-labelledby="contacts-form-title" data-contacts-form>
             <div class="stack contacts-form__heading"><h2 class="contacts-form__title" id="contacts-form-title">Напишите нам</h2><p class="contacts-form__description">Оставьте сообщение — специалисты отдела продаж ответят по электронной почте.</p></div>

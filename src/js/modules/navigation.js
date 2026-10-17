@@ -6,7 +6,7 @@ export function initNavigation(root = document) {
     const search = header.querySelector('[data-search-toggle]');
     const compact = matchMedia('(max-width: 1199px)');
     const mobile = matchMedia('(max-width: 767px)');
-    const hasMobileLayout = header.closest('.home-page, .catalog-page, .delivery-page, .product-page, .payment-page');
+    const hasMobileLayout = header.closest('.site-page');
     const mobileMenu = header.querySelector('.mobile-menu');
 
     function updateMenuTarget() {

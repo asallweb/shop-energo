@@ -12,7 +12,6 @@ export function initCatalogDemo(root = document) {
     let renderedCount;
     let renderedEmpty;
     let criteria = {};
-    let quickPower = null;
     let generatedBrand;
 
     function inRange(value, min, max) {
@@ -27,14 +26,19 @@ export function initCatalogDemo(root = document) {
       }
       if (!inRange(Number(data.price), criteria['price-min'], criteria['price-max'])) return false;
       if (!inRange(Number(data.power), criteria['power-min'], criteria['power-max'])) return false;
-      return quickPower === null || (Number(data.power) >= quickPower && Number(data.power) < quickPower + 1);
+      return true;
     }
 
     function render() {
       const list = catalog.querySelector('[data-catalog-list]');
       if (!list) return;
       const products = Array.from(list.children);
-      if (!snapshots.has(list)) snapshots.set(list, products.map(product => ({ product, hidden: product.hidden })));
+      if (!snapshots.has(list)) snapshots.set(list, []);
+      const snapshot = snapshots.get(list);
+      const recorded = new Set(snapshot.map(({ product }) => product));
+      for (const product of products) {
+        if (!recorded.has(product)) snapshot.push({ product, hidden: product.hidden });
+      }
       const sort = catalog.querySelector('[name="catalog-sort"]:checked')?.value || 'price';
       products.sort((a, b) => {
         if (sort === 'name') return a.querySelector('h2').textContent.localeCompare(b.querySelector('h2').textContent, 'ru');
@@ -66,15 +70,13 @@ export function initCatalogDemo(root = document) {
       const data = new FormData(form);
       criteria = Object.fromEntries(data);
       criteria.brands = data.getAll('brand');
-      quickPower = null;
       for (const button of catalog.querySelectorAll('[data-catalog-power]')) button.setAttribute('aria-pressed', 'false');
       render();
       form.dispatchEvent(new CustomEvent('catalog:filter-applied', { bubbles: true }));
     }, { signal });
-    form.addEventListener('catalog:power-change', event => {
-      quickPower = event.detail.power;
-      delete criteria['power-min'];
-      delete criteria['power-max'];
+    form.addEventListener('catalog:power-change', () => {
+      criteria['power-min'] = form.elements['power-min'].value;
+      criteria['power-max'] = form.elements['power-max'].value;
       render();
     }, { signal });
     catalog.addEventListener('change', event => {
@@ -87,7 +89,6 @@ export function initCatalogDemo(root = document) {
         const all = form.querySelector('[data-catalog-all]');
         if (all) all.indeterminate = false;
         criteria = {};
-        quickPower = null;
         for (const button of catalog.querySelectorAll('[data-catalog-power]')) button.setAttribute('aria-pressed', 'false');
         render();
         form.dispatchEvent(new CustomEvent('catalog:filter-reset', { bubbles: true }));

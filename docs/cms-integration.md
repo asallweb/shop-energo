@@ -10,11 +10,14 @@ Behavior is discovered from component attributes, rather than the current page n
 | Hero | `data-hero` |
 | Product gallery | `data-product-gallery` |
 | Product actions | `data-product-detail` |
-| Catalog demo | `data-catalog` |
+| Catalog UI | `data-catalog` |
+| Optional catalog demo filter | `data-catalog-filter` + `data-catalog-demo` |
 | Publication tabs | `data-tabs` |
 | Contact demo form | `data-contacts-form` |
 
 Preserve the supplied component structure, control attributes and BEM classes. Give IDs unique values when rendering multiple instances and update their matching `aria-controls`, `aria-labelledby` and anchor references. Tab panels and catalog state are resolved within their own component.
+
+See [catalog integration](catalog-integration.md) for disabling the demonstration filter or replacing it with AJAX. Keep the catalog UI root when switching filtering implementations.
 
 ## AJAX insertion and removal
 

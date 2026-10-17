@@ -118,18 +118,18 @@
 }
 
 @media screen and (max-width: 767px) {
-  :is(.catalog-page, .payment-page) .page__title {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .page__title {
     font-family: Arimo, Arial, sans-serif;
     font-size: 23px;
     line-height: 29px;
     text-align: left;
   }
 
-  :is(.catalog-page, .payment-page) .advantages {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .advantages {
     gap: 16px;
   }
 
-  :is(.catalog-page, .payment-page) .advantages__list {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .advantages__list {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -140,7 +140,7 @@
     outline-offset: -1px;
   }
 
-  :is(.catalog-page, .payment-page) .advantages__item {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .advantages__item {
     display: grid;
     grid-template-columns: 49px minmax(0,1fr);
     align-items: center;
@@ -150,21 +150,21 @@
     text-align: left;
   }
 
-  :is(.catalog-page, .payment-page) .advantages__item--service {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .advantages__item--service {
     min-height: 74px;
   }
 
-  :is(.catalog-page, .payment-page) .advantages__description {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .advantages__description {
     font-size: 15px;
     line-height: 22px;
     white-space: normal;
   }
 
-  :is(.catalog-page, .payment-page) .advantages__description br {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .advantages__description br {
     display: none;
   }
 
-  :is(.catalog-page, .payment-page) .advantages__divider {
+  :is(.catalog-page, .payment-page, .contacts-page, .returns-page, .offers-page) .advantages__divider {
     width: 100%;
     height: 1px;
   }

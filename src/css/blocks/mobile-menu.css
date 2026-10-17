@@ -3,11 +3,11 @@
 }
 
 @media screen and (max-width: 767px) {
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header[data-menu-open] .header__nav {
+  .site-page .header[data-menu-open] .header__nav {
     display: none;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header[data-menu-open] .mobile-menu {
+  .site-page .header[data-menu-open] .mobile-menu {
     display: block;
     position: absolute;
     z-index: 2;
@@ -22,7 +22,7 @@
     color: #451f37;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header[data-search-open] .mobile-menu {
+  .site-page .header[data-search-open] .mobile-menu {
     min-height: calc(100dvh - 204px);
     max-height: calc(100dvh - 204px);
   }

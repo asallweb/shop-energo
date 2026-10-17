@@ -230,19 +230,19 @@
 }
 
 @media screen and (max-width: 767px) {
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .footer {
+  .site-page .footer {
     height: auto;
     background: var(--color-plum);
     color: var(--color-white);
   }
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .footer__container {
+  .site-page .footer__container {
     padding: 32px 24px;
   }
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .footer__content,
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .footer__copyright {
+  .site-page .footer__content,
+  .site-page .footer__copyright {
     display: none;
   }
-  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .footer__mobile {
+  .site-page .footer__mobile {
     display: flex;
     flex-direction: column;
     align-items: stretch;
