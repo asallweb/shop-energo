@@ -22,7 +22,7 @@
     padding: 0;
   }
 
-  .payment-page .sidebar, .payment-page .search {
+  .payment-page .sidebar {
     display: none;
   }
 

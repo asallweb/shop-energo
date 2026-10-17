@@ -24,7 +24,7 @@
     padding: 0;
   }
 
-  .contacts-page .sidebar, .contacts-page .search {
+  .contacts-page .sidebar {
     display: none;
   }
 

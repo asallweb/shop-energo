@@ -31,8 +31,7 @@
     padding: 0;
   }
 
-  .home-page .sidebar,
-  .home-page .search {
+  .home-page .sidebar {
     display: none;
   }
 
