@@ -145,12 +145,12 @@
   top: 396px;
   right: 24px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 10px;
   width: 217px;
   height: 37px;
-  padding: 5px 20px 13px;
+  padding: 0 20px;
   border: 0;
   background: #a9a7a9;
   color: var(--color-white);
@@ -162,7 +162,7 @@
 .catalog-filter__more img {
   width: 15px;
   height: 9px;
-  margin-top: 5px;
+  margin-top: 0;
 }
 
 .catalog-filter__extra {
