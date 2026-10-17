@@ -29,8 +29,9 @@ export async function buildSite() {
   for (const name of ['app', ...Object.keys(pages)]) {
     const cssInput = join(srcDir, 'css', name === 'app' ? 'app.css' : `pages/${name}.css`);
     const cssOutput = join(distDir, 'css', `${name}.min.css`);
+    const entry = `${name === 'app' ? '' : '@import "../app.css";\n'}${await readFile(cssInput, 'utf8')}`;
     const result = await postcss([postcssImport(), autoprefixer(), cssnano({ preset: 'default' })])
-      .process(await readFile(cssInput, 'utf8'), { from: cssInput, to: cssOutput, map: false });
+      .process(entry, { from: cssInput, to: cssOutput, map: false });
     for (const warning of result.warnings()) console.warn(warning.toString());
     const css = replaceAssets(result.css);
     await writeFile(cssOutput, css);
@@ -55,10 +56,10 @@ export async function buildSite() {
 
   for (const [name, config] of Object.entries(pages)) {
     let html = await renderPage(await readFile(join(srcDir, `${name}.html`), 'utf8'), name, config, srcDir);
-    html = html.replace('href="css/app.min.css"', `href="css/app.min.css?v=${cssVersions.get('app')}"`)
+    html = html.replace('<link rel="stylesheet" href="css/app.min.css">', `<link rel="stylesheet" href="css/${name}.min.css?v=${cssVersions.get(name)}" blocking="render">`)
       .replace('src="js/app.min.js"', `src="js/app.min.js?v=${jsVersion}"`)
-      .replace('</head>', `  <link rel="stylesheet" href="css/${name}.min.css?v=${cssVersions.get(name)}">\n    <link rel="icon" href="assets/images/logo-symbol.svg" type="image/svg+xml">\n    <link rel="preload" href="assets/fonts/arimo-regular.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" href="assets/fonts/arimo-bold.woff2" as="font" type="font/woff2" crossorigin>\n  </head>`)
-      .replace('<link rel="stylesheet" href="css/app.min.css', '<link rel="preload" as="image" href="assets/images/header-background.webp" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-haze-left.svg">\n    <link rel="preload" as="image" href="assets/images/header-haze-right.svg">\n    <link rel="stylesheet" href="css/app.min.css');
+      .replace('</head>', '  <link rel="icon" href="assets/images/logo-symbol.svg" type="image/svg+xml">\n  </head>')
+      .replace('<link rel="stylesheet"', '<link rel="preload" href="assets/fonts/arimo-regular.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" href="assets/fonts/arimo-bold.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" as="image" href="assets/images/mobile-logo.svg" media="(max-width: 767px)" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-background.webp" media="(min-width: 768px)" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-haze-left.svg" media="(min-width: 768px)">\n    <link rel="preload" as="image" href="assets/images/header-haze-right.svg" media="(min-width: 768px)">\n    <link rel="stylesheet"');
     let mainPhoto = false;
     const mainStart = html.indexOf('<main');
     html = html.replace(/<img\b[^>]+>/g, (tag, offset) => {

@@ -1,6 +1,6 @@
 # CMS integration
 
-Load `js/app.min.js` once as an ES module and deploy its accompanying `js/chunks/` directory. Import paths are relative to the bundle, so the theme may use a different base URL if it preserves that directory structure. Include the common CSS and the page/component CSS needed by the fragment; JavaScript does not fetch CSS on behalf of the CMS.
+Load `js/app.min.js` once as an ES module and deploy its accompanying `js/chunks/` directory. Import paths are relative to the bundle, so the theme may use a different base URL if it preserves that directory structure. Each generated `css/<page>.min.css` includes the common and page CSS; load that one stylesheet in the document head before JavaScript. `app.min.css` is available separately for integrations that build their own component styles. Do not load it again alongside a complete page stylesheet. JavaScript does not fetch CSS on behalf of the CMS.
 
 Behavior is discovered from component attributes, rather than the current page name:
 

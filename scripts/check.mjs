@@ -20,6 +20,11 @@ for (const name of pageNames) {
   const html = await readFile(resolve(output, `${name}.html`), 'utf8');
   if (html.includes('data-include=') || html.includes('{{')) throw new Error(`${name}: unresolved template`);
   if (html.includes('<!--')) throw new Error(`${name}: HTML comment`);
+  if (name !== 'pages') {
+    const stylesheets = [...html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*>/g)];
+    if (stylesheets.length !== 1 || !stylesheets[0][0].includes('blocking="render"')) throw new Error(`${name}: expected one render-blocking page stylesheet`);
+    if (stylesheets[0].index > html.indexOf('<script')) throw new Error(`${name}: stylesheet must precede scripts`);
+  }
   for (const match of html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/g)) checkCode(match[1], `${name}.inline.css`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   if (new Set(ids).size !== ids.length) throw new Error(`${name}: duplicate id`);
