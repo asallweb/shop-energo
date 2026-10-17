@@ -37,7 +37,7 @@
 
   .home-page .page__content {
     gap: 30px;
-    padding: 14px 16px 30px;
+    padding: var(--page-content-top) 16px 30px;
   }
 
   .home-page .page__title {

@@ -30,7 +30,7 @@
 
   .contacts-page .page__content {
     gap: 32px;
-    padding: 0 16px;
+    padding: var(--page-content-top) 16px 0;
   }
 
   .contacts-page .contacts {

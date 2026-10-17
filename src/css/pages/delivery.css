@@ -39,12 +39,11 @@
   .delivery-page .page__content {
     align-items: stretch;
     gap: 32px;
-    padding: 16px 16px 32px;
+    padding: var(--page-content-top) 16px 32px;
     font-size: 15px;
     line-height: 22px;
   }
 
-  .delivery-page .page-heading,
   .delivery-page .delivery-intro,
   .delivery-page .delivery-navigation,
   .delivery-page .delivery-terms {
