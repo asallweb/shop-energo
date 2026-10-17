@@ -30,17 +30,12 @@
 
 .delivery-regions__step-number {
   flex-shrink: 0;
-  width: 27.180664px;
-  height: 18.408203px;
-}
-
-.delivery-regions__step-number--second {
-  width: 26.863281px;
-}
-
-.delivery-regions__step-number--third {
-  width: 26.964844px;
-  height: 18.446289px;
+  min-width: 27px;
+  color: var(--color-accent);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 25px;
+  font-variant-numeric: tabular-nums;
 }
 
 .delivery-regions__step-title {

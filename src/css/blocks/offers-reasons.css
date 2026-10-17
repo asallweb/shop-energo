@@ -1,21 +1,7 @@
-.offers-reasons__number {
-  display: none;
-}
-
 @media screen and (max-width: 767px) {
   .offers-reasons .numbered-cards__number {
-    display: none;
-  }
-
-  .offers-reasons__number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    background: var(--color-plum);
-    color: var(--color-white);
     font-size: 12px;
+    font-weight: 400;
     line-height: 15px;
   }
 

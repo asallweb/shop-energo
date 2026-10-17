@@ -17,9 +17,19 @@
 }
 
 .delivery-receiving__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  width: 41px;
+  min-width: 41px;
   height: 42px;
+  padding-inline: 4px;
+  background: var(--color-plum);
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .delivery-receiving__copy {
@@ -62,10 +72,6 @@
   }
 }
 
-.delivery-receiving__number-frame {
-  display: contents;
-}
-
 @media screen and (max-width: 767px) {
   .delivery-receiving {
     gap: 16px;
@@ -88,7 +94,7 @@
 
   .delivery-receiving__number {
     grid-column: 1;
-    width: 36px;
+    min-width: 36px;
     height: 36px;
     align-self: center;
   }
