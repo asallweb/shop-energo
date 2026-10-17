@@ -20,6 +20,9 @@ for (const name of pageNames) {
   const html = await readFile(resolve(output, `${name}.html`), 'utf8');
   if (html.includes('data-include=') || html.includes('{{')) throw new Error(`${name}: unresolved template`);
   if (html.includes('<!--')) throw new Error(`${name}: HTML comment`);
+  const publicationPanels = [...html.matchAll(/<div class="news__list" role="tabpanel"[^>]*>([\s\S]*?)(?=<div class="news__list" role="tabpanel"|<\/section>)/g)];
+  const mobileTitles = publicationPanels.map(panel => [...panel[1].matchAll(/<span class="news__mobile-title">([^<]+)<\/span>/g)].map(title => title[1]).join('\n'));
+  if (publicationPanels.length && (mobileTitles.some(titles => !titles) || new Set(mobileTitles).size !== publicationPanels.length)) throw new Error(`${name}: publication tabs must have distinct mobile content`);
   if (name !== 'pages') {
     const stylesheets = [...html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*>/g)];
     if (stylesheets.length !== 1 || !stylesheets[0][0].includes('blocking="render"')) throw new Error(`${name}: expected one render-blocking page stylesheet`);
