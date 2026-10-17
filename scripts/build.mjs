@@ -29,7 +29,6 @@ export async function buildSite() {
 
   const replaceAssets = await buildAssets({ rootDir, srcDir, distDir });
   const cssVersions = new Map();
-  const cssBundles = new Map();
   for (const name of ['app', ...Object.keys(pages)]) {
     const cssInput = join(srcDir, 'css', name === 'app' ? 'app.css' : `pages/${name}.css`);
     const cssOutput = join(distDir, 'css', `${name}.min.css`);
@@ -40,7 +39,6 @@ export async function buildSite() {
     const css = replaceAssets(result.css);
     await writeFile(cssOutput, css);
     cssVersions.set(name, createHash('sha256').update(css).digest('hex').slice(0, 12));
-    cssBundles.set(name, css);
   }
   await build({
     entryPoints: [join(srcDir, 'js', 'main.js')],
@@ -61,12 +59,10 @@ export async function buildSite() {
 
   for (const [name, config] of Object.entries(pages)) {
     let html = await renderPage(await readFile(join(srcDir, `${name}.html`), 'utf8'), name, config, srcDir);
-    const inlineCss = cssBundles.get(name).replace(/url\((["']?)\.\.\/assets\//g, 'url($1assets/');
-    if (/<\/style/i.test(inlineCss)) throw new Error(`${name}: unsafe inline stylesheet content`);
-    html = html.replace('<link rel="stylesheet" href="css/app.min.css">', () => `<style data-page-css="${name}-${cssVersions.get(name)}">${inlineCss}</style>`)
+    html = html.replace('<link rel="stylesheet" href="css/app.min.css">', `<link rel="stylesheet" href="css/${name}.min.css?v=${cssVersions.get(name)}" blocking="render">`)
       .replace('src="js/app.min.js"', `src="js/app.min.js?v=${jsVersion}"`)
       .replace('</head>', '  <link rel="icon" href="assets/images/logo-symbol.svg" type="image/svg+xml">\n  </head>')
-      .replace('<style data-page-css', '<link rel="preload" href="assets/fonts/arimo-regular.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" href="assets/fonts/arimo-bold.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" as="image" href="assets/images/mobile-logo.svg" media="(max-width: 767px)" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-background.webp" media="(min-width: 768px)" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-haze-left.svg" media="(min-width: 768px)">\n    <link rel="preload" as="image" href="assets/images/header-haze-right.svg" media="(min-width: 768px)">\n    <style data-page-css');
+      .replace('<link rel="stylesheet"', '<link rel="preload" href="assets/fonts/arimo-regular.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" href="assets/fonts/arimo-bold.woff2" as="font" type="font/woff2" crossorigin>\n    <link rel="preload" as="image" href="assets/images/mobile-logo.svg" media="(max-width: 767px)" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-background.webp" media="(min-width: 768px)" fetchpriority="high">\n    <link rel="preload" as="image" href="assets/images/header-haze-left.svg" media="(min-width: 768px)">\n    <link rel="preload" as="image" href="assets/images/header-haze-right.svg" media="(min-width: 768px)">\n    <link rel="stylesheet"');
     let mainPhoto = false;
     const mainStart = html.indexOf('<main');
     html = html.replace(/<img\b[^>]+>/g, (tag, offset) => {

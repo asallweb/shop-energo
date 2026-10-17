@@ -20,7 +20,7 @@ The mobile offers page follows the 390 px gray-background design below 768 px. T
 
 ## Source and build
 
-Each storefront document embeds its complete minified page stylesheet in the head before the module script and body. The build prepends the common CSS entry to each page entry, resolves all imports, and embeds that generated bundle with asset URLs rebased relative to the HTML document. Rendering therefore does not depend on an external CSS request. Source styles remain in their component files; standalone page bundles and `app.min.css` remain available for CMS use. Font preloads and the mobile logo are discovered early; desktop header image preloads are restricted to desktop viewports.
+Each storefront document loads one versioned, render-blocking CSS bundle in the head before JavaScript. The build combines common and page styles into css/<page>.min.css and resolves imports. Full page styles remain external; inline styles in storefront HTML are rejected by npm run check. Source styles remain in their component files. app.min.css remains available for CMS integrations that compose their own pages. Font preloads and the mobile logo are discovered early; desktop header image preloads are restricted to desktop viewports.
 
 All eight storefront documents share the `site-page` shell marker. Mobile header, navigation, footer and minimum width use that marker, so adding a page does not require changing a list of page names in CSS and JavaScript. Page-specific classes retain their content layouts and component variants. The informational payment, contacts, returns and offers headings use `page-heading--mobile` for their shared mobile typography and spacing.
 
