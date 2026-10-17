@@ -2,6 +2,7 @@ import { initSliders } from './modules/slider.js';
 import { initLightbox, closeLightbox } from './modules/lightbox.js';
 import { initTabs } from './modules/tabs.js';
 import { initNavigation } from './modules/navigation.js';
+import { initPreloader } from './modules/preloader.js';
 import { findElements, isMounted, unmountElements } from './modules/lifecycle.js';
 
 const pending = new Map();
@@ -13,10 +14,11 @@ const modules = [
   { selector: '[data-product-gallery]', load: () => import('./modules/product-gallery.js'), initialize: 'initProductGallery' },
   { selector: '[data-contacts-form], [data-contacts-addresses]', load: () => import('./pages/contacts.js'), initialize: 'initContacts' },
 ];
-const selector = ['[data-navigation]', '[data-slider]', '[data-tabs]', ...modules.map(module => module.selector)].join(', ');
+const selector = ['[data-preloader]', '[data-navigation]', '[data-slider]', '[data-tabs]', ...modules.map(module => module.selector)].join(', ');
 
 async function init(root = document) {
   if (!root?.querySelectorAll) throw new TypeError('Expected a DOM container.');
+  initPreloader(root);
   initLightbox();
   initSliders(root);
   initTabs(root);
