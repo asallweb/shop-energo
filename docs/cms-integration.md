@@ -6,6 +6,9 @@ Behavior is discovered from component attributes, rather than the current page n
 
 | Component | Root attribute |
 | --- | --- |
+| Preloader | `data-preloader` |
+| Page reveal animation (GSAP) | `.site-page` |
+| Main navigation | `data-navigation` |
 | Card/brand carousel | `data-slider` |
 | Hero | `data-hero` |
 | Product gallery | `data-product-gallery` |
@@ -14,6 +17,7 @@ Behavior is discovered from component attributes, rather than the current page n
 | Optional catalog demo filter | `data-catalog-filter` + `data-catalog-demo` |
 | Publication tabs | `data-tabs` |
 | Contact demo form | `data-contacts-form` |
+
 
 Preserve the supplied component structure, control attributes and BEM classes. Give IDs unique values when rendering multiple instances and update their matching `aria-controls`, `aria-labelledby` and anchor references. Tab panels and catalog state are resolved within their own component.
 

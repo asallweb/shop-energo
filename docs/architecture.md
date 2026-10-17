@@ -28,15 +28,16 @@ The mobile delivery page reuses its desktop sections, search, navigation anchors
 
 The mobile product detail page reuses its desktop HTML and local assets. Its component styles place gallery, purchase controls, brief parameters, help, conditions, section navigation, specifications, description, documents, feedback and recommendations in the supplied mobile order. Header, two-level menu and dark footer are shared with the other mobile pages. Below 768 px, product-gallery.js mounts three original entries with the repeated product image supplied in the design; above that breakpoint it restores all five desktop demonstration photos. Resizing and teardown restore original nodes, labels and carousel handlers. Picture sources preserve the desktop images, and lightbox links follow the active source.
 
-- `src/*.html` contains each page's unique content. `<template data-include="name"></template>` inserts a shared fragment from `src/partials/` during the build. These template elements are expanded out of the delivered HTML.
+- `src/*.html` contains each page's unique content. `<template data-include="name"></template>` inserts a shared fragment from `src/partials/` during the build, including the shared `preloader` partial. These template elements are expanded out of the delivered HTML.
 - `scripts/pages.mjs` declares page metadata, navigation state, category state and shared news variants. `scripts/templates.mjs` renders these values without a browser framework.
 - `src/css/base/` owns tokens, fonts, typography and UI primitives. `.stack` supplies a column flex layout; `.panel` supplies a white surface with a configurable `--panel-line` border.
-- `src/css/blocks/` owns visual components. Page-specific geometry stays in its component. Shared components use the same classes and fragments across pages.
+- `src/css/blocks/` owns visual components, including `preloader.css` for the unobtrusive branded preloader using the static `#c7c7c7` / `#763873` logo emblem and smooth transitions. Page-specific geometry stays in its component. Shared components use the same classes and fragments across pages.
 - `src/css/app.css` imports the common shell. `src/css/pages/<page>.css` imports only components used by that page. Import base product cards before page-specific recommendation overrides.
-- `src/js/main.js` initializes navigation, common sliders, tabs and the photo lightbox. It loads optional behavior through dynamic imports keyed by component data attributes, including AJAX fragments. `lifecycle.js` prevents duplicate initialization and releases handlers on removal.
-- `src/js/pages/` owns page interactions; `src/js/modules/` owns reusable behavior.
+- `src/js/main.js` initializes the non-blocking preloader (`preloader.js`), GSAP entrance animations (`reveal.js`), navigation, common sliders, tabs and the photo lightbox. It loads optional behavior through dynamic imports keyed by component data attributes, including AJAX fragments. `lifecycle.js` prevents duplicate initialization and releases handlers on removal.
+- `src/js/pages/` owns page interactions; `src/js/modules/` owns reusable behavior. GSAP is bundled locally into `dist/js/` for smooth staggered reveal animations on initial render, scroll intersection, tab switching and catalog filtering, respecting `prefers-reduced-motion`.
 
 `npm run build` renders HTML, minifies CSS, splits JavaScript into local ES modules and writes `dist/`. HTML uses only the generated bundles. Paths are relative and work under `/shop-energo/`. Source HTML is a template and must be previewed through the build, rather than served directly.
+
 
 ## Catalog integration
 
