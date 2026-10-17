@@ -77,3 +77,76 @@
     height: auto;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .product-specifications {
+    order: 7;
+    margin-top: 28px;
+    padding: 28px 16px;
+    gap: 24px;
+  }
+
+  .product-specifications__caption {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .product-specifications__heading {
+    gap: 8px;
+  }
+
+  .product-specifications__body {
+    gap: 24px;
+  }
+
+  .product-specifications__columns {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .product-specifications__group {
+    gap: 8px;
+  }
+
+  .product-specifications__group .product-detail__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .product-specifications__parameters {
+    gap: 0;
+  }
+
+  .product-specifications__row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding-block: 12px;
+    box-shadow: inset 0 -1px var(--product-line);
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .product-specifications__row::after {
+    content: none;
+  }
+
+  .product-specifications__row dt {
+    color: var(--product-muted);
+  }
+
+  .product-specifications__row dd {
+    justify-self: end;
+    max-width: 120px;
+  }
+
+  .product-specifications__note {
+    min-height: 58px;
+    height: auto;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

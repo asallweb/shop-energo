@@ -1,14 +1,21 @@
 @import "../blocks/tags.css";
+
 @import "../blocks/catalog-heading.css";
+
 @import "../blocks/catalog-filter.css";
+
 @import "../blocks/catalog-power.css";
+
 @import "../blocks/catalog-toolbar.css";
+
 @import "../blocks/catalog-product.css";
+
 @import "../blocks/catalog-pagination.css";
-@import "../blocks/catalog-mobile-product.css";
-@import "../blocks/catalog-article.css";
+
 @import "../blocks/advantages.css";
+
 @import "../blocks/brands.css";
+
 @import "../blocks/news.css";
 
 .catalog-page {
@@ -25,22 +32,50 @@
     padding: 0;
   }
 
-  .catalog-page .sidebar,
-  .catalog-page .search,
-  .catalog-page .tags,
-  .catalog-page .advantages,
-  .catalog-page .brands,
-  .catalog-page .news {
+  .catalog-page .sidebar {
     display: none;
   }
 
   .catalog-page .page__content {
-    gap: 0;
-    padding: 13px 20px 0;
+    gap: 32px;
+    padding: 32px 16px;
     overflow: visible;
   }
 
   .catalog__body {
     gap: 0;
+  }
+
+  .catalog__mobile-compare {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 18px;
+    margin-block: 32px 16px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .catalog__mobile-compare span {
+    margin-inline: -5px;
+  }
+
+  .catalog-page:has([data-filter-open]) .page__content {
+    gap: 24px;
+    padding-top: 0;
+    padding-bottom: 24px;
+  }
+
+  .catalog[data-filter-open] .catalog-list,
+  .catalog[data-filter-open] .catalog__mobile-compare,
+  .catalog[data-filter-open] > :is(.catalog-pagination, .tags, .advantages, .brands, .news),
+  .catalog-page:has([data-filter-open]) .footer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .catalog__mobile-compare {
+    display: none;
   }
 }

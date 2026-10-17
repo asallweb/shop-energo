@@ -8,6 +8,7 @@ const pending = new Map();
 const modules = [
   { selector: '[data-hero]', load: () => import('./modules/hero.js'), initialize: 'initHero' },
   { selector: '[data-catalog]', load: () => import('./pages/catalog.js'), initialize: 'initCatalog' },
+  { selector: '[data-catalog-filter][data-catalog-demo]', load: () => import('./pages/catalog-demo.js'), initialize: 'initCatalogDemo' },
   { selector: '[data-product-detail]', load: () => import('./pages/product.js'), initialize: 'initProduct' },
   { selector: '[data-product-gallery]', load: () => import('./modules/product-gallery.js'), initialize: 'initProductGallery' },
   { selector: '[data-contacts-form], [data-contacts-addresses]', load: () => import('./pages/contacts.js'), initialize: 'initContacts' },

@@ -49,3 +49,38 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+@media screen and (max-width: 767px) {
+  .payment-documents {
+    gap: 16px;
+    padding: 20px;
+    border: 0;
+    outline: 1px solid var(--color-panel-line);
+    outline-offset: -1px;
+  }
+
+  .payment-documents__title {
+    font-size: 23px;
+    line-height: 29px;
+  }
+
+  .payment-documents__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .payment-documents__item {
+    gap: 8px;
+  }
+
+  .payment-documents__method {
+    color: var(--color-plum);
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .payment-documents__description {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

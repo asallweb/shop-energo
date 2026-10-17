@@ -55,6 +55,47 @@
             </div>
           </div>
         </div>
+        <nav class="mobile-menu" id="mobile-navigation" aria-label="Мобильное меню">
+          <div class="mobile-menu__bar">
+            <h2 class="mobile-menu__title">Меню</h2>
+            <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-menu-close><img src="assets/icons/mobile-menu-close.svg" width="22" height="22" alt=""></button>
+          </div>
+          <div class="mobile-menu__body">
+            <div class="mobile-menu__group mobile-menu__group--catalog">
+              <button class="mobile-menu__toggle" type="button" aria-expanded="false" aria-controls="mobile-catalog" data-menu-section>КАТАЛОГ ТОВАРОВ<img src="assets/icons/mobile-menu-catalog-chevron.svg" width="20" height="20" alt=""></button>
+              <ul class="mobile-menu__submenu" id="mobile-catalog" hidden>
+                <li><a class="mobile-menu__link" href="./catalog.html">Бензиновые генераторы</a></li>
+                <li><a class="mobile-menu__link" href="#">Газовые генераторы</a></li>
+                <li><a class="mobile-menu__link" href="#">Дизельные генераторы</a></li>
+                <li><a class="mobile-menu__link" href="#">Инверторные генераторы</a></li>
+                <li><a class="mobile-menu__link" href="#">Сварочные генераторы</a></li>
+                <li><a class="mobile-menu__link" href="#">Контейнеры для электростанций</a></li>
+                <li><a class="mobile-menu__link" href="#">Блоки АВР и автоматика</a></li>
+                <li><a class="mobile-menu__link" href="#">Мотопомпы</a></li>
+                <li><a class="mobile-menu__link" href="#">Стабилизаторы напряжения</a></li>
+              </ul>
+            </div>
+            <div class="mobile-menu__group">
+              <button class="mobile-menu__toggle" type="button" aria-expanded="false" aria-controls="mobile-services" data-menu-section>УСЛУГИ<img src="assets/icons/mobile-menu-services-chevron.svg" width="20" height="20" alt=""></button>
+              <ul class="mobile-menu__submenu" id="mobile-services" hidden>
+                <li><a class="mobile-menu__link" href="#">Монтаж электростанций</a></li>
+                <li><a class="mobile-menu__link" href="#">Сервисное обслуживание</a></li>
+                <li><a class="mobile-menu__link" href="#">Предпродажный запуск</a></li>
+                <li><a class="mobile-menu__link" href="#">Все услуги</a></li>
+              </ul>
+            </div>
+            <ul class="mobile-menu__pages">
+              <li><a class="mobile-menu__page" href="./index.html">ГЛАВНАЯ</a></li>
+              <li><a class="mobile-menu__page" href="#">О КОМПАНИИ</a></li>
+              <li><a class="mobile-menu__page" href="./payment.html">ОПЛАТА</a></li>
+              <li><a class="mobile-menu__page" href="./delivery.html">ДОСТАВКА</a></li>
+              <li><a class="mobile-menu__page" href="./returns.html">ВОЗВРАТ ТОВАРА</a></li>
+              <li><a class="mobile-menu__page" href="./contacts.html">КОНТАКТЫ</a></li>
+              <li><a class="mobile-menu__page" href="./offers.html">СПЕЦПРЕДЛОЖЕНИЯ</a></li>
+              <li><a class="mobile-menu__page" href="#">СЕРТИФИКАТЫ</a></li>
+            </ul>
+          </div>
+        </nav>
         <nav class="header__nav" id="main-navigation" aria-label="Главное меню">
           <ul class="header__nav-list">
             <li><a class="header__nav-link" href="./index.html">ГЛАВНАЯ</a></li>

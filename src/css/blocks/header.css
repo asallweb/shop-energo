@@ -379,7 +379,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  :is(.home-page, .catalog-page, .delivery-page) .header {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header {
     z-index: 2;
     min-height: 146px;
     padding-bottom: 25px;
@@ -387,16 +387,16 @@
     background: #fff;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page) .header__top {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header__top {
     display: none;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page) .header__menu-toggle {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header__menu-toggle {
     top: 13px;
     left: 9px;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page) .header__mobile-top {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header__mobile-top {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -426,7 +426,7 @@
     height: 44px;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page) .header__mobile-controls {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header__mobile-controls {
     display: flex;
     justify-content: space-between;
     height: 40px;
@@ -463,7 +463,7 @@
     transform: translate(-0.5px, -0.5px);
   }
 
-  :is(.home-page, .catalog-page, .delivery-page) .header[data-search-open] .header__mobile-search {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header[data-search-open] .header__mobile-search {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 70px;
     gap: 10px;
@@ -487,7 +487,7 @@
     font-size: 14px;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page) .header[data-menu-open] .header__nav {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header[data-menu-open] .header__nav {
     position: absolute;
     z-index: 1;
     top: 100%;
@@ -500,7 +500,7 @@
     overscroll-behavior: contain;
   }
 
-  :is(.home-page, .catalog-page, .delivery-page) .header[data-search-open] .header__nav {
+  :is(.home-page, .catalog-page, .delivery-page, .product-page, .payment-page) .header[data-search-open] .header__nav {
     max-height: calc(100dvh - 220px);
   }
 

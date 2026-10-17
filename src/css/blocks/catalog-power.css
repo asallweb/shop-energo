@@ -29,3 +29,34 @@
   color: var(--color-white);
   background: var(--color-active);
 }
+
+@media screen and (max-width: 767px) {
+  .catalog[data-filter-open] .catalog-power {
+    display: flex;
+    max-width: none;
+    margin: 0 -16px;
+    padding: 20px 16px;
+    gap: 8px;
+    border: 0;
+  }
+
+  .catalog-power__title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .catalog-power__row {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 8px;
+  }
+
+  .catalog-power__button {
+    height: 40px;
+    padding: 0;
+    border: 1px solid #d8d8d8;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

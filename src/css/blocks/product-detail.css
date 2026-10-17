@@ -43,3 +43,38 @@
     height: auto;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .product-detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px 16px 28px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .product-detail__upper, .product-detail__information {
+    display: contents;
+  }
+
+  .product-detail__section-title {
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .product-detail__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .product-detail .product-detail__link {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .product-detail__small {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

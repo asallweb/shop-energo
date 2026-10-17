@@ -299,3 +299,143 @@
     width: 210px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .catalog-list {
+    display: flex;
+    gap: 16px;
+  }
+
+  .catalog-product, .catalog-product--unavailable, .catalog-product--compact {
+    height: auto;
+    min-height: 0;
+    padding: 16px 16px 21px;
+    border: 0;
+    outline: 1px solid #d8d8d8;
+    outline-offset: -1px;
+  }
+
+  .catalog-product__body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    height: auto;
+    gap: 16px;
+  }
+
+  .catalog-product:has(.catalog-product__badge) .catalog-product__body {
+    padding-top: 41px;
+  }
+
+  .catalog-product__info, .catalog-product__details, .catalog-product__footer, .catalog-product__purchase, .catalog-product__ordering {
+    display: contents;
+  }
+
+  .catalog-product__photo {
+    order: 0;
+    width: 100%;
+    height: 132px;
+  }
+
+  .catalog-product .catalog-product__image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 132px;
+    object-fit: contain;
+  }
+
+  .catalog-product__badge {
+    top: -41px;
+    left: 0;
+    width: auto;
+    height: 25px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+
+  .catalog-product__title {
+    order: 1;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+    white-space: normal;
+  }
+
+  .catalog-product__status {
+    order: 2;
+    padding-left: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .catalog-product__specifications, .catalog-product--unavailable .catalog-product__specifications {
+    order: 3;
+    gap: 0;
+  }
+
+  .catalog-product__label::after {
+    content: ":";
+  }
+
+  .catalog-product__specification {
+    justify-content: flex-start;
+    gap: 8px;
+    height: auto;
+    min-height: 22px;
+  }
+
+  .catalog-product__label, .catalog-product__value {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .catalog-product__price {
+    order: 4;
+    gap: 6px;
+    font-size: 23px;
+    line-height: 29px;
+  }
+
+  .catalog-product__buy {
+    order: 5;
+    width: 100%;
+    height: 46px;
+    border-radius: 0;
+  }
+
+  .catalog-product__compare {
+    order: 6;
+    align-self: flex-end;
+    height: 18px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .catalog-product__discount-space {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 18px;
+  }
+
+  .catalog-product__discount {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  @media (max-width: 374px) {
+    .catalog-product__compare {
+      font-size: 11px;
+    }
+
+    .catalog-product__discount {
+      font-size: 9px;
+    }
+  }
+}

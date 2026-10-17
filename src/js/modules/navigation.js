@@ -6,6 +6,30 @@ export function initNavigation(root = document) {
     const search = header.querySelector('[data-search-toggle]');
     const compact = matchMedia('(max-width: 1199px)');
     const mobile = matchMedia('(max-width: 767px)');
+    const hasMobileLayout = header.closest('.home-page, .catalog-page, .delivery-page, .product-page, .payment-page');
+    const mobileMenu = header.querySelector('.mobile-menu');
+
+    function updateMenuTarget() {
+      menu.setAttribute('aria-controls', mobile.matches && hasMobileLayout ? 'mobile-navigation' : 'main-navigation');
+    }
+
+    updateMenuTarget();
+    mobileMenu.querySelector('[data-menu-close]').addEventListener('click', () => {
+      close(menu, 'data-menu-open', 'Открыть меню');
+      menu.focus();
+    }, { signal });
+
+    mobileMenu.querySelectorAll('[data-menu-section]').forEach(control => {
+      control.addEventListener('click', () => {
+        const open = control.getAttribute('aria-expanded') !== 'true';
+        control.setAttribute('aria-expanded', String(open));
+        mobileMenu.querySelector(`#${control.getAttribute('aria-controls')}`).hidden = !open;
+      }, { signal });
+    });
+
+    mobileMenu.addEventListener('click', event => {
+      if (event.target.closest('a')) close(menu, 'data-menu-open', 'Открыть меню');
+    }, { signal });
 
     function close(control, attribute, label) {
       header.removeAttribute(attribute);
@@ -48,7 +72,11 @@ export function initNavigation(root = document) {
     }, { signal });
 
     compact.addEventListener('change', () => close(menu, 'data-menu-open', 'Открыть меню'), { signal });
-    mobile.addEventListener('change', () => close(search, 'data-search-open', 'Открыть поиск'), { signal });
+    mobile.addEventListener('change', () => {
+      close(menu, 'data-menu-open', 'Открыть меню');
+      close(search, 'data-search-open', 'Открыть поиск');
+      updateMenuTarget();
+    }, { signal });
     return () => {
       close(menu, 'data-menu-open', 'Открыть меню');
       close(search, 'data-search-open', 'Открыть поиск');

@@ -88,3 +88,72 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .product-description {
+    order: 8;
+    height: auto;
+    margin-top: 28px;
+    padding: 0;
+  }
+
+  .product-description__body {
+    gap: 18px;
+  }
+
+  .product-description__columns {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .product-description__copy {
+    width: 100%;
+    height: auto;
+    gap: 18px;
+  }
+
+  .product-description__text {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .product-description__text p:first-child {
+    min-height: 110px;
+  }
+
+  .product-description__text p:nth-child(2) {
+    min-height: 88px;
+  }
+
+  .product-description__text p:nth-child(3) {
+    min-height: 66px;
+  }
+
+  .product-description__text p + p {
+    margin-top: 18px;
+  }
+
+  .product-description__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .product-description__links button {
+    min-height: 38px;
+  }
+
+  .product-description__advice {
+    width: 100%;
+    height: auto;
+    gap: 14px;
+    padding: 18px;
+    border: 0;
+    box-shadow: inset 0 3px var(--color-cart);
+  }
+
+  .product-description__points {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

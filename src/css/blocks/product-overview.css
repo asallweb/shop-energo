@@ -90,3 +90,51 @@
     white-space: normal;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .product-overview, .product-overview__summary {
+    display: contents;
+  }
+
+  .product-overview__facts {
+    order: 3;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .product-overview__heading {
+    gap: 8px;
+  }
+
+  .product-overview__heading .product-detail__subtitle {
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .product-overview__heading .product-detail__small {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .product-overview__parameter {
+    height: 54px;
+    min-height: 54px;
+    gap: 12px;
+    padding-top: 14px;
+    padding-bottom: 0;
+  }
+
+  .product-overview__parameter dt, .product-overview__parameter dd {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .product-overview__help {
+    order: 4;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 16px;
+    border: 0;
+    box-shadow: inset 0 3px var(--color-cart);
+  }
+}

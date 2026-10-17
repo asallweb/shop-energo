@@ -105,3 +105,26 @@
     right: 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  :is(.catalog-page, .payment-page) .brands {
+    gap: 16px;
+  }
+
+  :is(.catalog-page, .payment-page) .brands__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  :is(.catalog-page, .payment-page) .brands__item {
+    width: 100%;
+    height: 80px;
+    font-size: 29px;
+    line-height: 40px;
+  }
+
+  :is(.catalog-page, .payment-page) .brands .slider__button {
+    display: none;
+  }
+}

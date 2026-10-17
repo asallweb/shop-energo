@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/app.min.css">
     <script type="module" src="js/app.min.js"></script>
   </head>
-  <body>
+  <body class="product-page">
     <template data-include="header"></template>
     <main class="page">
       <div class="container page__container">
@@ -26,22 +26,22 @@
                     <div class="product-gallery__viewport">
                       <div class="slider__track product-gallery__track" data-product-gallery-track>
                         <div class="product-gallery__slide" aria-hidden="false"><img class="product-gallery__image" src="assets/images/product-mitsui-zm-9500-se.png" width="353" height="301" alt="Бензиновый генератор Mitsui Power ECO ZM 9500 SE"></div>
-                        <div class="product-gallery__slide" aria-hidden="true"><img class="product-gallery__image" src="assets/images/mitsui-eco-zm-9500-e.png" width="353" height="301" alt="Тестовое фото: Mitsui Power ECO ZM 9500 E"></div>
-                        <div class="product-gallery__slide" aria-hidden="true"><img class="product-gallery__image" src="assets/images/mitsui-eco-zm-9500-ge.png" width="353" height="301" alt="Тестовое фото: Mitsui Power ECO ZM 9500 GE"></div>
+                        <div class="product-gallery__slide" aria-hidden="true"><picture><source media="(max-width: 767px)" srcset="assets/images/product-mitsui-zm-9500-se.png"><img class="product-gallery__image" src="assets/images/mitsui-eco-zm-9500-e.png" width="353" height="301" alt="Тестовое фото: Mitsui Power ECO ZM 9500 E"></picture></div>
+                        <div class="product-gallery__slide" aria-hidden="true"><picture><source media="(max-width: 767px)" srcset="assets/images/product-mitsui-zm-9500-se.png"><img class="product-gallery__image" src="assets/images/mitsui-eco-zm-9500-ge.png" width="353" height="301" alt="Тестовое фото: Mitsui Power ECO ZM 9500 GE"></picture></div>
                         <div class="product-gallery__slide" aria-hidden="true"><img class="product-gallery__image" src="assets/images/toyo-tkv-7-5spc.png" width="353" height="301" alt="Тестовое фото: TOYO TKV–7.5SPC"></div>
                         <div class="product-gallery__slide" aria-hidden="true"><img class="product-gallery__image" src="assets/images/hnd-ge3300jsi.png" width="353" height="301" alt="Тестовое фото: HND GE3300JSi"></div>
                       </div>
                     </div>
                   </a>
                   <span class="product-gallery__badge">Лидер продаж</span>
-                  <button class="product-gallery__arrow product-gallery__arrow--previous" type="button" data-product-previous data-carousel-previous aria-label="Предыдущее фото"><img src="assets/icons/product-gallery-previous.svg" width="40" height="40" alt=""></button>
-                  <button class="product-gallery__arrow product-gallery__arrow--next" type="button" data-product-next data-carousel-next aria-label="Следующее фото"><img src="assets/icons/product-gallery-next.svg" width="40" height="40" alt=""></button>
+                  <button class="product-gallery__arrow product-gallery__arrow--previous" type="button" data-product-previous data-carousel-previous aria-label="Предыдущее фото"><picture><source media="(max-width: 767px)" srcset="assets/icons/product-gallery-previous.svg"><img src="assets/icons/product-gallery-previous.svg" width="40" height="40" alt=""></picture></button>
+                  <button class="product-gallery__arrow product-gallery__arrow--next" type="button" data-product-next data-carousel-next aria-label="Следующее фото"><picture><source media="(max-width: 767px)" srcset="assets/icons/product-gallery-next.svg"><img src="assets/icons/product-gallery-next.svg" width="40" height="40" alt=""></picture></button>
                 </div>
                 <div class="product-gallery__thumbnails" aria-label="Выбор фотографии">
                   <div class="slider__track product-gallery__thumbnail-track" data-product-thumbnail-track>
                     <button class="panel product-gallery__thumbnail" type="button" data-product-thumbnail="0" data-carousel-go-to="0" aria-label="Фото 1: Бензиновый генератор Mitsui Power ECO ZM 9500 SE" aria-pressed="true"><img src="assets/images/product-mitsui-zm-9500-se.png" width="116" height="99" alt=""></button>
-                    <button class="panel product-gallery__thumbnail" type="button" data-product-thumbnail="1" data-carousel-go-to="1" aria-label="Фото 2: Тестовое фото: Mitsui Power ECO ZM 9500 E" aria-pressed="false"><img src="assets/images/mitsui-eco-zm-9500-e.png" width="116" height="99" alt=""></button>
-                    <button class="panel product-gallery__thumbnail" type="button" data-product-thumbnail="2" data-carousel-go-to="2" aria-label="Фото 3: Тестовое фото: Mitsui Power ECO ZM 9500 GE" aria-pressed="false"><img src="assets/images/mitsui-eco-zm-9500-ge.png" width="116" height="99" alt=""></button>
+                    <button class="panel product-gallery__thumbnail" type="button" data-product-thumbnail="1" data-carousel-go-to="1" aria-label="Фото 2: Тестовое фото: Mitsui Power ECO ZM 9500 E" aria-pressed="false"><picture><source media="(max-width: 767px)" srcset="assets/images/product-mitsui-zm-9500-se.png"><img src="assets/images/mitsui-eco-zm-9500-e.png" width="116" height="99" alt=""></picture></button>
+                    <button class="panel product-gallery__thumbnail" type="button" data-product-thumbnail="2" data-carousel-go-to="2" aria-label="Фото 3: Тестовое фото: Mitsui Power ECO ZM 9500 GE" aria-pressed="false"><picture><source media="(max-width: 767px)" srcset="assets/images/product-mitsui-zm-9500-se.png"><img src="assets/images/mitsui-eco-zm-9500-ge.png" width="116" height="99" alt=""></picture></button>
                     <button class="panel product-gallery__thumbnail" type="button" data-product-thumbnail="3" data-carousel-go-to="3" aria-label="Фото 4: Тестовое фото: TOYO TKV–7.5SPC" aria-pressed="false"><img src="assets/images/toyo-tkv-7-5spc.png" width="116" height="99" alt=""></button>
                     <button class="panel product-gallery__thumbnail" type="button" data-product-thumbnail="4" data-carousel-go-to="4" aria-label="Фото 5: Тестовое фото: HND GE3300JSi" aria-pressed="false"><img src="assets/images/hnd-ge3300jsi.png" width="116" height="99" alt=""></button>
                   </div>
@@ -81,8 +81,8 @@
               <div class="product-conditions__list">
                 <article class="stack product-conditions__card" id="product-delivery"><h2 class="product-detail__subtitle">Доставка</h2><p class="product-conditions__description">По Москве и России<br></p><a class="link product-conditions__link" href="./delivery.html">Рассчитать срок →</a></article>
                 <article class="stack product-conditions__card" id="product-payment"><h2 class="product-detail__subtitle">Оплата</h2><p class="product-conditions__description">Наличными, картой или по счёту</p><a class="link product-conditions__link" href="./payment.html">Перейти →</a></article>
-                <article class="stack product-conditions__card" id="product-installation"><h2 class="product-detail__subtitle">Монтаж</h2><p class="product-conditions__description">Подключение<br>и предпродажный запуск</p><a class="link product-conditions__link" href="#">Перейти →</a></article>
-                <article class="stack product-conditions__card" id="product-warranty"><h2 class="product-detail__subtitle">Гарантия</h2><p class="product-conditions__description">Сервисная помощь<br>и официальная гарантия</p><a class="link product-conditions__link" href="#">Перейти →</a></article>
+                <article class="stack product-conditions__card" id="product-installation"><h2 class="product-detail__subtitle">Монтаж</h2><p class="product-conditions__description">Подключение<br> и предпродажный запуск</p><a class="link product-conditions__link" href="#">Перейти →</a></article>
+                <article class="stack product-conditions__card" id="product-warranty"><h2 class="product-detail__subtitle">Гарантия</h2><p class="product-conditions__description">Сервисная помощь<br> и официальная гарантия</p><a class="link product-conditions__link" href="#">Перейти →</a></article>
               </div>
             </section>
             <div class="product-detail__information">

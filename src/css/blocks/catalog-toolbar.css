@@ -78,3 +78,51 @@
     gap: 12px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .catalog[data-filter-open] .catalog-toolbar {
+    display: block;
+  }
+
+  .catalog-toolbar__row, .catalog-toolbar__sorting {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .catalog-toolbar__sorting {
+    gap: 12px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .catalog-toolbar__choices {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 8px 12px;
+  }
+
+  .catalog-toolbar__choice {
+    min-height: 32px;
+    gap: 8px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .catalog-toolbar__radio {
+    width: 16px;
+    height: 16px;
+  }
+
+  .catalog-toolbar__radio:checked {
+    background-image: url("../assets/icons/catalog-mobile-radio-check.svg");
+    background-size: 16px 16px;
+  }
+
+  .catalog-toolbar__count {
+    display: none;
+  }
+}

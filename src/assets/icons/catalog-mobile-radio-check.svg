@@ -1,0 +1,10 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16.000000" height="16.000000" fill="none" clip-path="url(#clipPath_11)" customFrame="url(#clipPath_11)">
+	<defs>
+		<clipPath id="clipPath_11">
+			<rect width="16.000000" height="16.000000" x="0.000000" y="0.000000" rx="8.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Выбор сортировки" width="16.000000" height="16.000000" x="0.000000" y="0.000000" rx="8.000000" fill="rgb(117,67,111)" />
+	<path id="Выбрано" d="M3.54715 7.48704L7.29715 11.487L6.75 12L6.15898 11.5383L12.409 3.53827L13.591 4.46173L6.80184 13.1519L2.45285 8.51296L3.54715 7.48704Z" fill="rgb(255,255,255)" fill-rule="nonzero" />
+	<rect id="Выбор сортировки" width="15.000000" height="15.000000" x="0.500000" y="0.500000" rx="7.500000" stroke="rgb(117,67,111)" stroke-width="1.000000" />
+</svg>

@@ -10,7 +10,7 @@
   .category-directory__list {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 12px;
     padding: 0;
     list-style: none;
   }
@@ -20,7 +20,7 @@
     position: relative;
     height: 150px;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
     background: #e9e9e9;
     color: #000;
     text-decoration: none;
@@ -39,11 +39,75 @@
 
   .category-directory__image {
     position: absolute;
-    right: 8px;
-    bottom: 0;
-    width: 150px;
-    height: 133px;
+    left: calc(50% + var(--image-offset));
+    top: var(--image-top);
+    width: var(--image-width);
+    height: var(--image-height);
+    max-width: none;
     object-fit: contain;
+  }
+
+  .category-directory__image--petrol {
+    --image-offset: 3.813477px;
+    --image-top: 12.398825px;
+    --image-width: 175.186722px;
+    --image-height: 155.332245px;
+  }
+
+  .category-directory__image--gas {
+    --image-offset: 0px;
+    --image-top: 6.502885px;
+    --image-width: 185.824585px;
+    --image-height: 188.340958px;
+  }
+
+  .category-directory__image--diesel {
+    --image-offset: -5.945312px;
+    --image-top: 10.158603px;
+    --image-width: 253.692383px;
+    --image-height: 167.289902px;
+  }
+
+  .category-directory__image--inverter {
+    --image-offset: 7.422852px;
+    --image-top: 9.906667px;
+    --image-width: 171.577148px;
+    --image-height: 152.131744px;
+  }
+
+  .category-directory__image--welding {
+    --image-offset: 0px;
+    --image-top: 9.906667px;
+    --image-width: 179px;
+    --image-height: 158.713333px;
+  }
+
+  .category-directory__image--container {
+    --image-offset: 13.157715px;
+    --image-top: 20px;
+    --image-width: 173.684204px;
+    --image-height: 154px;
+  }
+
+  .category-directory__image--snowblower {
+    --image-offset: 14.259979px;
+    --image-top: 6.078857px;
+    --image-width: 179.480057px;
+    --image-height: 159.138977px;
+  }
+
+  .category-directory__image--ats {
+    --image-offset: 21px;
+    --image-top: 8.757005px;
+    --image-width: 173.143555px;
+    --image-height: 153.520615px;
+  }
+
+  .category-directory__image--pump {
+    --image-offset: 3.852356px;
+    --image-top: 8.890598px;
+    --image-width: 179px;
+    --image-height: 158.713333px;
   }
 
   @media (max-width: 374px) {
@@ -54,7 +118,12 @@
     }
 
     .category-directory__image {
+      top: auto;
+      left: auto;
+      right: 8px;
+      bottom: 0;
       width: 125px;
+      height: 133px;
     }
   }
 }

@@ -59,3 +59,40 @@
     margin-right: 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .product-heading {
+    order: 0;
+    height: auto;
+    padding: 0;
+  }
+
+  .product-heading__breadcrumbs {
+    width: 100%;
+    font-size: 12px;
+    line-height: 15px;
+    white-space: normal;
+  }
+
+  .product-heading__title {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .product-heading__meta {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 15px;
+    white-space: normal;
+  }
+
+  .product-heading__meta p, .product-heading__actions {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+}
