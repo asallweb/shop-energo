@@ -58,8 +58,12 @@ html {
 }
 
 :where(a, button) {
-  transition: color 160ms ease, background-color 160ms ease, filter 160ms ease;
+  transition: color 220ms cubic-bezier(0.22, 1, 0.36, 1), background-color 220ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms cubic-bezier(0.22, 1, 0.36, 1), outline-color 220ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1), filter 220ms cubic-bezier(0.22, 1, 0.36, 1), transform 220ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
   text-underline-offset: 3px;
+}
+
+:where(input, select, textarea) {
+  transition: border-color 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
@@ -77,7 +81,7 @@ html {
 
 @media (hover: hover) {
   :where(a, button):hover {
-    filter: brightness(0.88);
+    filter: brightness(0.92);
   }
 
   :where(.link, .header__phone-number, .header__email, .footer__email, .hero__home):hover {
@@ -113,7 +117,8 @@ html {
     scroll-behavior: auto;
   }
 
-  :where(a, button) {
+  :where(a, button, input, select, textarea) {
     transition: none;
   }
 }
+

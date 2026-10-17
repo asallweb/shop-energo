@@ -102,8 +102,9 @@ export function createCarousel(root, { tracks, onChange = () => {} }) {
     position += distance;
     render(!reducedMotion.matches);
     if (reducedMotion.matches) finish();
-    else timer = setTimeout(finish, 450);
+    else timer = setTimeout(finish, 480);
   }
+
 
   root.addEventListener('click', event => {
     const control = event.target.closest('[data-carousel-previous], [data-carousel-next], [data-carousel-go-to]');

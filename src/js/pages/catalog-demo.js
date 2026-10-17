@@ -1,6 +1,8 @@
+import gsap from 'gsap';
 import { mountElements } from '../modules/lifecycle.js';
 
 export function initCatalogDemo(root = document) {
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   mountElements(root, '[data-catalog-filter][data-catalog-demo]', (form, signal) => {
     const catalog = form.closest('[data-catalog]');
     if (!catalog) return false;
@@ -48,9 +50,28 @@ export function initCatalogDemo(root = document) {
       });
       list.append(...products);
       let visible = 0;
+      const visibleProducts = [];
       for (const product of products) {
         product.hidden = !matches(product);
-        if (!product.hidden) visible++;
+        if (!product.hidden) {
+          visible++;
+          visibleProducts.push(product);
+        }
+      }
+      if (visibleProducts.length && !reducedMotion.matches) {
+        gsap.fromTo(
+          visibleProducts,
+          { autoAlpha: 0, y: 12 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.42,
+            stagger: 0.035,
+            ease: 'power2.out',
+            clearProps: 'opacity,visibility,transform',
+            overwrite: 'auto',
+          }
+        );
       }
       const empty = catalog.querySelector('[data-catalog-empty]');
       if (empty) {
@@ -64,6 +85,7 @@ export function initCatalogDemo(root = document) {
         renderedCount = count.textContent;
       }
     }
+
 
     form.addEventListener('submit', event => {
       event.preventDefault();

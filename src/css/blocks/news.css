@@ -60,7 +60,27 @@
 .news__list {
   display: flex;
   justify-content: space-between;
+  animation: news-panel-fade 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+@keyframes news-panel-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news__list {
+    animation: none;
+  }
+}
+
 
 .news__card {
   --panel-line: var(--color-line);

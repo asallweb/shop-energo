@@ -20,6 +20,7 @@
     overscroll-behavior: contain;
     background: #fff;
     color: #451f37;
+    animation: mobile-menu-fade 220ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .site-page .header[data-search-open] .mobile-menu {
@@ -80,11 +81,13 @@
 
   .mobile-menu__toggle img {
     flex-shrink: 0;
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .mobile-menu__toggle[aria-expanded="false"] img {
     transform: scaleY(-1);
   }
+
 
   .mobile-menu__group--catalog .mobile-menu__toggle {
     box-shadow: none;
@@ -97,6 +100,10 @@
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+
+  .mobile-menu__submenu {
+    animation: mobile-menu-fade 200ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .mobile-menu__group--catalog .mobile-menu__submenu {
@@ -138,3 +145,27 @@
     line-height: 19px;
   }
 }
+
+@keyframes mobile-menu-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-page .header[data-menu-open] .mobile-menu,
+  .mobile-menu__submenu {
+    animation: none;
+  }
+
+  .mobile-menu__toggle img {
+    transition: none;
+  }
+}
+

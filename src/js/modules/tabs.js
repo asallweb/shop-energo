@@ -1,22 +1,43 @@
+import gsap from 'gsap';
 import { mountElements } from './lifecycle.js';
 
 export function initTabs(root = document) {
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   mountElements(root, '[data-tabs]', (section, signal) => {
     const tabs = Array.from(section.querySelectorAll('[role="tab"]')).filter(tab => tab.closest('[data-tabs]') === section);
     const panels = new Map(Array.from(section.querySelectorAll('[role="tabpanel"]')).filter(panel => panel.closest('[data-tabs]') === section).map(panel => [panel.id, panel]));
     if (!tabs.length || tabs.some(tab => !panels.has(tab.getAttribute('aria-controls')))) return false;
 
-    function selectTab(selected) {
+    function selectTab(selected, animate = false) {
       for (const tab of tabs) {
         const active = tab === selected;
         tab.setAttribute('aria-selected', String(active));
         tab.tabIndex = active ? 0 : -1;
-        panels.get(tab.getAttribute('aria-controls')).hidden = !active;
+        const panel = panels.get(tab.getAttribute('aria-controls'));
+        panel.hidden = !active;
+        if (active && animate && !reducedMotion.matches) {
+          const items = Array.from(panel.children);
+          if (items.length) {
+            gsap.fromTo(
+              items,
+              { autoAlpha: 0, y: 10 },
+              {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.4,
+                stagger: 0.04,
+                ease: 'power2.out',
+                clearProps: 'opacity,visibility,transform',
+                overwrite: 'auto',
+              }
+            );
+          }
+        }
       }
     }
 
     for (const tab of tabs) {
-      tab.addEventListener('click', () => selectTab(tab), { signal });
+      tab.addEventListener('click', () => selectTab(tab, true), { signal });
       tab.addEventListener('keydown', event => {
         const index = tabs.indexOf(tab);
         let next;
@@ -26,10 +47,11 @@ export function initTabs(root = document) {
         if (event.key === 'End') next = tabs.at(-1);
         if (!next) return;
         event.preventDefault();
-        selectTab(next);
+        selectTab(next, true);
         next.focus();
       }, { signal });
     }
-    selectTab(tabs.find(tab => tab.getAttribute('aria-selected') === 'true') || tabs[0]);
+    selectTab(tabs.find(tab => tab.getAttribute('aria-selected') === 'true') || tabs[0], false);
   });
 }
+
