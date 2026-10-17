@@ -25,8 +25,14 @@ for (const name of pageNames) {
   if (publicationPanels.length && (mobileTitles.some(titles => !titles) || new Set(mobileTitles).size !== publicationPanels.length)) throw new Error(`${name}: publication tabs must have distinct mobile content`);
   if (name !== 'pages') {
     const stylesheets = [...html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*>/g)];
-    if (stylesheets.length !== 1 || !stylesheets[0][0].includes('blocking="render"')) throw new Error(`${name}: expected one render-blocking page stylesheet`);
-    if (stylesheets[0].index > html.indexOf('<script')) throw new Error(`${name}: stylesheet must precede scripts`);
+    const embedded = [...html.matchAll(/<style data-page-css="[^"]+">([\s\S]*?)<\/style>/g)];
+    if (stylesheets.length || embedded.length !== 1 || !embedded[0][1].includes('.site-page')) throw new Error(`${name}: expected one complete embedded page stylesheet`);
+    if (embedded[0].index > html.indexOf('<script') || embedded[0].index > html.indexOf('<body')) throw new Error(`${name}: stylesheet must precede scripts and body`);
+    for (const match of embedded[0][1].matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
+      if (/^(?:data:|https?:|#)/.test(match[1])) continue;
+      if (!(await stat(resolve(output, match[1].split(/[?#]/)[0]))).isFile()) throw new Error(`${name}: missing inline CSS asset ${match[1]}`);
+      checks++;
+    }
   }
   for (const match of html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/g)) checkCode(match[1], `${name}.inline.css`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
