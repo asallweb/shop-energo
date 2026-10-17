@@ -52,7 +52,7 @@ An `a[data-lightbox-open]` keeps its original image URL as a fallback. The share
 
 ## Assets and performance
 
-All assets, libraries and fonts are local. The build converts raster sources to WebP with content hashes, caps oversized images, and uses lossless encoding for maps, certificates and payment graphics. Original exports remain in `src/assets/`; generated image cache files live in ignored `.local/cache/`. SVGs stay SVGs. WOFF2 subsets retain the supplied font designs; original fonts and licenses remain available in the source tree. Unused TTFs are excluded from the published output.
+All assets, libraries and fonts are local. The build converts raster sources to WebP with content hashes, caps oversized images, and uses lossless encoding for maps, certificates and payment graphics. Used original exports remain in `src/assets/`; generated image cache files live in ignored `.local/cache/`. SVGs stay SVGs. WOFF2 subsets retain the supplied font designs and their licenses. Unreferenced exports and redundant TTF originals are removed from the source tree. Asset copying and conversion include only paths referenced by source HTML, CSS, JavaScript or build templates; license texts are retained. `npm run check` rejects unreferenced production assets. Complete standalone CSS bundles remain intentional CMS integration artifacts.
 
 Critical header imagery and Arimo fonts are preloaded. Main hero/product imagery has high fetch priority; other HTML images load lazily. Page CSS and JavaScript behavior are loaded only where needed. Performance changes must preserve the supplied palette, geometry and typography.
 

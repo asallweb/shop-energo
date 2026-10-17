@@ -1,4 +1,4 @@
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -20,7 +20,10 @@ export async function buildSite() {
     throw new Error('Build output must be the project dist directory.');
   }
 
-  await rm(distDir, { recursive: true, force: true });
+  await mkdir(distDir, { recursive: true });
+  for (const entry of await readdir(distDir)) {
+    await rm(join(distDir, entry), { recursive: true, force: true });
+  }
   await mkdir(join(distDir, 'css'), { recursive: true });
   await mkdir(join(distDir, 'js'), { recursive: true });
 

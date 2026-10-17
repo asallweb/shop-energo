@@ -18,15 +18,20 @@ export async function buildAssets({ rootDir, srcDir, distDir }) {
   const cache = join(rootDir, '.local', 'cache', 'images');
   await mkdir(cache, { recursive: true });
   const replacements = new Map();
+  const references = (await Promise.all((await files(srcDir)).concat(await files(join(rootDir, 'scripts')))
+    .filter(path => /\.(?:html|css|js|mjs)$/.test(path))
+    .map(path => readFile(path, 'utf8')))).join('\n');
+  const used = path => references.includes(relative(srcDir, path).replaceAll('\\', '/'));
   let originalBytes = 0;
   let outputBytes = 0;
   const raster = path => /\.(?:png|jpe?g|webp)$/.test(path);
   await cp(source, join(distDir, 'assets'), {
     recursive: true,
-    filter: path => !raster(path) && !path.endsWith('.ttf') && !path.endsWith('.gitkeep'),
+    filter: path => !raster(path) && !path.endsWith('.ttf') && !path.endsWith('.gitkeep')
+      && (!extname(path) || path.endsWith('.txt') || used(path)),
   });
   for (const path of await files(source)) {
-    if (!raster(path)) continue;
+    if (!raster(path) || !used(path)) continue;
     const input = await readFile(path);
     const key = createHash('sha256').update(input).update('webp-v1-q92-max1200-header1920').digest('hex');
     const cached = join(cache, key + '.webp');

@@ -1,5 +1,5 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { parse as parseJavaScript } from 'acorn';
 import postcss from 'postcss';
 import { pages } from './pages.mjs';
@@ -7,6 +7,7 @@ import { pages } from './pages.mjs';
 const output = resolve('dist');
 const pageNames = [...Object.keys(pages), 'pages'];
 let checks = 0;
+let assetReferences = '';
 function checkCode(text, file) {
   if (/\.(?:js|mjs)$/.test(file)) {
     const comments = [];
@@ -18,6 +19,7 @@ function checkCode(text, file) {
 }
 for (const name of pageNames) {
   const html = await readFile(resolve(output, `${name}.html`), 'utf8');
+  assetReferences += html;
   if (html.includes('data-include=') || html.includes('{{')) throw new Error(`${name}: unresolved template`);
   if (html.includes('<!--')) throw new Error(`${name}: HTML comment`);
   const publicationPanels = [...html.matchAll(/<div class="news__list" role="tabpanel"[^>]*>([\s\S]*?)(?=<div class="news__list" role="tabpanel"|<\/section>)/g)];
@@ -60,6 +62,7 @@ async function checkBundles(directory) {
     if (entry.isDirectory()) { await checkBundles(file); continue; }
     if (!/\.(css|js)$/.test(file)) continue;
     const text = await readFile(file, 'utf8');
+    assetReferences += text;
     checkCode(text, file);
     const references = file.endsWith('.css')
       ? [...text.matchAll(/url\(["']?([^"')]+)["']?\)/g)]
@@ -72,6 +75,16 @@ async function checkBundles(directory) {
   }
 }
 await checkBundles(output);
+async function checkAssets(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const file = join(directory, entry.name);
+    if (entry.isDirectory()) { await checkAssets(file); continue; }
+    if (file.endsWith('.txt')) continue;
+    const asset = relative(output, file).replaceAll('\\', '/');
+    if (!assetReferences.includes(asset)) throw new Error(`Unused production asset: ${asset}`);
+  }
+}
+await checkAssets(join(output, 'assets'));
 async function checkSource(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const file = join(directory, entry.name);
