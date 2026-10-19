@@ -1,4 +1,4 @@
-import { mountElements } from '../modules/lifecycle.js?v=b8e23316de5e';
+import { mountElements } from '../modules/lifecycle.js?v=b6ce846ced1e';
 
 export function initCatalog(root = document) {
   mountElements(root, '[data-catalog]', (catalog, signal) => {

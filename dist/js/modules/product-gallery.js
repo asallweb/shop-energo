@@ -1,5 +1,5 @@
-import { createCarousel } from './carousel.js?v=b8e23316de5e';
-import { mountElements } from './lifecycle.js?v=b8e23316de5e';
+import { createCarousel } from './carousel.js?v=b6ce846ced1e';
+import { mountElements } from './lifecycle.js?v=b6ce846ced1e';
 
 export function initProductGallery(root = document) {
   mountElements(root, '[data-product-gallery]', (gallery, signal) => {

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Элементы интерфейса SHOP-ENERGO: кнопки, формы, фильтры и карточки товаров." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>UI-kit — SHOP-ENERGO</title>
+    <link rel="preload" href="assets/fonts/arimo-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/arimo-bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/mobile-logo.svg"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/header-background.257bb5bd75.webp"
+      media="(min-width: 768px)"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="assets/images/header-haze-left.svg" media="(min-width: 768px)" />
+    <link rel="preload" as="image" href="assets/images/header-haze-right.svg" media="(min-width: 768px)" />
+    <link rel="stylesheet" href="css/app.min.css?v=cfaf48030f79" blocking="render" />
+    <link rel="stylesheet" href="css/ui-kit.min.css?v=e0cba50e1ced" blocking="render" />
+    <script type="module" src="js/main.js?v=b6ce846ced1e"></script>
+    <link rel="icon" href="assets/images/logo-symbol.svg" type="image/svg+xml" />
+  </head>
+  <body class="site-page ui-kit-page">
+    <main class="ui-kit" data-ui-kit>
+      <h1 class="page-heading__title">UI-kit</h1>
+      <section class="ui-kit__section">
+        <h2 class="page__section-title">Кнопки</h2>
+        <div class="ui-kit__row">
+          <button
+            class="button button--primary product-card__buy"
+            type="button"
+            aria-label="Купить Mitsui Power ECO ZM 9500 SE"
+          >
+            Купить</button
+          ><button class="button contacts-form__submit" type="button">Отправить сообщение</button
+          ><button class="catalog-filter__submit ui-kit__filter-button" type="button">Подобрать</button>
+        </div>
+      </section>
+      <section class="ui-kit__section">
+        <h2 class="page__section-title">Ссылки</h2>
+        <div class="ui-kit__row">
+          <a class="link" href="./catalog.html">Каталог товаров</a
+          ><a class="footer__email" href="mailto:info@shop-energo.ru">info@shop-energo.ru</a>
+        </div>
+      </section>
+      <section class="ui-kit__section">
+        <h2 class="page__section-title">Поиск</h2>
+        <form class="search__form" role="search" action="./index.html" method="get">
+          <input
+            class="panel search__input"
+            type="search"
+            name="q"
+            aria-label="Поиск по товарам и услугам"
+            placeholder="Поиск по товарам и услугам"
+          />
+          <button class="button search__button" type="submit">Найти</button>
+        </form>
+      </section>
+      <section class="ui-kit__section">
+        <h2 class="page__section-title">Форма</h2>
+        <form
+          class="stack panel contacts-form"
+          id="contacts-form"
+          method="post"
+          action="./contacts.html"
+          aria-labelledby="contacts-form-title"
+          data-contacts-form
+        >
+          <div class="stack contacts-form__heading">
+            <h2 class="contacts-form__title" id="contacts-form-title">Напишите нам</h2>
+            <p class="contacts-form__description">
+              Оставьте сообщение — специалисты отдела продаж ответят по электронной почте.
+            </p>
+          </div>
+          <div class="stack contacts-form__fields">
+            <div class="contacts-form__row">
+              <label class="stack contacts-form__field"
+                ><span class="contacts-form__label">Ваше имя</span
+                ><input
+                  class="panel contacts-form__input"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Как к вам обращаться"
+                  required /></label
+              ><label class="stack contacts-form__field"
+                ><span class="contacts-form__label">Ваш e-mail</span
+                ><input
+                  class="panel contacts-form__input"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="name@example.ru"
+                  required
+              /></label>
+            </div>
+            <label class="stack contacts-form__field"
+              ><span class="contacts-form__label">Сообщение</span
+              ><textarea
+                class="panel contacts-form__input contacts-form__textarea"
+                name="message"
+                placeholder="Опишите вопрос или укажите номер заказа"
+                required
+              ></textarea>
+            </label>
+          </div>
+          <div class="contacts-form__footer">
+            <div class="stack contacts-form__verification">
+              <label class="contacts-form__label contacts-form__label--code" for="contacts-code"
+                >Защита от автоматических сообщений</label
+              >
+              <div class="contacts-form__code-row">
+                <span class="contacts-form__code" aria-hidden="true">КОД</span
+                ><input
+                  class="panel contacts-form__input contacts-form__code-input"
+                  id="contacts-code"
+                  name="code"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Введите код"
+                  required
+                  data-contacts-code="КОД"
+                  aria-describedby="contacts-form-status"
+                />
+              </div>
+              <p class="contacts-form__status" id="contacts-form-status" role="status">
+                Поля и проверочный код показаны как макет формы.
+              </p>
+            </div>
+            <button class="button contacts-form__submit" type="submit">Отправить сообщение</button>
+          </div>
+        </form>
+      </section>
+      <section class="ui-kit__section">
+        <h2 class="page__section-title">Фильтры</h2>
+        <div class="ui-kit__row">
+          <div class="ui-kit__checkboxes">
+            <label class="catalog-filter__brand"
+              ><input
+                class="catalog-filter__checkbox"
+                type="checkbox"
+                name="ui-brand"
+                value="Huter"
+                checked
+              />Huter</label
+            ><label class="catalog-filter__brand"
+              ><input class="catalog-filter__checkbox" type="checkbox" name="ui-brand" value="Honda" />Honda</label
+            >
+          </div>
+          <div class="catalog-toolbar__choices">
+            <label class="catalog-toolbar__choice"><input class="catalog-toolbar__radio" type="radio" name="ui-sort" value="price" checked>цене </label
+            ><label class="catalog-toolbar__choice"><input class="catalog-toolbar__radio" type="radio" name="ui-sort" value="name">названию </label
+            ><label class="catalog-toolbar__choice"><input class="catalog-toolbar__radio" type="radio" name="ui-sort" value="new">новизне</label
+            ><label class="catalog-toolbar__choice"><input class="catalog-toolbar__radio" type="radio" name="ui-sort" value="power">мощности</label>
+          </div>
+          <label class="stack contacts-form__field"
+            ><span class="contacts-form__label">Напряжение</span
+            ><select class="catalog-filter__select" name="ui-voltage">
+              <option value="">Любое</option>
+              <option value="230">230 В</option>
+              <option value="400">400 В</option>
+            </select></label
+          ><label class="stack contacts-form__field"
+            ><span class="contacts-form__label">Мощность от, кВт</span
+            ><input
+              class="catalog-filter__input"
+              type="number"
+              name="ui-power"
+              min="0"
+              step="0.1"
+              placeholder="Например, 5"
+          /></label>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

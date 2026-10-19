@@ -1,5 +1,5 @@
-import gsap from '../vendor/gsap.js?v=b8e23316de5e';
-import { mountElements } from './lifecycle.js?v=b8e23316de5e';
+import gsap from '../vendor/gsap.js?v=b6ce846ced1e';
+import { mountElements } from './lifecycle.js?v=b6ce846ced1e';
 
 const groupSelectors = [
   '.category-directory__list > li',

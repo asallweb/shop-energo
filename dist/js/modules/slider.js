@@ -1,5 +1,5 @@
-import { createCarousel } from './carousel.js?v=b8e23316de5e';
-import { mountElements } from './lifecycle.js?v=b8e23316de5e';
+import { createCarousel } from './carousel.js?v=b6ce846ced1e';
+import { mountElements } from './lifecycle.js?v=b6ce846ced1e';
 
 function createMobileGrid(slider, track) {
   const items = Array.from(track.children);

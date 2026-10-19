@@ -1,17 +1,18 @@
-import { initSliders } from './modules/slider.js?v=b8e23316de5e';
-import { initLightbox, closeLightbox } from './modules/lightbox.js?v=b8e23316de5e';
-import { initTabs } from './modules/tabs.js?v=b8e23316de5e';
-import { initNavigation } from './modules/navigation.js?v=b8e23316de5e';
-import { initPreloader } from './modules/preloader.js?v=b8e23316de5e';
-import { initReveal } from './modules/reveal.js?v=b8e23316de5e';
-import { findElements, isMounted, unmountElements } from './modules/lifecycle.js?v=b8e23316de5e';
+import { initSliders } from './modules/slider.js?v=b6ce846ced1e';
+import { initLightbox, closeLightbox } from './modules/lightbox.js?v=b6ce846ced1e';
+import { initTabs } from './modules/tabs.js?v=b6ce846ced1e';
+import { initNavigation } from './modules/navigation.js?v=b6ce846ced1e';
+import { initPreloader } from './modules/preloader.js?v=b6ce846ced1e';
+import { initReveal } from './modules/reveal.js?v=b6ce846ced1e';
+import { findElements, isMounted, unmountElements } from './modules/lifecycle.js?v=b6ce846ced1e';
 
 const pending = new Map();
 const modules = [
-  { selector: '[data-hero]', load: () => import('./modules/hero.js?v=b8e23316de5e'), initialize: 'initHero' },
-  { selector: '[data-catalog]', load: () => import('./pages/catalog.js?v=b8e23316de5e'), initialize: 'initCatalog' },
-  { selector: '[data-catalog-filter][data-catalog-demo]', load: () => import('./pages/catalog-demo.js?v=b8e23316de5e'), initialize: 'initCatalogDemo' },
-  { selector: '[data-product-gallery]', load: () => import('./modules/product-gallery.js?v=b8e23316de5e'), initialize: 'initProductGallery' },
+  { selector: '[data-ui-kit]', load: () => import('./pages/ui-kit.js?v=b6ce846ced1e'), initialize: 'initUiKit' },
+  { selector: '[data-hero]', load: () => import('./modules/hero.js?v=b6ce846ced1e'), initialize: 'initHero' },
+  { selector: '[data-catalog]', load: () => import('./pages/catalog.js?v=b6ce846ced1e'), initialize: 'initCatalog' },
+  { selector: '[data-catalog-filter][data-catalog-demo]', load: () => import('./pages/catalog-demo.js?v=b6ce846ced1e'), initialize: 'initCatalogDemo' },
+  { selector: '[data-product-gallery]', load: () => import('./modules/product-gallery.js?v=b6ce846ced1e'), initialize: 'initProductGallery' },
 ];
 const selector = ['.site-page', '[data-preloader]', '[data-navigation]', '[data-slider]', '[data-tabs]', ...modules.map(module => module.selector)].join(', ');
 

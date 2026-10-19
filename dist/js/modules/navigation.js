@@ -1,4 +1,4 @@
-import { mountElements } from './lifecycle.js?v=b8e23316de5e';
+import { mountElements } from './lifecycle.js?v=b6ce846ced1e';
 
 export function initNavigation(root = document) {
   mountElements(root, '[data-navigation]', (header, signal) => {
